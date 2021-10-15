@@ -6,7 +6,7 @@ import java.util.HashMap;
 import velo.ladealpha.fields.astronomy.Atmosphere_Density;
 import velo.ladealpha.fields.astronomy.Planet;
 import velo.ladealpha.fields.astronomy.PlanetTypes;
-import velo.ladealpha.fields.astronomy.PlanetaryComposition;
+import velo.ladealpha.fields.astronomy.CelestialObjectComposition;
 import velo.ladealpha.fields.astronomy.SpaceObject;
 import velo.ladealpha.fields.astronomy.Star;
 
@@ -26,11 +26,11 @@ public class Earth extends Planet {
 				-45,
 				149597870,
 				1,
-				new PlanetaryComposition(new Object[][] {
-					{"Oxygen", 47},
-					{"Silicon", 28},
+				new CelestialObjectComposition(new Object[][] {
+					{"Oxygen", 47.0},
+					{"Silicon", 28.0},
 					{"Aluminum", 8.1},
-					{"Iron", 5},
+					{"Iron", 5.0},
 					{"Calcium", 3.6},
 					{"Sodium", 2.8},
 					{"Potassium", 2.6},

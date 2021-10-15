@@ -12,13 +12,13 @@ public class Planet extends SpaceObject {
 	 * @param max_temp_c
 	 * @param min_temp_c
 	 * @param distance_to_orbitted_star
-	 * @param time_to_orbit_star_relative_to_earth
+	 * @param time_to_orbit_star_years
 	 * @param composition
 	 */
 	
 	public Planet(long radius, Star star_orbitted, PlanetTypes type, int moons_n, int rings_n,
 			Atmosphere_Density atmosphere_density, int max_temp_c, int min_temp_c, long distance_to_orbitted_star,
-			int time_to_orbit_star_relative_to_earth, PlanetaryComposition composition, long mass) {
+			int time_to_orbit_star_years, CelestialObjectComposition composition, long mass) {
 		super(mass);
 		this.radius = radius;
 		this.star_orbitted = star_orbitted;
@@ -29,7 +29,7 @@ public class Planet extends SpaceObject {
 		this.max_temp_c = max_temp_c;
 		this.min_temp_c = min_temp_c;
 		this.distance_to_orbitted_star = distance_to_orbitted_star;
-		this.time_to_orbit_star_relative_to_earth = time_to_orbit_star_relative_to_earth;
+		this.time_to_orbit_star_years = time_to_orbit_star_years;
 		this.composition = composition;
 	}
 	private long radius;
@@ -40,8 +40,8 @@ public class Planet extends SpaceObject {
 	private Atmosphere_Density atmosphere_density;
 	private int max_temp_c, min_temp_c;
 	private long distance_to_orbitted_star;
-	private int time_to_orbit_star_relative_to_earth;
-	private PlanetaryComposition composition;
+	private int time_to_orbit_star_years;
+	private CelestialObjectComposition composition;
 	/**
 	 * @return the star_orbitted
 	 */
@@ -139,27 +139,27 @@ public class Planet extends SpaceObject {
 		this.distance_to_orbitted_star = distance_to_orbitted_star;
 	}
 	/**
-	 * @return the time_to_orbit_star_relative_to_earth
+	 * @return the time_to_orbit_star_years
 	 */
-	public int getTime_to_orbit_star_relative_to_earth() {
-		return time_to_orbit_star_relative_to_earth;
+	public int getTime_to_orbit_star_years() {
+		return time_to_orbit_star_years;
 	}
 	/**
-	 * @param time_to_orbit_star_relative_to_earth the time_to_orbit_star_relative_to_earth to set
+	 * @param time_to_orbit_star_years the time_to_orbit_star_years to set
 	 */
-	public void setTime_to_orbit_star_relative_to_earth(int time_to_orbit_star_relative_to_earth) {
-		this.time_to_orbit_star_relative_to_earth = time_to_orbit_star_relative_to_earth;
+	public void setTime_to_orbit_star_years(int time_to_orbit_star_years) {
+		this.time_to_orbit_star_years = time_to_orbit_star_years;
 	}
 	/**
 	 * @return the composition
 	 */
-	public PlanetaryComposition getComposition() {
+	public CelestialObjectComposition getComposition() {
 		return composition;
 	}
 	/**
 	 * @param composition the composition to set
 	 */
-	public void setComposition(PlanetaryComposition composition) {
+	public void setComposition(CelestialObjectComposition composition) {
 		this.composition = composition;
 	}
 	
