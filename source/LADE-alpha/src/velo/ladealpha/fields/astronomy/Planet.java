@@ -15,6 +15,7 @@ public class Planet extends SpaceObject {
 	 * @param time_to_orbit_star_relative_to_earth
 	 * @param composition
 	 */
+	
 	public Planet(long radius, Star star_orbitted, PlanetTypes type, int moons_n, int rings_n,
 			Atmosphere_Density atmosphere_density, int max_temp_c, int min_temp_c, long distance_to_orbitted_star,
 			int time_to_orbit_star_relative_to_earth, PlanetaryComposition composition, long mass) {
