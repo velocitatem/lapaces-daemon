@@ -1,0 +1,10 @@
+#+AUTHOR: Daniel Rosel
+* Fields
+** Politics
+** Economy
+** Astronomy
+*** Earth and The moon
+** Psychology
+*** Behavior prediction
+*** Behavior analysis
+*** Assessment of personality
