@@ -6,5 +6,8 @@
 *** Earth and The moon
 ** Psychology
 *** Behavior prediction
++ Predict emotion based on:
+  - Stimuli type
+  - Current emotional state
 *** Behavior analysis
 *** Assessment of personality
