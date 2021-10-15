@@ -1,0 +1,9 @@
+#+AUTHOR: Daniel Rosel
+
+* Sources used for computations and evaluations
++ https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
++ https://calculla.com/moon_properties
++ http://www.astronomynotes.com/solarsys/s2.htm
++ http://www.johnstonsarchive.net/astro/ssplanetdata.html
++ https://www.cliffsnotes.com/study-guides/astronomy/earth-and-its-moon/properties-of-earth-and-the-moon
++ https://www.edaboard.com/threads/how-to-measure-the-mass-of-an-object-in-space.48004/
