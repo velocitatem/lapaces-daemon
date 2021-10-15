@@ -1,8 +1,37 @@
 package velo.ladealpha.fields.astronomy;
 
-public class Planet extends SpaceObject {
-		
+public class Planet extends SpaceObject {	
 	
+	/**
+	 * @param radius
+	 * @param star_orbitted
+	 * @param type
+	 * @param moons_n
+	 * @param rings_n
+	 * @param atmosphere_density
+	 * @param max_temp_c
+	 * @param min_temp_c
+	 * @param distance_to_orbitted_star
+	 * @param time_to_orbit_star_relative_to_earth
+	 * @param composition
+	 */
+	public Planet(long radius, Star star_orbitted, PlanetTypes type, int moons_n, int rings_n,
+			Atmosphere_Density atmosphere_density, int max_temp_c, int min_temp_c, long distance_to_orbitted_star,
+			int time_to_orbit_star_relative_to_earth, PlanetaryComposition composition, long mass) {
+		super(mass);
+		this.radius = radius;
+		this.star_orbitted = star_orbitted;
+		this.type = type;
+		this.moons_n = moons_n;
+		this.rings_n = rings_n;
+		this.atmosphere_density = atmosphere_density;
+		this.max_temp_c = max_temp_c;
+		this.min_temp_c = min_temp_c;
+		this.distance_to_orbitted_star = distance_to_orbitted_star;
+		this.time_to_orbit_star_relative_to_earth = time_to_orbit_star_relative_to_earth;
+		this.composition = composition;
+	}
+	private long radius;
 	private Star star_orbitted;
 	private PlanetTypes type;
 	private int moons_n;
@@ -11,7 +40,7 @@ public class Planet extends SpaceObject {
 	private int max_temp_c, min_temp_c;
 	private long distance_to_orbitted_star;
 	private int time_to_orbit_star_relative_to_earth;
-	private Object[] composition;
+	private PlanetaryComposition composition;
 	/**
 	 * @return the star_orbitted
 	 */
@@ -123,13 +152,13 @@ public class Planet extends SpaceObject {
 	/**
 	 * @return the composition
 	 */
-	public Object[] getComposition() {
+	public PlanetaryComposition getComposition() {
 		return composition;
 	}
 	/**
 	 * @param composition the composition to set
 	 */
-	public void setComposition(Object[] composition) {
+	public void setComposition(PlanetaryComposition composition) {
 		this.composition = composition;
 	}
 	
