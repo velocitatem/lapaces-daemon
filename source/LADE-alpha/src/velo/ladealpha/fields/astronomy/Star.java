@@ -11,7 +11,7 @@ public class Star extends SpaceObject {
 		this.distance_ly = distance_ly;
 		this.apparent_magnitude = apparent_magnitude;
 		this.absolute_magnitude = absolute_magnitude;
-		this.liminosity = liminosity;
+		this.liminosity = liminosity * Math.pow(10, 24); 
 		this.color = color;
 		this.radius = radius;
 		this.spectrum = spectrum;
@@ -19,7 +19,7 @@ public class Star extends SpaceObject {
 	private double distance_ly;
 	private double apparent_magnitude;
 	private double absolute_magnitude;
-	private double liminosity;
+	private double liminosity; // J/s
 	private Color color;
 	private double radius;	
 	private StellarSpectrum spectrum;
