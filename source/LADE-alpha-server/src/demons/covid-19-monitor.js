@@ -1,5 +1,6 @@
 var axios = require("axios").default;
 var mysql = require("mysql")
+var creds = require("./credentials.json")
 var options = {
   method: 'GET',
   url: 'https://who-covid-19-data.p.rapidapi.com/api/data',
@@ -11,8 +12,8 @@ var options = {
 };
 var con = mysql.createConnection({
   host: "localhost",
-  user: "v310",
-  password: "Saniroot1678",
+  user: creds.uname,
+  password: creds.password,
   database: "lade"
 });
 con.connect(function(err) {
