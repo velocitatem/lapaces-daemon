@@ -2,18 +2,25 @@
 * Fields
 ** Politics
 ** Economy
-*** Supply and Demand
++ Supply and Demand
++ Stock Market
++ Currency ExchangeEconomic Indicators
++
+  - GDP
+  - Inflation
+** Health
++ Covid19
 ** Astronomy
-*** Earth and The moon
++ Earth and The moon
 ** Psychology
-*** Behavior prediction
-+ Predict emotion based on:
-  - Stimuli type (contextual_*)
-  - Current emotional state
-*** Behavior analysis
-*** Assessment of personality
++ Behavior prediction
+  + Predict emotion based on:
+    - Stimuli type (contextual_*)
+    - Current emotional state
++ Behavior analysis
++ Assessment of personality
 ** Math
-*** Slopes
++ Slopes
 * Data
 ** Periodically acquired
 *** CNN headlines \to keywords
