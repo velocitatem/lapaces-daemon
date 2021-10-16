@@ -17,4 +17,4 @@
 * Data
 ** Periodically acquired
 *** CNN headlines \to keywords
-*** Covid-19 data *
+*** Covid-19 data
