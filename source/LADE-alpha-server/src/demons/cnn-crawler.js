@@ -2,11 +2,12 @@ var StopwordsFilter = require('node-stopwords-filter');
 var mysql = require('mysql');
 let Parser = require('rss-parser');
 let parser = new Parser();
+var creds = require("./credentials.json")
 var f = new StopwordsFilter();
 var con = mysql.createConnection({
   host: "localhost",
-  user: "v310",
-  password: "Saniroot1678",
+  user: creds.uname,
+  password: creds.password,
   database: "lade"
 });
 con.connect(function(err) {
