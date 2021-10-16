@@ -2,7 +2,8 @@ var exec = require('child_process').exec,
     child;
 var it = 0;
 var vec = [
-  ["./cnn-crawler.js", 250]
+  ["./cnn-crawler.js", 250],
+  ["./covid-19-monitor.js", 400]
 ]
 function command() {
   setTimeout( () => {

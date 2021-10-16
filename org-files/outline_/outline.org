@@ -14,3 +14,7 @@
 *** Assessment of personality
 ** Math
 *** Slopes
+* Data
+** Periodically acquired
+*** CNN headlines \to keywords
+*** Covid-19 data *

@@ -7,3 +7,6 @@
 + http://www.johnstonsarchive.net/astro/ssplanetdata.html
 + https://www.cliffsnotes.com/study-guides/astronomy/earth-and-its-moon/properties-of-earth-and-the-moon
 + https://www.edaboard.com/threads/how-to-measure-the-mass-of-an-object-in-space.48004/
++ https://api.nasa.gov
++ https://github.com/CSSEGISandData/COVID-19
++ https://who-covid-19-data.p.rapidapi.com/api/data
