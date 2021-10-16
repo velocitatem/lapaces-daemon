@@ -17,5 +17,5 @@ public class SystemAlpha {
 	public double radiansOfDifferenceAfterNDays(double n) {
 		double c = (theMoon.getTime_to_orbit_planet_years() * Constants.days_in_year);
 		return 	((getOrbitsOfMoonForDayOfYear(n) % 1)) * (Math.PI * 2) ;
-	}		
+	}
 }

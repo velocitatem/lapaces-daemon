@@ -1,6 +1,9 @@
 #+AUTHOR: Daniel Rosel
 * Fields
 ** Politics
++ News
+  - Emotional Coloring
+  - Long period reccuring themes
 ** Economy
 + Supply and Demand
 + Stock Market
