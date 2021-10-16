@@ -14,9 +14,8 @@ class emotinalRegressionTest {
 		Profile profile = new Profile();
 		profile.setcontextual_struggle(0.7);
 		profile.setResponsibility(0.8);
-		profile.setExternal_disappointment(0.6);
-		
-		System.out.println(new EmotionalRegression(profile).anxiety());
+		profile.setExternal_disappointment(0.6);		
+		assertEquals(Math.round(10*new EmotionalRegression(profile).anxiety()), 9);
 	}
 
 }

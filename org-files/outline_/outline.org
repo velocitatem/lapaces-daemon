@@ -2,12 +2,15 @@
 * Fields
 ** Politics
 ** Economy
+*** Supply and Demand
 ** Astronomy
 *** Earth and The moon
 ** Psychology
 *** Behavior prediction
 + Predict emotion based on:
-  - Stimuli type
+  - Stimuli type (contextual_*)
   - Current emotional state
 *** Behavior analysis
 *** Assessment of personality
+** Math
+*** Slopes
