@@ -1,6 +1,6 @@
 var exec = require('child_process').exec,
     child;
-var it = 0;
+var it = 1;
 var vec = [
   ["./cnn-crawler.js", 250],
   ["./covid-19-monitor.js", 400]
