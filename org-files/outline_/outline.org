@@ -4,8 +4,8 @@
 ** Economy
 + Supply and Demand
 + Stock Market
-+ Currency ExchangeEconomic Indicators
-+
++ Currency Exchange
++ Economic Indicators
   - GDP
   - Inflation
 ** Health
@@ -22,6 +22,6 @@
 ** Math
 + Slopes
 * Data
-** Periodically acquired
-*** CNN headlines \to keywords
-*** Covid-19 data
++ Periodically acquired
+  - CNN headlines \to keywords
+  - Covid-19 data
