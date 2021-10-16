@@ -1,12 +1,24 @@
 package velo.ladealpha.fields.math;
 
-public class Slope {
+public class LinearFunction {
 	private double m, b;
 
-	public Slope(double m, double b) {
+	public LinearFunction() {}
+	public LinearFunction(double m, double b) {
 		super();
 		this.m = m;
 		this.b = b;
+	}
+	public void buildFromTwoPoints(double x1, double y1, double x2, double y2) {
+		double MeanRateOfChange = (y2 - y1) / (x2 - x1);
+		m = MeanRateOfChange;
+		double intercept = y1 + (m * (-x1));
+		b = intercept;
+	}
+
+	@Override
+	public String toString() {
+		return "y = " + m + "x + (" + b + ")";
 	}
 	public double compute(double x) {
 		return (m*x) +b;
