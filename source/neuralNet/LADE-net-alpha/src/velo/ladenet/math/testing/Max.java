@@ -6,15 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladenet.math.LadeMath;
 
-class MaxTest {
+class Max {
 
 	@Test
 	void test() {
-		double[][] vec = {{-0.5, 1, 0.0001, -5.5}};
-		double[][] mod = LadeMath.maximum(vec);
-		assertEquals(mod[0][0], 0.0);
-		assertEquals(mod[0][3], 0.0);
+		double[] mat = {-5, 199, 2};
+		assertEquals(mat[1], LadeMath.max(mat));
 	}
 
 }
-
