@@ -19,7 +19,6 @@ function command() {
         });
       }
       else {
-        console.log("skipping " + v[0] + " @ " + it)
       }
     }
     it+=1;
