@@ -47,6 +47,15 @@ public class LadeMath {
 		}		
 		return normalized;
 	}
+	public static double[][] clip(double[][] input) {
+		for(int i = 0; i < input.length; i+=1) {
+			for(int j = 0; j < input[i].length; j+=1) {
+				double val = input[i][j], mod = Math.pow(10, -17);
+				input[i][j] = (val<=0-mod?mod:val);
+			}
+		}
+		return input;
+	}
 	public static double[][] exponentiate(double[][] input) {
 		for(int i = 0; i < input.length; i+=1) {
 			for(int j = 0; j < input[i].length; j+=1) {
