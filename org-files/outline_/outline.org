@@ -5,7 +5,7 @@
   - Emotional Coloring
   - Long period reccuring themes
 ** Economy
-+ Supply and Demand
++ *Supply and Demand*
 + Stock Market
 + Currency Exchange
 + Economic Indicators
@@ -16,7 +16,7 @@
 ** Astronomy
 + Earth and The moon
 ** Psychology
-+ Behavior prediction
++ Behavior prediction [DONE]
   + Predict emotion based on:
     - Stimuli type (contextual_*)
     - Current emotional state
@@ -26,5 +26,5 @@
 + Slopes
 * Data
 + Periodically acquired
-  - CNN headlines \to keywords
-  - Covid-19 data
+  - CNN headlines \to keywords [DONE]
+  - Covid-19 data [DONE]
