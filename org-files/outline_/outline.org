@@ -3,7 +3,7 @@
 ** Politics
 + News
   - Emotional Coloring
-  - Long period reccuring themes
+  - Long period recurring themes
 ** Economy
 + *Supply and Demand*
 + Stock Market
@@ -16,6 +16,7 @@
 ** Astronomy
 + Earth and The moon
 ** Physics
++ Vector Operations
 + Kinematics
 ** Statistics
 ** Psychology
