@@ -15,6 +15,9 @@
 + Covid19
 ** Astronomy
 + Earth and The moon
+** Physics
++ Kinematics
+** Statistics
 ** Psychology
 + Behavior prediction [DONE]
   + Predict emotion based on:
