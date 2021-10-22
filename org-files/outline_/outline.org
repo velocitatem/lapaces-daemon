@@ -16,14 +16,13 @@
 ** Astronomy
 + Earth and The moon
 ** Physics
-+ Vector Operations
++ Vector Operations [DONE]
 + Kinematics
+  - Displacement [DONE]
+  - Velocity [DONE]
 ** Statistics
 ** Psychology
 + Behavior prediction [DONE]
-  + Predict emotion based on:
-    - Stimuli type (contextual_*)
-    - Current emotional state
 + Behavior analysis
 + Assessment of personality
 ** Math
