@@ -4,6 +4,7 @@
 ## TOC
 - [Outline](./org-files/outline_/outline.org)
 - [Sources](./org-files/sources_/sources.org)
+- [Structure](./org-files/sources_/structure.txt)
 
 ![Logo](./design/logo/design-01.png)
 
