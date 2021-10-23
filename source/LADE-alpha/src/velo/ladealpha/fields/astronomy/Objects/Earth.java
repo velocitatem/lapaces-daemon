@@ -16,7 +16,8 @@ public class Earth extends Planet {
 	
 	public Earth() {
 		super(
-				6370, // 
+				6370, //
+				23.5,
 				new TheSun(),
 				PlanetTypes.Terrestrial,
 				1,

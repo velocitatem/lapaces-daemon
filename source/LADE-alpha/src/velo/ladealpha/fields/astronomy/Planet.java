@@ -16,11 +16,14 @@ public class Planet extends SpaceObject {
 	 * @param composition
 	 */
 	
-	public Planet(long radius, Star star_orbitted, PlanetTypes type, int moons_n, int rings_n,
+
+	private long radius;
+	public Planet(long radius, double tilt, Star star_orbitted, PlanetTypes type, int moons_n, int rings_n,
 			Atmosphere_Density atmosphere_density, int max_temp_c, int min_temp_c, long distance_to_orbitted_star,
-			int time_to_orbit_star_years, CelestialObjectComposition composition, long mass) {
+			int time_to_orbit_star_years, CelestialObjectComposition composition, long mass) {		
 		super(mass);
 		this.radius = radius;
+		this.tilt = tilt;
 		this.star_orbitted = star_orbitted;
 		this.type = type;
 		this.moons_n = moons_n;
@@ -32,7 +35,7 @@ public class Planet extends SpaceObject {
 		this.time_to_orbit_star_years = time_to_orbit_star_years;
 		this.composition = composition;
 	}
-	private long radius;
+	private double tilt;
 	private Star star_orbitted;
 	private PlanetTypes type;
 	private int moons_n;
@@ -42,6 +45,31 @@ public class Planet extends SpaceObject {
 	private long distance_to_orbitted_star;
 	private int time_to_orbit_star_years;
 	private CelestialObjectComposition composition;
+	
+	/**
+	 * @return the radius
+	 */
+	public long getRadius() {
+		return radius;
+	}
+	/**
+	 * @param radius the radius to set
+	 */
+	public void setRadius(long radius) {
+		this.radius = radius;
+	}
+	/**
+	 * @return the tilt
+	 */
+	public double getTilt() {
+		return tilt;
+	}
+	/**
+	 * @param tilt the tilt to set
+	 */
+	public void setTilt(double tilt) {
+		this.tilt = tilt;
+	}
 	/**
 	 * @return the star_orbitted
 	 */

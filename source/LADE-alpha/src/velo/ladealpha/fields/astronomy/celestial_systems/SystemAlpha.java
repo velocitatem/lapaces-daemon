@@ -7,7 +7,7 @@ import velo.ladealpha.fields.astronomy.Constants;
 import velo.ladealpha.fields.astronomy.SpaceObject;
 import velo.ladealpha.fields.astronomy.Objects.*;
 
-public class SystemAlpha {
+public class SystemAlpha extends CelestialSystem {
 	private TheMoon theMoon = new TheMoon();
 	private Earth earth = new Earth();
 	private TheSun theSun = new TheSun();	
@@ -18,5 +18,8 @@ public class SystemAlpha {
 		double c = (theMoon.getTime_to_orbit_planet_years() * Constants.days_in_year);
 		return 	((getOrbitsOfMoonForDayOfYear(n) % 1)) * (Math.PI * 2) ;
 	}
-	
+	public double radiansRelativeToJSolstice(double day) {
+		
+		return 0;
+	}
 }
