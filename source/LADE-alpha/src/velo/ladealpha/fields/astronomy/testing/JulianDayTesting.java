@@ -12,6 +12,7 @@ class JulianDayTesting {
 	void test() {
 		Moment moment = new Moment(1957, 10, 4, 19, 29, 0, 0);
 		assertEquals((int)2436116.31180556, (int)moment.getJulianDay());
+		System.out.println(moment.T_Value());
 		moment = new Moment(2000, 1, 1, 12, 0, 0, 0);
 		assertEquals((int)2451545.0000000, moment.getJulianDay());
 	}

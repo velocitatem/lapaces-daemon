@@ -29,12 +29,17 @@ public class Moment {
 			B  = (2 - A + (int)(A / 4));		
 		}
 		return 
-				(int) (Constants.days_in_year * (Y + Constants.JuliansDayConstant)) +(int) (30.6001 * (M + 1)) + DayOfMonth() + B - 1524.5;
+				(int) (Constants.days_in_year * (Y + Constants.JuliansDayConstant)) +
+				(int) (30.6001 * (M + 1)) + DayOfMonth() + B - 1524.5;
 	}
 
 	public static Moment getDateFromJulianDay(double jd) {
 		Moment m = null;
 		return m;
+	}
+	
+	public double T_Value() {
+		return (getJulianDay() - 2451545.0) / (Constants.days_in_year * 100);
 	}
 	
 	public boolean IsJulianDate() {		
