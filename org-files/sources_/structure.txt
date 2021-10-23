@@ -1,0 +1,78 @@
+ladealpha
+│           ├── ai
+│           │   ├── dl4j
+│           │   │   ├── DeepModelData.java
+│           │   │   └── DeepModel.java
+│           │   ├── neuroph
+│           │   │   └── NeuralNetworkNEU.java
+│           │   └── testing
+│           │       └── DataSetTesting.java
+│           ├── fields
+│           │   ├── astronomy
+│           │   │   ├── Atmosphere_Density.java
+│           │   │   ├── CelestialCordinates.java
+│           │   │   ├── CelestialObjectComposition.java
+│           │   │   ├── celestial_systems
+│           │   │   │   ├── CelestialSystem.java
+│           │   │   │   ├── SolarSystem.java
+│           │   │   │   └── SystemAlpha.java
+│           │   │   ├── Constants.java
+│           │   │   ├── Moon.java
+│           │   │   ├── navigation
+│           │   │   │   └── Moment.java
+│           │   │   ├── Objects
+│           │   │   │   ├── Earth.java
+│           │   │   │   ├── TheMoon.java
+│           │   │   │   └── TheSun.java
+│           │   │   ├── Planet.java
+│           │   │   ├── PlanetTypes.java
+│           │   │   ├── SpaceObject.java
+│           │   │   ├── Star.java
+│           │   │   ├── StellarSpectrum.java
+│           │   │   └── testing
+│           │   │       ├── JulianDayTesting.java
+│           │   │       └── MoonOrbitComputations.java
+│           │   ├── economy
+│           │   │   ├── supplyANDdemand
+│           │   │   │   ├── Demand.java
+│           │   │   │   ├── SupplyAndDemandSystem.java
+│           │   │   │   └── Supply.java
+│           │   │   └── testing
+│           │   │       └── supplyAndDemandTesting.java
+│           │   ├── math
+│           │   │   ├── calculus
+│           │   │   │   └── Differentiation.java
+│           │   │   ├── EquationComponent.java
+│           │   │   ├── EquationComponents.java
+│           │   │   ├── Equation.java
+│           │   │   ├── LinearFunction.java
+│           │   │   ├── operations
+│           │   │   │   ├── Interpolation.java
+│           │   │   │   └── SystemOfLinearFunctions.java
+│           │   │   ├── QuadraticFunction.java
+│           │   │   └── testing
+│           │   │       ├── EquationTest.java
+│           │   │       ├── InterpolationTesting.java
+│           │   │       ├── LinearFunctionTest.java
+│           │   │       └── QuadraticFunction.java
+│           │   ├── physics
+│           │   │   ├── ComplexVector.java
+│           │   │   ├── kinematics
+│           │   │   │   ├── KinematicComponents.java
+│           │   │   │   ├── Kinematics.java
+│           │   │   │   └── ProjectileMotion.java
+│           │   │   ├── PhysicsComp.java
+│           │   │   ├── SimpleVector.java
+│           │   │   ├── testing
+│           │   │   │   └── ComplexVectorOps.java
+│           │   │   └── VectorDirection.java
+│           │   └── psychology
+│           │       ├── behaviour
+│           │       │   ├── EmotionalStimuli.java
+│           │       │   ├── prediction
+│           │       │   │   └── EmotionalRegression.java
+│           │       │   └── VerbalEmotionalColoring.java
+│           │       ├── personality
+│           │       │   └── Profile.java
+│           │       └── testing
+│           │           └── emotinalRegressionTest.java
