@@ -7,7 +7,7 @@ import velo.ladealpha.fields.astronomy.Constants;
 import velo.ladealpha.fields.astronomy.SpaceObject;
 import velo.ladealpha.fields.astronomy.Objects.*;
 
-public class SystemAlpha {
+public class SystemAlpha extends CelestialSystem {
 	private TheMoon theMoon = new TheMoon();
 	private Earth earth = new Earth();
 	private TheSun theSun = new TheSun();	
