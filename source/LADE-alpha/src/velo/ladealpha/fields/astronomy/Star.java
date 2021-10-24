@@ -4,6 +4,7 @@ import java.awt.Color;
 
 public class Star extends SpaceObject {
 	
+	// TODO implment paralax angle in structure
 	
 	public Star(double distance_ly, double apparent_magnitude, double absolute_magnitude, double liminosity,
 			Color color, double radius, StellarSpectrum spectrum) {

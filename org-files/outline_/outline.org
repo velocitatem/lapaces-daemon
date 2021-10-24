@@ -14,7 +14,12 @@
 ** Health
 + Covid19
 ** Astronomy
-+ Earth and The moon
++ Earth orbit
+  - Position of the moon
+  - orbit simulator
++ Solar system
+  - orbit of each planet
++ Starchart
 ** Physics
 + Vector Operations [DONE]
 + Kinematics
@@ -27,6 +32,8 @@
 + Assessment of personality
 ** Math
 + Slopes
++ Calculus
+  - Differentiation
 * Data
 + Periodically acquired
   - CNN headlines \to keywords [DONE]
