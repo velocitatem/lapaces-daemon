@@ -22,12 +22,21 @@ public class Star extends SpaceObject {
 	private double liminosity; // J/s
 	private Color color;
 	private double radius;	
+	private double paralax_angle;
 	private StellarSpectrum spectrum;
+	
+	public static double computeDistanceGivenTheta(double theta) {
+		
+		return 1 / Math.tan(theta / 3600); // au
+		
+	}
+	
 	/**
 	 * @return the distance_ly
 	 */
+	// TODO TEST
 	public double getDistance_ly() {
-		return distance_ly;
+		return AstronomicalUnitConversion.AUtoLY(computeDistanceGivenTheta(paralax_angle));
 	}
 	/**
 	 * @param distance_ly the distance_ly to set
