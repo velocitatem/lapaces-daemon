@@ -37,7 +37,7 @@
 ** Life
 + Timeline
   - Action prediction
-    [[./media/behaviour.png]]
+    [[./media/action.png]]
 * Data
 + Periodically acquired
   - CNN headlines \to keywords [DONE]
