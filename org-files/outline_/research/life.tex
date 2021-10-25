@@ -1,4 +1,4 @@
-% Created 2021-10-25 Mon 16:52
+% Created 2021-10-25 Mon 17:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,17 +31,17 @@
 
 
 \section{Introduction}
-\label{sec:org8aed63f}
+\label{sec:orgfeec809}
 Life perceived simply by ones eyes, can be very chaotic, but when carefully analyzed, there are many patterns which depend on each other. To be able to predict behavior and stack patterns, a ground level of behavioral prediction must be established. Our core day-to-day behavior is highly periodic and can be modeled using simple trigonometric functions.
 \section{Mechanics}
-\label{sec:orgc35eee6}
+\label{sec:org9938656}
 Life can be represented as a single line \(y = 1\) and events in life as intersections with that line. Each day, can be mapped out by a function such as:
 \begin{equation}
     d = \cos{(\xi x + \pi) + 1}, (10^{-5} \leq \xi \leq 10^{5})
 \end{equation}
 In this case \(\xi\) is making the system more or less precise. The noon of each day is where \(d \cap y\) and each day ends at \(\xi2\pi\).
 \subsection{Periodic Events in Life}
-\label{sec:org5484a32}
+\label{sec:orgd4eaf90}
 Most events in life work on a periodic basis, this can be repetition can be represented by:
 \begin{equation}
 s = 1 + \cos{(\frac{1}{n}x + -(n - \sigma)\pi) + 10^{-\omega}}
@@ -53,7 +53,7 @@ The above equation can model nearly every even in life.
 \item \(\omega\) changes the range of the event.
 \end{itemize}
 \subsubsection{Determining temporal proximity relative to certain event}
-\label{sec:org022f9c1}
+\label{sec:org08f02fe}
 For the implementation of this system in algorithms and neural networks, knowing the proximity of events relative to a certain day (\(n\)), the following can be used:
 \begin{equation}
     m = \dot{s}(n * 2\pi)
@@ -61,5 +61,5 @@ For the implementation of this system in algorithms and neural networks, knowing
 The above, if \(s\) does not depend on another function, will yield a value in the range of (-\(\xi\), \(\xi\)). From this, one can determine their temporal position relative to the nearest event.
 
 \subsection{Non-Periodic Events}
-\label{sec:org22012e3}
+\label{sec:orgadca919}
 \end{document}

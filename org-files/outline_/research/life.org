@@ -4,7 +4,7 @@
 * Introduction
 Life perceived simply by ones eyes, can be very chaotic, but when carefully analyzed, there are many patterns which depend on each other. To be able to predict behavior and stack patterns, a ground level of behavioral prediction must be established. Our core day-to-day behavior is highly periodic and can be modeled using simple trigonometric functions.
 * Mechanics
-Life can be represented as a single line $y = 1$ and events in life as intersections with that line. Each day, can be mapped out by a function such as:
+Life can be represented as a single line $y = 2$ and events in life as intersections with that line. Each day, can be mapped out by a function such as:
 \begin{equation}
     d = \cos{(\xi x + \pi) + 1}, (10^{-5} \leq \xi \leq 10^{5})
 \end{equation}
