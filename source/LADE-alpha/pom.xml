@@ -19,17 +19,6 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>org.deeplearning4j</groupId>
-			<artifactId>deeplearning4j-core</artifactId>
-			<version>1.0.0-M1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.beykery</groupId>
-			<artifactId>neuroph</artifactId>
-			<version>2.92</version>
-		</dependency>
 
 	</dependencies>
 </project>

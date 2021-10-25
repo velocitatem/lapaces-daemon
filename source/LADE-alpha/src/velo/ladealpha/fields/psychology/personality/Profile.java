@@ -1,7 +1,9 @@
 package velo.ladealpha.fields.psychology.personality;
 
 public class Profile {
-	private double contextual_struggle, contextual_meaning, expectations, reality, external_disappointment, responsibility, mistrust, self_esteem, envy, pride, kindness, powerlessness, contenxtual_skill, contextual_challenge, curiosity, external_love, courage;
+	private double contextual_struggle, contextual_meaning, expectations, reality, external_disappointment,
+			responsibility, mistrust, self_esteem, envy, pride, kindness, powerlessness, contenxtual_skill,
+			contextual_challenge, curiosity, external_love, courage;
 
 	/**
 	 * @return the contextual_struggle
@@ -240,5 +242,5 @@ public class Profile {
 	public void setCourage(double courage) {
 		this.courage = courage;
 	}
-	
+
 }
