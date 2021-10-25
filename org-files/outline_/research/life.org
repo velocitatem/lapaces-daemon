@@ -1,0 +1,28 @@
+#+TITLE: Frame of Life
+#+AUTHOR: Daniel Rosel
+
+* Introduction
+Life perceived simply by ones eyes, can be very chaotic, but when carefully analyzed, there are many patterns which depend on each other. To be able to predict behavior and stack patterns, a ground level of behavioral prediction must be established. Our core day-to-day behavior is highly periodic and can be modeled using simple trigonometric functions.
+* Mechanics
+Life can be represented as a single line $y = 1$ and events in life as intersections with that line. Each day, can be mapped out by a function such as:
+\begin{equation}
+    d = \cos{(\xi x + \pi) + 1}, (10^{-5} \leq \xi \leq 10^{5})
+\end{equation}
+In this case \xi is making the system more or less precise. The noon of each day is where $d \cap y$ and each day ends at $\xi2\pi$.
+** Periodic Events in Life
+Most events in life work on a periodic basis, this can be repetition can be represented by:
+\begin{equation}
+s = 1 + \cos{(\frac{1}{n}x + -(n - \sigma)\pi) + 10^{-\omega}}
+\end{equation}
+The above equation can model nearly every even in life.
++ $n$ is the frequency (in days) of the event.
++ $\sigma$ is the shift which changes the occurrence of the event in the day $n$.
++ $\omega$ changes the range of the event.
+*** Determining temporal proximity relative to certain event
+For the implementation of this system in algorithms and neural networks, knowing the proximity of events relative to a certain day ($n$), the following can be used:
+\begin{equation}
+    m = \dot{s}(n * 2\pi)
+\end{equation}
+The above, if $s$ does not depend on another function, will yield a value in the range of (-\xi, \xi). From this, one can determine their temporal position relative to the nearest event.
+
+** Non-Periodic Events
