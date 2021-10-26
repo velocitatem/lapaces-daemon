@@ -1,5 +1,5 @@
-lst <- WDI::WDIsearch("")
-for(p in 1:500) {
-  indicator <- lst[p,][1]
-  print(indicator)
+povertyIndexList = c("1.0.HCount.2.5usd");
+length = 1; 
+for(index in povertyIndexList) {
+  WDI::WDI(indicator = index, country = c("CZ", "US"), start=1990, end=2020)
 }
