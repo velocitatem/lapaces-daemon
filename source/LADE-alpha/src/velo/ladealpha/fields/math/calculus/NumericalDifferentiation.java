@@ -1,6 +1,7 @@
 package velo.ladealpha.fields.math.calculus;
 
 import velo.ladealpha.fields.math.Equation;
+import velo.ladealpha.fields.math.LinearFunction;
 
 public class NumericalDifferentiation {
 	public static double differentiate(Equation f, double x) {				
@@ -13,4 +14,12 @@ public class NumericalDifferentiation {
 		return Limits.limit(new df(), 0);			
 		
 	}
+	
+	public static LinearFunction tangentLine(Equation f, double x) {
+		double m = differentiate(f, x);
+		double b = f.compute(x) - ( m * x);
+		LinearFunction lf = new LinearFunction(m, b);
+		return lf;
+	}
+	
 }
