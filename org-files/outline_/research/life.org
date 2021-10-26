@@ -12,17 +12,37 @@ In this case \xi is making the system more or less precise. The noon of each day
 ** Periodic Events in Life
 Most events in life work on a periodic basis, this can be repetition can be represented by:
 \begin{equation}
-s = 1 + \cos{(\frac{1}{n}x + -(n - \sigma)\pi) + 10^{-\omega}}
+s = 1 + \cos{(\frac{1}{n}x + (\sigma)\pi)}
 \end{equation}
 The above equation can model nearly every even in life.
 + $n$ is the frequency (in days) of the event.
 + $\sigma$ is the shift which changes the occurrence of the event in the day $n$.
-+ $\omega$ changes the range of the event.
 *** Determining temporal proximity relative to certain event
 For the implementation of this system in algorithms and neural networks, knowing the proximity of events relative to a certain day ($n$), the following can be used:
 \begin{equation}
     m = \dot{s}(n * 2\pi)
 \end{equation}
 The above, if $s$ does not depend on another function, will yield a value in the range of (-\xi, \xi). From this, one can determine their temporal position relative to the nearest event.
-
-** Non-Periodic Events
+** Computing the Parameters
+*** zero-range events
+A 0 range event is an event which simply occurs, but does not last any long period of time. To create a function such that it follows our criteria, we must compute sigma.
+\begin{equation}
+    \sigma = -\frac{\frac{1}{n}x}{\pi}
+\end{equation}
+In the above equation, it's variables represent the following:
++ $n$ is the frequency of occurrence (in days)
++ $x$ is as follows:
+  \begin{equation}
+    x = \frac{h}{24} * 2\pi
+  \end{equation}
+  where $h$ is the hour at which the event occurs.
+**** *Example*
+Alice wakes up at 0600 every day. The function for this behavior would look as the following:
+\begin{equation}
+b = \cos{( x + (\frac{-(\frac{6}{24}*2\pi)}{\pi})\pi )} + 1 = \cos{(x-\frac{1}{4}2\pi)}+1
+\end{equation}
+**** *Visualization*
+Using a Java algorithm, the following is the output of functions compiled given life parameters.
+[[./media/life01.jpg]]
+*** lasting events
+these events can be represented by a set of 2 zero-range events, one as a marker for the start and the other marking the end. Another potential approach would be to scale the function on the y-axis, creating 2 intercepts with $y=2$, marking the start and end with just one function.
