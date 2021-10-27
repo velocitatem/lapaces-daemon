@@ -1,4 +1,4 @@
-% Created 2021-10-26 Tue 15:54
+% Created 2021-10-27 Wed 15:59
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,18 +31,18 @@
 
 
 \section{Introduction}
-\label{sec:org750505b}
+\label{sec:org393c7a6}
 Life perceived simply by ones eyes, can be very chaotic, but when carefully analyzed, there are many patterns which depend on each other. To be able to predict behavior and stack patterns, a ground level of behavioral prediction must be established. Our core day-to-day behavior is highly periodic and can be modeled using simple trigonometric functions.
 \section{Mechanics}
-\label{sec:orgf7bf620}
+\label{sec:org5636ac5}
 Life can be represented as a single line \(y = 2\) and events in life as intersections with that line. Each day, can be mapped out by a function such as:
 \begin{equation}
-    d = \cos{(\xi x + \pi) + 1}, (10^{-5} \leq \xi \leq 10^{5})
+    d = \cos{(\Xi x + \pi) + 1}, (10^{-5} \leq \Xi \leq 10^{5})
 \end{equation}
-In this case \(\xi\) is making the system more or less precise. The noon of each day is where \(d \cap y\) and each day ends at \(\xi2\pi\).
+In this case \(\Xi\) is making the system more or less precise. The noon of each day is where \(d \cap y\) and each day ends at \(\Xi2\pi(c)\).
 \subsection{Periodic Events in Life}
-\label{sec:org1825b26}
-Most events in life work on a periodic basis, this can be repetition can be represented by:
+\label{sec:orgb8967f5}
+Most events in life work on a periodic basis, this can be represented by:
 \begin{equation}
 s = 1 + \cos{(\frac{1}{n}x + (\sigma)\pi)}
 \end{equation}
@@ -52,16 +52,13 @@ The above equation can model nearly every even in life.
 \item \(\sigma\) is the shift which changes the occurrence of the event in the day \(n\).
 \end{itemize}
 \subsubsection{Determining temporal proximity relative to certain event}
-\label{sec:org9b62f7f}
-For the implementation of this system in algorithms and neural networks, knowing the proximity of events relative to a certain day (\(n\)), the following can be used:
-\begin{equation}
-    m = \dot{s}(n * 2\pi)
-\end{equation}
-The above, if \(s\) does not depend on another function, will yield a value in the range of (-\(\xi\), \(\xi\)). From this, one can determine their temporal position relative to the nearest event.
+\label{sec:org89fb88f}
+For the implementation of this system in algorithms and neural networks, knowing the proximity of events relative to a certain day (\(n\)), a simple optimization algorithm must be used. For zero-range events, the target is finding an x for which \(\dot{f}(x)\) is 0 and \(f(x) = 2\).
+
 \subsection{Computing the Parameters}
-\label{sec:org5147367}
+\label{sec:org4d7e92b}
 \subsubsection{zero-range events}
-\label{sec:org6ec9402}
+\label{sec:orgaa95f31}
 A 0 range event is an event which simply occurs, but does not last any long period of time. To create a function such that it follows our criteria, we must compute sigma.
 \begin{equation}
     \sigma = -\frac{\frac{1}{n}x}{\pi}
@@ -77,19 +74,19 @@ where \(h\) is the hour at which the event occurs.
 \end{itemize}
 \begin{enumerate}
 \item \textbf{Example}
-\label{sec:org22ac5f2}
+\label{sec:org505a869}
 Alice wakes up at 0600 every day. The function for this behavior would look as the following:
 \begin{equation}
 b = \cos{( x + (\frac{-(\frac{6}{24}*2\pi)}{\pi})\pi )} + 1 = \cos{(x-\frac{1}{4}2\pi)}+1
 \end{equation}
 \item \textbf{Visualization}
-\label{sec:org6da0c94}
+\label{sec:org6fe4fa6}
 Using a Java algorithm, the following is the output of functions compiled given life parameters.
 \begin{center}
 \includegraphics[width=.9\linewidth]{./media/life01.jpg}
 \end{center}
 \end{enumerate}
 \subsubsection{lasting events}
-\label{sec:org76174a4}
-these events can be represented by a set of 2 zero-range events, one as a marker for the start and the other marking the end. Another potential approach would be to scale the function on the y-axis, creating 2 intercepts with \(y=2\), marking the start and end with just one function.
+\label{sec:orgadfe8c0}
+Events that have a start and an end, can be represented by a set of 2 zero-range events, one as a marker for the start and the other marking the end. Another potential approach would be to scale the function on the y-axis, creating 2 intercepts with \(y=2\), marking the start and end with just one function.
 \end{document}
