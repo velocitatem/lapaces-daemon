@@ -1,11 +1,19 @@
 package velo.ladealpha.fields.psychology.personality;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Profile.
+ */
 public class Profile {
+	
+	/** The courage. */
 	private double contextual_struggle, contextual_meaning, expectations, reality, external_disappointment,
 			responsibility, mistrust, self_esteem, envy, pride, kindness, powerlessness, contenxtual_skill,
 			contextual_challenge, curiosity, external_love, courage;
 
 	/**
+	 * Gets the contextual struggle.
+	 *
 	 * @return the contextual_struggle
 	 */
 	public double getcontextual_struggle() {
@@ -13,6 +21,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the contextual struggle.
+	 *
 	 * @param contextual_struggle the contextual_struggle to set
 	 */
 	public void setcontextual_struggle(double contextual_struggle) {
@@ -20,6 +30,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the contextual meaning.
+	 *
 	 * @return the contextual_meaning
 	 */
 	public double getcontextual_meaning() {
@@ -27,6 +39,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the contextual meaning.
+	 *
 	 * @param contextual_meaning the contextual_meaning to set
 	 */
 	public void setcontextual_meaning(double contextual_meaning) {
@@ -34,6 +48,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the expectations.
+	 *
 	 * @return the expectations
 	 */
 	public double getExpectations() {
@@ -41,6 +57,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the expectations.
+	 *
 	 * @param expectations the expectations to set
 	 */
 	public void setExpectations(double expectations) {
@@ -48,6 +66,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the reality.
+	 *
 	 * @return the reality
 	 */
 	public double getReality() {
@@ -55,6 +75,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the reality.
+	 *
 	 * @param reality the reality to set
 	 */
 	public void setReality(double reality) {
@@ -62,6 +84,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the external disappointment.
+	 *
 	 * @return the external_disappointment
 	 */
 	public double getExternal_disappointment() {
@@ -69,6 +93,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the external disappointment.
+	 *
 	 * @param external_disappointment the external_disappointment to set
 	 */
 	public void setExternal_disappointment(double external_disappointment) {
@@ -76,6 +102,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the responsibility.
+	 *
 	 * @return the responsibility
 	 */
 	public double getResponsibility() {
@@ -83,6 +111,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the responsibility.
+	 *
 	 * @param responsibility the responsibility to set
 	 */
 	public void setResponsibility(double responsibility) {
@@ -90,6 +120,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the mistrust.
+	 *
 	 * @return the mistrust
 	 */
 	public double getMistrust() {
@@ -97,6 +129,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the mistrust.
+	 *
 	 * @param mistrust the mistrust to set
 	 */
 	public void setMistrust(double mistrust) {
@@ -104,6 +138,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the self esteem.
+	 *
 	 * @return the self_esteem
 	 */
 	public double getSelf_esteem() {
@@ -111,6 +147,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the self esteem.
+	 *
 	 * @param self_esteem the self_esteem to set
 	 */
 	public void setSelf_esteem(double self_esteem) {
@@ -118,6 +156,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the envy.
+	 *
 	 * @return the envy
 	 */
 	public double getEnvy() {
@@ -125,6 +165,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the envy.
+	 *
 	 * @param envy the envy to set
 	 */
 	public void setEnvy(double envy) {
@@ -132,6 +174,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the pride.
+	 *
 	 * @return the pride
 	 */
 	public double getPride() {
@@ -139,6 +183,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the pride.
+	 *
 	 * @param pride the pride to set
 	 */
 	public void setPride(double pride) {
@@ -146,6 +192,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the kindness.
+	 *
 	 * @return the kindness
 	 */
 	public double getKindness() {
@@ -153,6 +201,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the kindness.
+	 *
 	 * @param kindness the kindness to set
 	 */
 	public void setKindness(double kindness) {
@@ -160,6 +210,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the powerlessness.
+	 *
 	 * @return the powerlessness
 	 */
 	public double getPowerlessness() {
@@ -167,6 +219,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the powerlessness.
+	 *
 	 * @param powerlessness the powerlessness to set
 	 */
 	public void setPowerlessness(double powerlessness) {
@@ -174,6 +228,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the contenxtual skill.
+	 *
 	 * @return the contenxtual_skill
 	 */
 	public double getContenxtual_skill() {
@@ -181,6 +237,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the contenxtual skill.
+	 *
 	 * @param contenxtual_skill the contenxtual_skill to set
 	 */
 	public void setContenxtual_skill(double contenxtual_skill) {
@@ -188,6 +246,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the contextual challenge.
+	 *
 	 * @return the contextual_challenge
 	 */
 	public double getContextual_challenge() {
@@ -195,6 +255,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the contextual challenge.
+	 *
 	 * @param contextual_challenge the contextual_challenge to set
 	 */
 	public void setContextual_challenge(double contextual_challenge) {
@@ -202,6 +264,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the curiosity.
+	 *
 	 * @return the curiosity
 	 */
 	public double getCuriosity() {
@@ -209,6 +273,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the curiosity.
+	 *
 	 * @param curiosity the curiosity to set
 	 */
 	public void setCuriosity(double curiosity) {
@@ -216,6 +282,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the external love.
+	 *
 	 * @return the external_love
 	 */
 	public double getExternal_love() {
@@ -223,6 +291,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the external love.
+	 *
 	 * @param external_love the external_love to set
 	 */
 	public void setExternal_love(double external_love) {
@@ -230,6 +300,8 @@ public class Profile {
 	}
 
 	/**
+	 * Gets the courage.
+	 *
 	 * @return the courage
 	 */
 	public double getCourage() {
@@ -237,6 +309,8 @@ public class Profile {
 	}
 
 	/**
+	 * Sets the courage.
+	 *
 	 * @param courage the courage to set
 	 */
 	public void setCourage(double courage) {

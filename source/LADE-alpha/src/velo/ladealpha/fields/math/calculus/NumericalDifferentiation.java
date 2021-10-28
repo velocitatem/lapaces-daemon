@@ -3,7 +3,21 @@ package velo.ladealpha.fields.math.calculus;
 import velo.ladealpha.fields.math.Equation;
 import velo.ladealpha.fields.math.LinearFunction;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NumericalDifferentiation.
+ *
+ * @author velo
+ */
 public class NumericalDifferentiation {
+	
+	/**
+	 * Differentiate.
+	 *
+	 * @param f the f
+	 * @param x the x
+	 * @return the double
+	 */
 	public static double differentiate(Equation f, double x) {				
 		class df extends Equation {
 			@Override
@@ -15,6 +29,13 @@ public class NumericalDifferentiation {
 		
 	}
 	
+	/**
+	 * Tangent line.
+	 *
+	 * @param f the f
+	 * @param x the x
+	 * @return the linear function
+	 */
 	public static LinearFunction tangentLine(Equation f, double x) {
 		double m = differentiate(f, x);
 		double b = f.compute(x) - ( m * x);

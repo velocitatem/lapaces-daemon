@@ -11,9 +11,16 @@ import velo.ladealpha.fields.astronomy.SpaceObject;
 import velo.ladealpha.fields.astronomy.Star;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Earth.
+ */
 public class Earth extends Planet {
 
 	
+	/**
+	 * Instantiates a new earth.
+	 */
 	public Earth() {
 		super(
 				6370, //
