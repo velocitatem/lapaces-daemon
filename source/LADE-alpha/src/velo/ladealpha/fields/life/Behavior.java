@@ -2,8 +2,17 @@ package velo.ladealpha.fields.life;
 
 public class Behavior {
 	double frequencyInDays, startTime, endTime, timeOfDay;
+	String name;
 	Event primary, secondary;
-	
+	Event primaryExclusion, secondaryExclusion;
+	public Behavior even() {
+		if(secondary==null) {
+			return new Behavior(name, frequencyInDays, timeOfDay + 24);
+		}
+		else {
+			return new Behavior(name, frequencyInDays, startTime + 24, endTime + 24);
+		}		
+	}
 	
 	public Event[] getEvents() {
 		if(secondary==null) {
@@ -16,6 +25,7 @@ public class Behavior {
 	
 	public Behavior(String name, double frequencyInDays, double timeOfDay) {
 		super();
+		this.name = name;
 		this.frequencyInDays = frequencyInDays;
 		this.timeOfDay = timeOfDay;
 		this.primary = new Event(name, frequencyInDays, timeOfDay);
@@ -23,6 +33,7 @@ public class Behavior {
 
 	public Behavior(String name, double frequencyInDays, double startTime, double endTime) {
 		super();
+		this.name = name;
 		this.frequencyInDays = frequencyInDays;
 		this.startTime = startTime;
 		this.endTime = endTime;

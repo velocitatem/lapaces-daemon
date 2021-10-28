@@ -1,5 +1,9 @@
 package velo.ladealpha.fields.life;
 
+import java.util.ArrayList;
+
+import velo.ladealpha.fields.math.Equation;
+
 public class Life {
 	
 	private String subject;
@@ -19,6 +23,21 @@ public class Life {
 			}
 		}
 		return r;
+	}
+	
+	private Equation compositeEquation() {
+		return new Equation().equationFromString(this.getCompositeFunction());
+	}
+		
+	public String getCompositeFunction() {
+		ArrayList<String> lst = new ArrayList<String>();
+		lst.add("1");
+		for(Behavior b : patterns) {
+			for(Event e : b.getEvents()) {
+				lst.add("cos( 1/"+e.getDay_freq()+"x - "+e.getSigma()+"\\pi )");
+			}
+		}
+		return String.join("+", lst);
 	}
 	
 	public Event getClosestEvent(double day, double hour) {

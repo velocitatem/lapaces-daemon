@@ -45,6 +45,15 @@ Using a Java algorithm, the following is the output of functions compiled given 
 Events that have a start and an end, can be represented by a set of 2 zero-range events, one as a marker for the start and the other marking the end. Another potential approach would be to scale the function on the y-axis, creating 2 intercepts with $y=2$, marking the start and end with just one function.
 * Abstractions
 ** Inconsistent behavior
+Not all events happen with a 100 percent certainty.
 ** Weekends
 The majority of people, do not work each day of the week, but rather Monday \to Friday. How can we create a special case for every weekend, so that a predicted event does not stand true? We can formulate another event which can be refereed to as a negation event. This event will have a different y-axis shift, making it's implication clearly different.
 **** *Example*
+** Subject Busyness
+To see how busy each day of a subjects life is, one can do the following:
+\begin{equation}
+    f_c(x) = 1 + \sum_{i=0}^{n}{ \cos(s_i_{\text{frequency}}x - s_i_{\sigma} \pi})
+\end{equation}
+where $s$ is the function representing an event in a set of $n$ events. When graphically compared to the day function ($y = cos(x - \pi) + 1$), we get the following:
+[[./media/activity_density.png]]
+With a large enough set of parameters, you will rarely observe a repeating pattern in the composite function.
