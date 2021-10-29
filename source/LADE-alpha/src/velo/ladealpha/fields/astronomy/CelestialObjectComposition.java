@@ -3,9 +3,20 @@ package velo.ladealpha.fields.astronomy;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CelestialObjectComposition.
+ */
 public class CelestialObjectComposition {
+	
+	/** The composition. */
 	private ArrayList<HashMap<String, Double>> composition;
 
+	/**
+	 * Instantiates a new celestial object composition.
+	 *
+	 * @param data the data
+	 */
 	public CelestialObjectComposition(Object[][] data) {
 		composition = new ArrayList<HashMap<String,Double>>();
 		for(int i = 0 ; i < data.length; i+=1) {

@@ -2,12 +2,31 @@ package velo.ladealpha.fields.math.operations;
 
 import velo.ladealpha.fields.math.LinearFunction;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SystemOfLinearFunctions.
+ */
 public class SystemOfLinearFunctions {
+	
+	/** The b. */
 	private LinearFunction a, b;
+	
+	/**
+	 * Instantiates a new system of linear functions.
+	 *
+	 * @param a the a
+	 * @param b the b
+	 */
 	public SystemOfLinearFunctions(LinearFunction a, LinearFunction b) {
 		this.a = a ;
 		this.b = b;		
 	}
+	
+	/**
+	 * Solution.
+	 *
+	 * @return the double[]
+	 */
 	public double[] solution() {
 		double[] cords = new double[2];
 		double compoundSlope = a.getM() + (-1*(b.getM())),

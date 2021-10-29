@@ -5,7 +5,15 @@ import java.awt.Color;
 import velo.ladealpha.fields.astronomy.Star;
 import velo.ladealpha.fields.astronomy.StellarSpectrum;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TheSun.
+ */
 public class TheSun extends Star {
+	
+	/**
+	 * Instantiates a new the sun.
+	 */
 	public TheSun() {
 		super(
 				0.00001581250734, 

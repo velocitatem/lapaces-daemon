@@ -30,7 +30,19 @@ import javax.tools.ToolProvider;
 import velo.ladealpha.fields.math.Equation;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Codify.
+ */
 public class Codify {	
+	
+	/**
+	 * Compute string equation.
+	 *
+	 * @param equation the equation
+	 * @param input the input
+	 * @return the double
+	 */
 	public double computeStringEquation(String equation, double input) {		
         String classNameA = "Function";
         String codeA =
