@@ -8,6 +8,7 @@ import java.util.Set;
 
 import velo.ladealpha.fields.math.Equation;
 import velo.ladealpha.fields.math.LMath;
+import velo.ladealpha.fields.math.calculus.NumericalDifferentiation;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -73,13 +74,18 @@ public class Life {
 		return String.join("+", lst);
 	}
 
-	
+	/**
+	 * Compute closest event.
+	 *
+	 * @param x the x
+	 * @return the event
+	 */
 	private Event computeClosestEvent(double x) {
 		double smallestDiff = Double.POSITIVE_INFINITY;
 		Event closestEvent = null;
 		for (Behavior b : patterns) {
 			for (Event e : b.getEvents()) {
-				//System.out.println(e);
+				// System.out.println(e);
 				if (!e.isExclusion()) {
 					double diff = Math.abs(e.closestOccurance(x) - x);
 					if (diff < smallestDiff) {
@@ -91,7 +97,7 @@ public class Life {
 		}
 		return closestEvent;
 	}
-	
+
 	/**
 	 * Gets the closest event.
 	 *
@@ -105,38 +111,64 @@ public class Life {
 		double x = (Math.PI * 2 * day) - hourRadiansCompliment;
 		return computeClosestEvent(x);
 	}
-	
-	public HashMap<Double, String> generateReport(double baseDay, double prospectiveRange, double retrospectiveRange) {
+
+	/**
+	 * Generate report.
+	 *
+	 * @param baseDay            the base day
+	 * @param prospectiveRange   the prospective range
+	 * @param retrospectiveRange the retrospective range
+	 * @return the life report
+	 */
+	public LifeReport generateReport(double baseDay, double prospectiveRange, double retrospectiveRange) {
 		double start = baseDay - retrospectiveRange, end = baseDay + prospectiveRange;
 		ArrayList<Double> xs = new ArrayList<Double>();
-		HashMap<Double, String> eventList = new HashMap<Double, String>();
-		for(double d = start; d < end; d+=0.1) {
+		HashMap<Double, Event> eventList = new HashMap<Double, Event>();
+		for (double d = start; d < end; d += 0.1) {
 			Event e = computeClosestEvent(d);
-			double temporalPos = LMath.round(e.closestOccurance(d), 3);			
-			if(!xs.contains(temporalPos)) {
-				eventList.put(temporalPos, e.getName());
+			double temporalPos = LMath.round(e.closestOccurance(d), 3);
+			if (!xs.contains(temporalPos)) {
+				eventList.put(temporalPos, e);
 				xs.add(temporalPos);
 			}
 		}
+		LifeReport lr = new LifeReport();
 		Double[] vec = new Double[xs.size()];
-		int i =0;
-		for(Map.Entry<Double, String> set : eventList.entrySet()) {
+		int i = 0;
+		for (Map.Entry<Double, Event> set : eventList.entrySet()) {
 			vec[i] = set.getKey();
-			i+=1;
+			i += 1;
 		}
 		Arrays.sort(vec);
 		System.out.println(Arrays.toString(vec));
-		for(Double p : vec) {
-			for(Map.Entry<Double, String> set : eventList.entrySet()) {
-				if(set.getKey() == p) {
-					int day = (int) (set.getKey() / (Math.PI *2));
-					double time = ((((set.getKey() / (Math.PI *2)) - day)) * 24);
-					int minute = (int) ((time - ((int)time)) * 60);
-					System.out.println("Day-" + day + " Hour-" + ((int)time <9?"0":"") + (int)time + " Minute-" + minute + "\t \t" + set.getValue());
+		for (Double p : vec) {
+			for (Map.Entry<Double, Event> set : eventList.entrySet()) {
+				if (set.getKey() == p) {
+					int day = (int) (set.getKey() / (Math.PI * 2));
+					double time = ((((set.getKey() / (Math.PI * 2)) - day)) * 24);
+					int minute = (int) ((time - ((int) time)) * 60);
+					LifeReportComponent lrc = new LifeReportComponent(set.getValue(), day, time, minute);
+					lr.add(lrc);
 				}
 			}
 		}
-		return eventList;
+		return lr;
+	}
+
+	/**
+	 * Compute slope vector.
+	 *
+	 * @param x the x
+	 * @return the array list
+	 */
+	public ArrayList<Double> computeSlopeVector(double x) {
+		ArrayList<Double> vec = new ArrayList<Double>();
+		for (Behavior b : patterns) {
+			for (Event e : b.getEvents()) {
+				vec.add(NumericalDifferentiation.differentiate(e.getEq(), x));
+			}
+		}
+		return vec;
 	}
 
 	/**
