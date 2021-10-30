@@ -17,6 +17,17 @@ public class LadeMath {
 		
 		return input;
 	}
+	public static double[][] addMatrxAndVector(double[][] a, double[] b) {
+		double[][] res = new double[a.length][a[0].length];
+		
+		for(int r = 0 ; r < a.length ; r += 1) {
+			double[] row = res[r];
+			for(int c = 0 ; c < row.length; c += 1) {
+				res[r][c] = a[r][c] + b[c];
+			}
+		}
+		return res;
+	}
 	public static double[][] dot(double[][] a, double[][] b) {		
 		int row1 = a.length, col1 = a[0].length, col2 = b[0].length;
 		double[][] c = new double[row1][col2];
