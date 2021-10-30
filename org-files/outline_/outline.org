@@ -35,9 +35,7 @@
 + Calculus
   - Differentiation
 ** Life
-+ Timeline
-  - Action prediction
-    [[./media/action.png]]
+[[./research/life.pdf]]
 * Data
 + Periodically acquired
   - CNN headlines \to keywords [DONE]

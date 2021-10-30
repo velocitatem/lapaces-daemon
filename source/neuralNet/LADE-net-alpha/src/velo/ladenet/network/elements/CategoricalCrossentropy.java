@@ -5,17 +5,19 @@ import velo.ladenet.math.LadeMath;
 public class CategoricalCrossentropy extends Loss{
 	
 	@Override
-	public double[][] forward(double[][] input, double[] y) {
+	public double[] forward(double[][] input, double[][] y) {
 		int sampleLength = input.length;
 		double[][] clippedInput = LadeMath.clip(input);
-		double loss = 0;
-		for(int row = 0 ; row < input.length ; row += 1) {
-			for(int col = 0 ; col < input[row].length ; col += 1) {
-				double val = input[row][col];
-				loss += (val*y[col]);
+		double[] loss = new double[sampleLength];
+		for(int row = 0 ; row < clippedInput.length ; row += 1) {
+			double o = 0;
+			for(int col = 0 ; col < clippedInput[row].length ; col += 1) {
+				double val = clippedInput[row][col];				
+				o += (Math.log(val)*y[row][col]);
 			}
+			loss[row] = -o;
 		}
-		return null;
+		return loss;
 	}
 	
 }
