@@ -37,7 +37,7 @@ class LifeTesting {
 	@Test
 	void compositeFunction() {
 
-		//System.out.println(life.getCompositeFunction());
+		System.out.println(life.getCompositeFunction());
 	}
 
 	@Test
@@ -56,6 +56,7 @@ class LifeTesting {
 	
 	@Test
 	void report() {
+		
 		System.out.println(secodLife.getFunctionSet());
 		System.out.println(secodLife.generateReport(5, 4, 4));
 	}

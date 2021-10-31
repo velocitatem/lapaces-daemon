@@ -31,6 +31,15 @@ public class Equation{
 		}
 	}	
 	
+	
+	
+	@Override
+	public String toString() {
+		return stringForm;
+	}
+
+
+
 	/**
 	 * Equation from string.
 	 *

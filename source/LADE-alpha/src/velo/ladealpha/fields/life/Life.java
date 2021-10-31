@@ -34,6 +34,11 @@ public class Life {
 		this.patterns = patterns;
 	}
 
+	
+	public void graph() {
+		
+	}
+	
 	/**
 	 * Gets the function set.
 	 *
@@ -68,7 +73,7 @@ public class Life {
 		lst.add("1");
 		for (Behavior b : patterns) {
 			for (Event e : b.getEvents()) {
-				lst.add("cos( 1/" + e.getDay_freq() + "x - " + e.getSigma() + "\\pi )");
+				lst.add("cos( 1/" + e.getDay_freq() + " * x - " + e.getSigma() + " * pi )");
 			}
 		}
 		return String.join("+", lst);

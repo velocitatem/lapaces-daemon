@@ -9,7 +9,7 @@ public class SoftmaxActivation {
 	public double[][] getOutput() {
 		return output;
 	}
-
+ 
 	public void forward(double[][] input) {
 		double[][] exp = LadeMath.exponentiate(input);
 		double[][] norm = LadeMath.normalize(exp);
