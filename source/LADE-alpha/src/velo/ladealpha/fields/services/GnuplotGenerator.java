@@ -19,6 +19,7 @@ public class GnuplotGenerator {
 			Random rnd = new Random();
 			char c = (char) ('a' + rnd.nextInt(26));
 			String f = c+"(x)";
+			f = used.contains(f)?c+"_1(x)":f;
 			res+=f+"= "+str+"\n";
 			used.add(f);
 			i+=1;

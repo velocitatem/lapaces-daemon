@@ -79,6 +79,24 @@ public class Life {
 		return String.join("+", lst);
 	}
 
+	
+	public Equation[] getEquationVector() {
+		ArrayList<Equation> vec = new ArrayList<Equation>();
+		for (Behavior b : patterns) {
+			for (Event e : b.getEvents()) {
+				vec.add(new Equation().equationFromString("cos( 1/" + e.getDay_freq() + " * x - " + e.getSigma() + " * pi )"));
+			}
+		}
+		Equation[] r = new Equation[vec.size()];
+		int i = 0;
+		for(Equation e : vec) {
+			r[i] = e;
+			i++;
+		}
+		return r;
+	}
+	
+	
 	/**
 	 * Compute closest event.
 	 *
@@ -117,6 +135,8 @@ public class Life {
 		return computeClosestEvent(x);
 	}
 
+	
+	
 	/**
 	 * Generate report.
 	 *

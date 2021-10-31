@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladealpha.fields.life.Behavior;
 import velo.ladealpha.fields.life.Life;
+import velo.ladealpha.fields.math.Equation;
+import velo.ladealpha.fields.services.GnuplotGenerator;
 
 class LifeTesting {
 
@@ -61,4 +63,18 @@ class LifeTesting {
 		System.out.println(secodLife.generateReport(5, 4, 4));
 	}
 
+	
+	@Test
+	void code() {
+		GnuplotGenerator gg = new GnuplotGenerator();
+		String o = gg.generate(life.getEquationVector(), "Life");
+		System.out.println(o);
+
+	}
+	
+	@Test
+	void lifeVector() {
+		System.out.println("V:" +Arrays.toString(life.computeSlopeVector(4).toArray()));
+	}
+	
 }
