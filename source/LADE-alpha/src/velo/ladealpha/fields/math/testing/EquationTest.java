@@ -9,17 +9,24 @@ import velo.ladealpha.fields.math.Equation;
 
 class EquationTest {
 
+	class eq1 extends Equation {
+		@Override
+		public double compute(double input) {
+			return (4*input)/Math.pow(2, input);
+		}
+	}
+	
 	@Test
 	void test() {
-		class eq1 extends Equation {
-			@Override
-			public double compute(double input) {
-				return (4*input)/Math.pow(2, input);
-			}
-		}
+		
  		Equation eq = new eq1();		
 		double result = eq.compute(5);
-		System.out.println(result);
+	//	System.out.println(result);
+	}
+	
+	@Test
+	void inverse() {
+		System.out.println(new eq1().computeInverse(1000,0));
 	}
 
 }
