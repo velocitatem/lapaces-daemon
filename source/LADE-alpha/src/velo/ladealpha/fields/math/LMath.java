@@ -6,6 +6,17 @@ package velo.ladealpha.fields.math;
  */
 public class LMath {
 	
+	
+    public static double factorial(double number) {
+        long result = 1;
+
+        for (int factor = 2; factor <= number; factor++) {
+            result *= factor;
+        }
+
+        return result;
+    }
+	
 	/**
 	 * Round.
 	 *

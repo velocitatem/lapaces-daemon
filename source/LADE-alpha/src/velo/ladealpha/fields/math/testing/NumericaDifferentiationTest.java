@@ -9,18 +9,31 @@ import velo.ladealpha.fields.math.calculus.Limits;
 import velo.ladealpha.fields.math.calculus.NumericalDifferentiation;
 
 class NumericaDifferentiationTest {
+	double x = 7.5;
+
+	class f extends Equation {
+		@Override
+		public double compute(double x) {
+			return Math.tan((6 * x) / 2);
+		}
+	}
 
 	@Test
 	void test() {
-		double x = 7.5;
-		class f extends Equation {
-			@Override
-			public double compute(double x) {
-				return Math.tan((6*x) / 2);
-			}
-		}
-		assertEquals(3.93359, NumericalDifferentiation.differentiate(new f(), x));
-		
+
+		assertEquals(3, (int)NumericalDifferentiation.differentiate(new f(), x));
+
+	}
+	
+	@Test
+	void test2( ) {
+		assertEquals(3,(int)NumericalDifferentiation.differentiate(new f()).compute(x));
+	}
+
+	@Test
+	void highOrder() {
+		System.out.println(NumericalDifferentiation.differentiate(
+				new Equation().equationFromString("x * Math.pow(x -2, 2)"), 3, 3));
 	}
 
 }

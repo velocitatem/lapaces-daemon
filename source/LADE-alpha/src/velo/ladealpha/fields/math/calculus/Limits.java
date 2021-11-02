@@ -9,11 +9,10 @@ import velo.ladealpha.fields.math.LMath;
  */
 public class Limits {
 	
-	/** The prec. */
-	public static int prec = 5;
+
 	
 	/** The prec diff. */
-	public static double precDiff = 0.001;
+	public static double precDiff = 0.000001;
 	
 	/**
 	 * Limit.
@@ -23,20 +22,18 @@ public class Limits {
 	 * @return the double
 	 */
 	public static double limit(Equation eq, double x) {
-		double approaching = Double.NaN;
-		double diff = Double.POSITIVE_INFINITY;
-		int i = 1;
-		boolean found = false;
-		while(i <= 50) {
+		
+		int i = 1;		
+		while(i <= 60) {
 			double delta = Math.pow(10, -i);
 			double ap = x + delta, an = x - delta;
 			double rap = eq.compute(ap), ran = eq.compute(an);			
-			diff = Math.abs(rap - ran);
-			if(diff < precDiff) {
-				return LMath.round(((rap + ran) / 2), 5);
+			
+			if(Math.abs(rap - ran) <= precDiff) {
+				return ((rap + ran) / 2);
 			}			
 			i+=1;
 		}
-		return approaching;
+		return Double.NaN; 
 	}
 }
