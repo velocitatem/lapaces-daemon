@@ -72,7 +72,7 @@ public class NumericalDifferentiation {
 					return (1 / Math.pow(h, order)) * sum;
 				}
 			}
-			return Limits.limit(new r(), 0);
+			return new r().compute(Math.pow(10, -3));
 		}
 
 	}

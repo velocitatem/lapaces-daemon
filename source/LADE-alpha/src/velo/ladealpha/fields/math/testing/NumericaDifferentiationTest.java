@@ -33,7 +33,7 @@ class NumericaDifferentiationTest {
 	@Test
 	void highOrder() {
 		System.out.println(NumericalDifferentiation.differentiate(
-				new Equation().equationFromString("x * Math.pow(x -2, 2)"), 3, 3));
+				new Equation().equationFromString("Math.pow(Math.sqrt(x), 4)"), 5, 3));
 	}
 
 }

@@ -22,13 +22,11 @@ public class Limits {
 	 * @return the double
 	 */
 	public static double limit(Equation eq, double x) {
-		
+		double eval = eq.compute(x);
 		int i = 1;		
-		while(i <= 60) {
-			double delta = Math.pow(10, -i);
-			double ap = x + delta, an = x - delta;
-			double rap = eq.compute(ap), ran = eq.compute(an);			
-			
+		while(i <= 100) {
+			double delta = Math.pow(10, -(i));			
+			double rap = eq.compute(x + delta), ran = eq.compute(x - delta);						
 			if(Math.abs(rap - ran) <= precDiff) {
 				return ((rap + ran) / 2);
 			}			
