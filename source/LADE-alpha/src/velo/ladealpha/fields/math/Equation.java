@@ -34,26 +34,10 @@ public class Equation{
 	
 	
 	
-	public double computeInverse(double input, double mid) {
-		int range = 100000;
-		ArrayList<Double> vec = new ArrayList<Double>();
-		for(double i = mid-range; i < mid+range ; i += 0.01) {
-			vec.add(i);
-		}
-		double smallestDiff = Double.POSITIVE_INFINITY, smallestPos = Double.POSITIVE_INFINITY;
-		for(Double s : vec) {
-			double diff = Math.abs(this.compute(s) - input);
-			if(diff < smallestDiff) {
-				smallestDiff = diff;
-				smallestPos = s;
-			}
-		}
-		if(mid > 1000) {
-			return smallestPos;
-		}
-		else {
-			return computeInverse(input, smallestPos);
-		}
+	public double computeInverse(double x) {
+		
+		
+		return 1;
 	}
 	
 	

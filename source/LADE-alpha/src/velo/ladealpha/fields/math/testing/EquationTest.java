@@ -26,7 +26,7 @@ class EquationTest {
 	
 	@Test
 	void inverse() {
-		System.out.println(new eq1().computeInverse(1000,0));
+		System.out.println(new eq1().computeInverse(1000));
 	}
 
 }

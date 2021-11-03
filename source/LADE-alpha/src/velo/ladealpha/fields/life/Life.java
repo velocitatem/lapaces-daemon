@@ -106,18 +106,23 @@ public class Life {
 	private Event computeClosestEvent(double x) {
 		double smallestDiff = Double.POSITIVE_INFINITY;
 		Event closestEvent = null;
+		
 		for (Behavior b : patterns) {
 			for (Event e : b.getEvents()) {
-				// System.out.println(e);
+
 				if (!e.isExclusion()) {
+				
 					double diff = Math.abs(e.closestOccurance(x) - x);
 					if (diff < smallestDiff) {
 						smallestDiff = diff;
 						closestEvent = e;
 					}
+				
 				}
+				
 			}
 		}
+		
 		return closestEvent;
 	}
 
