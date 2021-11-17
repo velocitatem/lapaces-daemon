@@ -8,5 +8,5 @@
 - [Sources](./org-files/sources_/sources.org)
 - [Structure](./org-files/sources_/structure.txt)
 
-![Logo](./design/logo/design-01.png)
+![Logo](./design/logo1.svg)
 
