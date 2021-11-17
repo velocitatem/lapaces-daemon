@@ -11,6 +11,35 @@ public class Profile {
 			responsibility, mistrust, self_esteem, envy, pride, kindness, powerlessness, contenxtual_skill,
 			contextual_challenge, curiosity, external_love, courage;
 
+	
+	public Profile() {
+		
+	}
+	
+	public Profile(double contextual_struggle, double contextual_meaning, double expectations, double reality,
+			double external_disappointment, double responsibility, double mistrust, double self_esteem, double envy,
+			double pride, double kindness, double powerlessness, double contenxtual_skill, double contextual_challenge,
+			double curiosity, double external_love, double courage) {
+		super();
+		this.contextual_struggle = contextual_struggle;
+		this.contextual_meaning = contextual_meaning;
+		this.expectations = expectations;
+		this.reality = reality;
+		this.external_disappointment = external_disappointment;
+		this.responsibility = responsibility;
+		this.mistrust = mistrust;
+		this.self_esteem = self_esteem;
+		this.envy = envy;
+		this.pride = pride;
+		this.kindness = kindness;
+		this.powerlessness = powerlessness;
+		this.contenxtual_skill = contenxtual_skill;
+		this.contextual_challenge = contextual_challenge;
+		this.curiosity = curiosity;
+		this.external_love = external_love;
+		this.courage = courage;
+	}
+
 	/**
 	 * Gets the contextual struggle.
 	 *

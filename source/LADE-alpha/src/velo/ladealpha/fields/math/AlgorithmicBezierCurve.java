@@ -20,8 +20,7 @@ public class AlgorithmicBezierCurve {
 		ArrayList<Line> coreLines = new ArrayList<Line>();
 		for(int i = 0; i < points.size()-1; i += 1) {
 			Point p = points.get(i), p1 = points.get(i+1);
-			Line l = new Line(p, p1);
-			System.out.println(l.lerp(0.5));
+			Line l = new Line(p, p1);			
 			coreLines.add(l);
 		}
 		return coreLines;

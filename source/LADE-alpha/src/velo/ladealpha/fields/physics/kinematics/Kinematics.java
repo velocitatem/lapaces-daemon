@@ -36,7 +36,7 @@ public class Kinematics {
 	 * @param t the t
 	 * @return the double
 	 */
-	public static double DeltaT(double v_0, double v, double t) {
+	public static double DeltaX(double v_0, double v, double t) {
 		return (0.5) * (v_0 + v) * t;
 	}	
 	
