@@ -11,3 +11,4 @@
 + https://github.com/CSSEGISandData/COVID-19
 + https://who-covid-19-data.p.rapidapi.com/api/data
 + https://squarewidget.com/solar-coordinates/
++ https://publicdomainvectors.org/en/free-clipart/Dragon-symbol/50461.html
