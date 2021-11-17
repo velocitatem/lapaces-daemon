@@ -55,6 +55,14 @@ public class ComplexVector {
 		return Math.atan(A_y/A_x);
 	}	
 	
+	
+	
+	
+	@Override
+	public String toString() {
+		return A_x + "i + " + A_y + "j" ;
+	}
+
 	/**
 	 * Theta degrees.
 	 *

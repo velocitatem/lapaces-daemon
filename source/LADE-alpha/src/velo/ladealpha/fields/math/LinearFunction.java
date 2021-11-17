@@ -40,6 +40,22 @@ public class LinearFunction {
 		double intercept = y1 + (m * (-x1));
 		b = intercept;
 	}
+	
+	/**
+	 * Builds the from two points.
+	 *
+	 * @param x1 the x 1
+	 * @param y1 the y 1
+	 * @param x2 the x 2
+	 * @param y2 the y 2
+	 */
+	public LinearFunction BuildFromTwoPoints(double x1, double y1, double x2, double y2) {
+		double MeanRateOfChange = (y2 - y1) / (x2 - x1);
+		m = MeanRateOfChange;
+		double intercept = y1 + (m * (-x1));
+		b = intercept;
+		return this;
+	}
 
 	/**
 	 * To string.

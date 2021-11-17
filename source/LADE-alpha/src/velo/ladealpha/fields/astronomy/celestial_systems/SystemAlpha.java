@@ -6,6 +6,7 @@ import java.util.Date;
 import velo.ladealpha.fields.astronomy.Constants;
 import velo.ladealpha.fields.astronomy.SpaceObject;
 import velo.ladealpha.fields.astronomy.Objects.*;
+import velo.ladealpha.main.IMod;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -21,6 +22,8 @@ public class SystemAlpha extends CelestialSystem {
 	
 	/** The sun. */
 	private TheSun theSun = new TheSun();	
+	
+	
 	
 	/**
 	 * Gets the orbits of moon for day of year.
@@ -53,4 +56,7 @@ public class SystemAlpha extends CelestialSystem {
 		
 		return 0;
 	}
+
+
+
 }
