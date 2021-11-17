@@ -5,6 +5,7 @@ import java.time.temporal.ChronoField;
 import java.util.Arrays;
 
 import velo.ladealpha.fields.astronomy.navigation.Moment;
+import velo.ladealpha.fields.cryptography.Hashing;
 import velo.ladealpha.fields.math.Equation;
 import velo.ladealpha.fields.math.LMath;
 import velo.ladealpha.fields.math.LinearFunction;
@@ -14,6 +15,7 @@ import velo.ladealpha.fields.math.calculus.TaylorSeries;
 import velo.ladealpha.fields.math.operations.SystemOfLinearFunctions;
 import velo.ladealpha.fields.physics.ComplexVector;
 import velo.ladealpha.fields.physics.kinematics.Kinematics;
+import velo.ladealpha.misc.SortingAlgorithms;
 
 public class ModuleFunctions {
 	public static Function averageSpeed() {
@@ -177,7 +179,7 @@ public class ModuleFunctions {
 				LocalDateTime now = LocalDateTime.now();
 				int year = now.getYear();
 				int month = now.getMonthValue();
-				int day = now.getDayOfMonth();
+				int day =  now.getDayOfMonth();
 				int hour = now.getHour();
 				int minute = now.getMinute();
 				int second = now.getSecond();
@@ -199,5 +201,98 @@ public class ModuleFunctions {
 			}
 		}
 		return new f();
+	}
+	public static Function hashFunctions() {
+		class f extends Function {
+			f() {
+				super("hashing", new String[] {"type", "body"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				String input = (String)params[1];
+				// awful, i know
+				switch((String)params[0]) {				
+				case "md2": return Hashing.md2(input);
+				case "md5": return Hashing.md5(input);
+				case "sha1": return Hashing.sha1(input);
+				case "sha224": return Hashing.sha224(input);
+				case "sha256": return Hashing.sha256(input);
+				case "sha384": return Hashing.sha384(input);
+				case "sha512": return Hashing.sha512(input);
+				default: return null;
+				}
+				
+			}
+		}
+		return new f();
+	}
+	private static double[] doubleVec(String[] arr) {
+		double[] vec = new double[arr.length];
+		int i = 0;
+		for(String s : arr) {
+			vec[i] = Double.valueOf(s);
+			i++;
+		}
+		return vec;
+	}
+	public static Function[] sort() {
+		
+		class ins extends Function {
+			ins() {
+				super("insertion", new String[] {"array"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {							
+				return SortingAlgorithms.insertionSort(doubleVec((String[])params[0]));
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString((double[])o);
+			}
+		}
+		class bubble extends Function {
+			bubble() {
+				super("bubble", new String[] {"array"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {							
+				return SortingAlgorithms.bubbleSort(doubleVec((String[])params[0]));
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString((double[])o);
+			}
+		}
+		
+		class selection extends Function {
+			selection() {
+				super("selection", new String[] {"array"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {							
+				return SortingAlgorithms.selectionSort(doubleVec((String[])params[0]));
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString((double[])o);
+			}
+		}
+		
+		class merge extends Function {
+			merge() {
+				super("merge", new String[] {"array"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double[] v = doubleVec((String[])params[0]);
+				return SortingAlgorithms.mergeSort(v, 0, v.length-1);
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString((double[])o);
+			}
+		}
+		
+		return new Function[] {new ins(), new bubble(), new selection(), new merge()};
 	}
 }

@@ -38,10 +38,16 @@ public class Main {
 			}),
 			new Module("astronomy", new Module[] {
 					new Module("navigation", new Function[] {
-							ModuleFunctions.julianDay(),
-							ModuleFunctions.julianDay1()
+						ModuleFunctions.julianDay(),
+						ModuleFunctions.julianDay1()
 							
 					})
+			}),
+			new Module("computing", new Module[] {
+					new Module("cryptography", new Function[] {
+						ModuleFunctions.hashFunctions() 	
+					}),
+					new Module("sorting", ModuleFunctions.sort())
 			})
 			
 
@@ -62,7 +68,17 @@ public class Main {
 			try {
 				d = Double.valueOf((String) d);
 			} catch (Exception ee) {
-
+				try {
+					String val = (String)d;							
+					if(val.contains("arr")) {
+						int is = val.indexOf("(")+1, ie = val.indexOf(")");
+						String[] arr = val.substring(is, ie).split(",");	
+						System.out.println(Arrays.toString(arr));
+						return arr;
+					}
+				}catch (Exception eee) {
+					// TODO: handle exception
+				}
 			}
 		}
 		return d;
@@ -170,7 +186,10 @@ public class Main {
 						i += 1;
 					}
 				} else {
-					err("You must select a function");
+					Object d = (String) inVec[2];
+					d = eval(d);
+					p[Integer.valueOf(pass)] = d;
+					say("set " + pass + " ( " + d.getClass() + " ) " + " = " + d);
 				}
 			}
 			break;
