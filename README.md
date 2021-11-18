@@ -14,7 +14,13 @@ Have you made an algorithm you are really proud of? Do you have a neat library g
 
 ### Subprojects
 - **[LADEos](https://github.com/danalves24com/LADEos)**
-- **[LADEshell](./source/LADE-shell)
+- **[LADEshell](./source/LADE-shell)**
 
+## Contribute!
+[LADE-alpha](./source/LADE-alpha) is being made in Java, that does not mean other languages are not accepted. Currently supported languages are:
+- Node.js
+- C++ [Coming Soon]
 
-
+1. Clone the repo
+2. Make a new branch
+3. Add your code [help](./org-files/contrib.md)
