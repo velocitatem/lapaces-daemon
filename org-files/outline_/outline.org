@@ -15,27 +15,44 @@
 + Covid19
 ** Astronomy
 + Earth orbit
-  - Position of the moon
+  - Position of the moon [DONE ish]
   - orbit simulator
 + Solar system
   - orbit of each planet
-+ Starchart
++ Navigation
+  + julianDay [DONE]
 ** Physics
-+ Vector Operations [DONE]
-+ Kinematics
-  - Displacement [DONE]
-  - Velocity [DONE]
+ + Vector Operations [DONE]
+ + Kinematics
+   - Displacement [DONE]
+   - Velocity [DONE]
 ** Statistics
 ** Psychology
-+ Behavior prediction [DONE]
-+ Behavior analysis
-+ Assessment of personality
+ +  Computational Psychology
+** Computing
+ + cryptography
+   + hash function {md2..sha512} [DONE]
+   + hash cracking
+ + sorting [DONE]
+** System
+    + network [DONE]
+      + port scan
+      + device probe
+      + network scan
+      + ping
+      + ip's
 ** Math
-+ Slopes
-+ Calculus
-  - Differentiation
+  + Statistics
+  + Operations
+    + Factorial [DONE]
+    + linar systems [DONE]
+  + Calculus
+    - Differentiation [DONE]
+    - Limits [DONE]
+    - Taylor Series [DONE]
 ** Life
-[[./research/life.pdf]]
+    [[./research/life.pdf]]
+
 * Data
 + Periodically acquired
   - CNN headlines \to keywords [DONE]
