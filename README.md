@@ -6,6 +6,7 @@
 
 ## I NEED YOU 👉
 Have you made an algorithm you are really proud of? Do you have a neat library going? Please Share! We are trying to compile the best algorithms out there, to create the best OS computational inteligence possible. You will ofcourse recieve the proper credit.
+[Join the Discord server](https://discord.gg/aYxmTPHx)
 
 ## TOC
 - [Outline](./org-files/outline_/outline.org)
