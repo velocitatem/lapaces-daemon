@@ -10,6 +10,7 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 import resources.ResourceLoader;
+import velo.ladealpha.fields.services.ResourceFileLoader;
 import velo.ladealpha.misc.SystemCommand;
 
 class ResourceLoading {
@@ -17,30 +18,10 @@ class ResourceLoading {
 	@Test
 	void test() {
 		
-		String p = System.currentTimeMillis() + "-tmp";
-		File out = new File(p);
-		try {
-			out.createNewFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			FileWriter fw = new FileWriter(p);
-			BufferedReader br = ResourceLoader.loadFile("script.js");			
-			String line;
-			while ((line = br.readLine()) != null) {
-				fw.write(line+"\n");
-			}			
-			fw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		SystemCommand.run("node " + p);
-		File r = new File(p);
-		r.delete();
+		ResourceFileLoader rl = new ResourceFileLoader();
+		String path = rl.loadFile("script.js");
+		String out = SystemCommand.runSV("node "+ path);		
+		System.out.println(out);
 
 	}
 

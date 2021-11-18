@@ -6,20 +6,31 @@ import java.io.InputStreamReader;
 
 public class SystemCommand {
 
-	public static String runPB(String cmd) {
-		ProcessBuilder pb = new ProcessBuilder(cmd.split(" "));
-		pb.inheritIO();
-		Process process;
+	public static String runSV(String command) {
+		String s = null;
 		StringBuilder sb = new StringBuilder();
 		try {
-			process = pb.start();
-			BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
-			String s = null;
+
+			// run the Unix "ps -ef" command
+			// using the Runtime exec method:
+			Process p = Runtime.getRuntime().exec(command);
+
+			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+			BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+
+			// read the output from the command
 			while ((s = stdInput.readLine()) != null) {
-				sb.append(s+"\n");
+				sb.append(s + "\n");				
 			}
+
+			// read any errors from the attempted command
+			while ((s = stdError.readLine()) != null) {
+				sb.append(s + "\n");
+			}
+
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("exception happened - here's what I know: ");
 			e.printStackTrace();
 		}
 		return sb.toString();
@@ -30,8 +41,6 @@ public class SystemCommand {
 
 		try {
 
-			// run the Unix "ps -ef" command
-			// using the Runtime exec method:
 			Process p = Runtime.getRuntime().exec(command);
 
 			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
