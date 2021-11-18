@@ -30,6 +30,18 @@ public class Function {
 
 
 
+	public String getDescrition() {
+		return descrition;
+	}
+	public void setDescrition(String descrition) {
+		this.descrition = descrition;
+	}
+	public boolean isDesc() {
+		return desc;
+	}
+	public void setDesc(boolean desc) {
+		this.desc = desc;
+	}
 	public String getName() {
 		return name;
 	}

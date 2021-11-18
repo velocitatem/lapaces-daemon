@@ -66,7 +66,7 @@ public class Main {
 	};
 
 	private static String describeFunction(Function f) {
-		return " " + f.getName() + " :: " + Arrays.toString(f.getParams()) ;
+		return " " + f.getName() + " :: " + Arrays.toString(f.getParams()) + (f.isDesc()?"\t("+f.getDescrition()+")":"") ;
 	}
 	
 	private static void say(Object msg) {
@@ -152,7 +152,7 @@ public class Main {
 									if(mm.isLast()) {
 										int ifd = 0;
 										for(Function fl : mm.getFunctions()) {
-											System.out.println("\t \t- [" + ifd + "] " + fl.getName() + " :: " + Arrays.toString(fl.getParams()) );
+											System.out.println("\t \t- [" + ifd + "] " + describeFunction(fl));
 											ifd+=1;
 										}
 									}
@@ -214,6 +214,21 @@ public class Main {
 					p[Integer.valueOf(pass)] = d;
 					say("set " + pass + " ( " + d.getClass() + " ) " + " = " + d);
 				}
+			}
+			break;
+		case "get":
+			if (function >= 0 && inVec[2] != null) {
+				int i = 0;
+				for (String param : f.getFunctions()[function].getParams()) {
+					if (param.equals(pass)) {												
+						say("got " + param + " ( " + p[i].getClass() + " ) " + " = " + p[i]);
+					}
+					i += 1;
+				}
+			} else {				
+				int i = Integer.valueOf(pass);
+				Object d = p[i];
+				say("got " + pass + " ( " + d.getClass() + " ) " + " = " + d);
 			}
 			break;
 		case "report":

@@ -421,7 +421,7 @@ public class ModuleFunctions {
 	public static Function scanNetwork() {
 		class f extends Function {
 			public f() {
-				super("scan-network", new String[] {"T"});
+				super("scan-network", new String[] {"T"}, "scan duration proportional to 22600*T (ms)");
 			}
 
 			@Override
