@@ -1,8 +1,9 @@
 package lade.shell.velo.main;
 
 public class Function {
-	private String name;
+	private String name, descrition;
 	private String[] params;
+	private boolean desc = false;
 	
 	
 	
@@ -10,6 +11,13 @@ public class Function {
 		super();
 		this.name = name;
 		this.params = params;
+	}
+	public Function(String name, String[] params, String description) {
+		super();
+		this.name = name;
+		this.params = params;
+		this.desc = true;
+		this.descrition = description;
 	}
 
 	public Object stringify(Object o) {

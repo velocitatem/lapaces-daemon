@@ -2,6 +2,7 @@ package lade.shell.velo.main;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import velo.ladealpha.fields.astronomy.navigation.Moment;
@@ -15,6 +16,8 @@ import velo.ladealpha.fields.math.calculus.TaylorSeries;
 import velo.ladealpha.fields.math.operations.SystemOfLinearFunctions;
 import velo.ladealpha.fields.physics.ComplexVector;
 import velo.ladealpha.fields.physics.kinematics.Kinematics;
+import velo.ladealpha.fields.system_managment.Internet;
+import velo.ladealpha.fields.system_managment.Target;
 import velo.ladealpha.misc.SortingAlgorithms;
 
 public class ModuleFunctions {
@@ -294,5 +297,142 @@ public class ModuleFunctions {
 		}
 		
 		return new Function[] {new ins(), new bubble(), new selection(), new merge()};
+	}
+	public static Function portScan() {
+		class f extends Function {
+			public f() {
+				super("port-scan", new String[] {"ip"});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				String ip = (String)params[0];
+				if(Internet.reachHost(ip, 2000)) {
+					return Internet.scanPorts(ip);	
+				}
+				else {
+					return null;
+				}
+				
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString(((ArrayList<Integer>)o).toArray());
+			}
+		}
+		return new f();
+	}
+	public static Function deviceProbe() {
+		class f extends Function {
+			public f() {
+				super("device-probe", new String[] {"ip"});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				String ip = (String)params[0];
+				if(Internet.reachHost(ip, 2000)) {
+					return new Target(ip, Internet.getIPHostname(ip), Internet.scanPorts(ip));	
+				}
+				else {
+					return null;
+				}
+				
+			}
+			@Override
+			public Object stringify(Object o) {
+				return o.toString();
+			}
+		}
+		return new f();
+	}
+	public static Function ping() {
+		class f extends Function {
+			public f() {
+				super("ping", new String[] {"ip"});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				String ip = (String)params[0];
+				return Internet.reachHost(ip, 2000);
+				
+			}
+		}
+		return new f();
+	}
+	public static Function getPublicIP() {
+		class f extends Function {
+			public f() {
+				super("public-ip", new String[] {});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				return Internet.getPublicIP();				
+			}
+		}
+		return new f();
+	}
+	public static Function getPrivateIP() {
+		class f extends Function {
+			public f() {
+				super("private-ip", new String[] {});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				return Internet.getLocalIP();				
+			}
+		}
+		return new f();
+	}
+	public static Function getLanIP() {
+		class f extends Function {
+			public f() {
+				super("lan-ip", new String[] {});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				return Internet.getLANIP();				
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString(((ArrayList<String>)o).toArray());
+			}
+		}
+		return new f();
+	}
+	public static Function urlIP() {
+		class f extends Function {
+			public f() {
+				super("url-ip", new String[] {"url"});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {
+				String ip = (String)params[0];
+				return Internet.getURLIP(ip);
+			}
+		}
+		return new f();
+	}
+	public static Function scanNetwork() {
+		class f extends Function {
+			public f() {
+				super("scan-network", new String[] {"T"});
+			}
+
+			@Override
+			public Object evaluate(Object[] params) {				
+				return Internet.scanNetwork((int)params[0]);
+			}
+			@Override
+			public Object stringify(Object o) {
+				return Arrays.toString(((ArrayList<String>)o).toArray());
+			}
+		}
+		return new f();
 	}
 }

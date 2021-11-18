@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/home/velo/Documents/Coding/lapaces-demon/libs/lade-alpha-03.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LADE-alpha"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

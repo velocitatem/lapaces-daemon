@@ -48,11 +48,27 @@ public class Main {
 						ModuleFunctions.hashFunctions() 	
 					}),
 					new Module("sorting", ModuleFunctions.sort())
+			}),
+			new Module("system", new Module[] {
+					new Module("network", new Function[] {
+						ModuleFunctions.portScan(),
+						ModuleFunctions.deviceProbe(),
+						ModuleFunctions.scanNetwork(),
+						ModuleFunctions.ping(),
+						ModuleFunctions.getLanIP(),
+						ModuleFunctions.getPublicIP(),
+						ModuleFunctions.getPrivateIP(),
+						ModuleFunctions.urlIP()
+					})
 			})
 			
 
 	};
 
+	private static String describeFunction(Function f) {
+		return " " + f.getName() + " :: " + Arrays.toString(f.getParams()) ;
+	}
+	
 	private static void say(Object msg) {
 		System.out.println("\n\t" + msg + "\n");
 	}
@@ -113,7 +129,7 @@ public class Main {
 							if (mm.isLast()) {
 								int ifd = 0;
 								for(Function fl : mm.getFunctions()) {
-									System.out.println("\t \t \t- [" + ifd + "] " + fl.getName() + " :: " + Arrays.toString(fl.getParams()) );
+									System.out.println("\t \t \t- [" + ifd + "] " + describeFunction(fl));
 									ifd+=1;
 								}
 							} else {
@@ -133,6 +149,13 @@ public class Main {
 								say("Showing module " + pass);
 								for (Module mm : m.getSubs()) {
 									System.out.println("\t+ " + mm.getName());
+									if(mm.isLast()) {
+										int ifd = 0;
+										for(Function fl : mm.getFunctions()) {
+											System.out.println("\t \t- [" + ifd + "] " + fl.getName() + " :: " + Arrays.toString(fl.getParams()) );
+											ifd+=1;
+										}
+									}
 								}
 							}
 						}
