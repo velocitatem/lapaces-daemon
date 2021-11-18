@@ -1,15 +1,21 @@
 package lade.shell.velo.main;
 
+import java.io.Console;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import velo.ladealpha.misc.SystemCommand;
+import velo.ladealpha.misc.TerminalColors;
+
 public class Main {
 
-	public static String prompt() {
+	
+	
+	public static String prompt() {		
 		Scanner myObj = new Scanner(System.in);
-		System.out.print("lade> ");
+		System.out.print( TerminalColors.BLACK + TerminalColors.WHITE_BACKGROUND +"lade>" + TerminalColors.RESET + " ");
 		return myObj.nextLine();
 	}
 
@@ -277,8 +283,8 @@ public class Main {
 				} else {
 				}
 			}
-
-			break;
+			
+			break;		
 		default:
 			if (in.length() > 0) {
 				SystemCommand.run(in);
@@ -290,6 +296,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		
 
 		while (true) {
 			try {

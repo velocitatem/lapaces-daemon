@@ -110,11 +110,9 @@ class NetworkScanner {
 		System.out.println(Arrays.toString(elements));
 		for(int i = 0 ; i <= 225; i += 1) {
 			elements[3] = String.valueOf(i);
-			String p = String.join(".", elements);
-			System.out.println(p);
+			String p = String.join(".", elements);			
 			if (Internet.reachHost(p, m*100)) {
-				found.add(p);
-				System.out.println(p);
+				found.add(p);				
 			}
 		}
 		
