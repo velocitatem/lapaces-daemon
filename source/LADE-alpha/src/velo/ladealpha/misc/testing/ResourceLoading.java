@@ -39,6 +39,8 @@ class ResourceLoading {
 		}
 		
 		SystemCommand.run("node " + p);
+		File r = new File(p);
+		r.delete();
 
 	}
 
