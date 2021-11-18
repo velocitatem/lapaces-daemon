@@ -35,6 +35,10 @@
    + hash cracking
  + sorting [DONE]
 ** System
+    + Connections 
+      + Socket Server
+      + Socket Client
+      + Telnet
     + network [DONE]
       + port scan
       + device probe
