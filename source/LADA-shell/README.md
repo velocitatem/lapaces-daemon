@@ -1,28 +1,28 @@
-# LADE Shell
-LADE Shell is an interactive cli, used to access modules integrated in the LADE api.
+# LADA Shell
+LADA Shell is an interactive cli, used to access modules integrated in the LADA api.
 
 ## Install
 
 Prerequisite `jre-openjdk`
 
 1. `git clone https://github.com/danalves24com/lapaces-daemon.git`
-2. `cd lapaces-daemon/source/LADE-shell`
-3. `sudo bash .install_lade.sh`
-4. `lade` and you should be put into the LADE shell which should look like the following:
+2. `cd lapaces-daemon/source/LADA-shell`
+3. `sudo bash .install_lada.sh`
+4. `lada` and you should be put into the LADA shell which should look like the following:
 
 ```
-lade>
+lada>
 ```
 
-### Using LADE shell
-To get started with using commands in the shell, run `help` or simply `-h`. If the command you enter is recognized by LADE, it will execute in its own environment, however if you were to type `lsblk`, you would get the system output of that command.
+### Using LADA shell
+To get started with using commands in the shell, run `help` or simply `-h`. If the command you enter is recognized by LADA, it will execute in its own environment, however if you were to type `lsblk`, you would get the system output of that command.
 #### Syntax for execution
 There are 2 ways you can run a module, a single-line or a more interactive multi-line approach.
 To get the LAN IP of your device you can do one of the following:
 1. signle-line
 
 ``` 
-lade> run system/network 4
+lada> run system/network 4
 
 
 	using module: system==>network
@@ -45,11 +45,11 @@ lade> run system/network 4
 2. multi-line
 
 ```
-lade> use system/network
+lada> use system/network
 
 	using module: system==>network
 
-lade> functions
+lada> functions
 
 	Functions contained in current module
 
@@ -62,8 +62,8 @@ lade> functions
 	 [6]	private-ip :: []
 	 [7]	url-ip :: [url]
 
-lade> set function 4
-lade> run
+lada> set function 4
+lada> run
 
 	Output: [10.0.1.106, 10.0.1.103]
 
