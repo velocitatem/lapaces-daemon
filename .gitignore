@@ -1,3 +1,15 @@
 *credentials.json
 */node_modules
 /.metadata/
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
