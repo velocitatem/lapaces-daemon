@@ -7,16 +7,16 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
 
 ### Eclipse ###
-*.metadata
-bin/
-tmp/
+**/.metadata
+**/bin/
+**/tmp/
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
-*.settings/
-*.loadpath
+**/.settings/
+**/.loadpath
 .recommenders
 
 # External tool builders
