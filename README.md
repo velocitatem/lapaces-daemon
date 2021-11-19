@@ -4,7 +4,7 @@
 **A free and open-source computational inteligence**
 ## What is it?
 LADA is at it's core a Java library, which has been implemented into the following:
-- **[LADAos](https://github.com/danalves24com/LADEos)**
+- **[LADAos](https://github.com/danalves24com/LADAos)**
 - **[LADAshell](./source/LADA-shell)**
 
 ## Why?
