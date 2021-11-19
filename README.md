@@ -5,7 +5,7 @@
 ## What is it?
 LADA is at it's core a Java library, which has been implemented into the following:
 - **[LADAos](https://github.com/danalves24com/LADEos)**
-- **[LADAshell](./source/LADE-shell)**
+- **[LADAshell](./source/LADA-shell)**
 
 ## Why?
 Wheather you are a software developer or a regular user, LADA can make your life easier. LADA is filled with many algorithms for tasks which would otherwise take longer or simply be tedious.
@@ -23,7 +23,7 @@ Have you made an algorithm you are really proud of? Do you have a neat library g
 
 
 ## Contribute!
-[LADA-alpha](./source/LADE-alpha) is being made in Java, that does not mean other languages are not accepted. Currently supported languages are:
+[LADA-alpha](./source/LADA-alpha) is being made in Java, that does not mean other languages are not accepted. Currently supported languages are:
 - Node.js
 - C++ [Coming Soon]
 
