@@ -2,7 +2,10 @@
 LADE Shell is an interactive cli, used to access modules integrated in the LADE api.
 
 ## Install
-1. Clone the repo
+
+Prerequisite `jre-openjdk`
+
+1. `git clone https://github.com/danalves24com/lapaces-daemon.git`
 2. `cd lapaces-daemon/source/LADE-shell`
 3. `sudo bash .install_lade.sh`
 4. `lade` and you should be put into the LADE shell which should look like the following:
