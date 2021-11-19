@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import velo.ladealpha.fields.psychology.behaviour.prediction.EmotionalRegression;
-import velo.ladealpha.fields.psychology.personality.Profile;
+import velo.ladaalpha.fields.psychology.behaviour.prediction.EmotionalRegression;
+import velo.ladaalpha.fields.psychology.personality.Profile;
 
 class emotinalRegressionTest {
 

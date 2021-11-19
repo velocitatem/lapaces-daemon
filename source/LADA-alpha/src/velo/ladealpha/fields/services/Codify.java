@@ -23,11 +23,12 @@ import javax.tools.JavaCompiler;
 import javax.tools.JavaCompiler.CompilationTask;
 import javax.tools.JavaFileObject;
 import javax.tools.JavaFileObject.Kind;
+
+import velo.ladaalpha.fields.math.Equation;
+
 import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
-
-import velo.ladealpha.fields.math.Equation;
 
 
 // TODO: Auto-generated Javadoc

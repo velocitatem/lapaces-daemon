@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/LADE-alpha"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/LADA-alpha"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

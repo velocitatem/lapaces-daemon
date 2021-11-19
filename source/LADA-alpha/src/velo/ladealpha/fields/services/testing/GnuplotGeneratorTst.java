@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import velo.ladealpha.fields.math.Equation;
+import velo.ladaalpha.fields.math.Equation;
 import velo.ladealpha.fields.services.GnuplotGenerator;
 
 class GnuplotGeneratorTst {

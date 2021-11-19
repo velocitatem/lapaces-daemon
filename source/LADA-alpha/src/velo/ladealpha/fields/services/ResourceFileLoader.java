@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import resources.ResourceLoader;
-import velo.ladealpha.misc.SystemCommand;
+import velo.ladaalpha.misc.SystemCommand;
 
 public class ResourceFileLoader {
 	private String tmp = System.currentTimeMillis() + "-tmp";

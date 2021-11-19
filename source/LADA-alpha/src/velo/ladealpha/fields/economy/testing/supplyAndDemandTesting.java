@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import velo.ladealpha.fields.economy.supplyANDdemand.Demand;
-import velo.ladealpha.fields.economy.supplyANDdemand.Supply;
-import velo.ladealpha.fields.economy.supplyANDdemand.SupplyAndDemandSystem;
+import velo.ladaalpha.fields.economy.supplyANDdemand.Demand;
+import velo.ladaalpha.fields.economy.supplyANDdemand.Supply;
+import velo.ladaalpha.fields.economy.supplyANDdemand.SupplyAndDemandSystem;
 
 class supplyAndDemandTesting {
 

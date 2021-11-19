@@ -3,7 +3,7 @@ package velo.ladealpha.fields.services;
 import java.util.ArrayList;
 import java.util.Random;
 
-import velo.ladealpha.fields.math.Equation;
+import velo.ladaalpha.fields.math.Equation;
 
 public class GnuplotGenerator {
 	public String generate(Equation[] set, String title) {

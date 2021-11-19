@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import velo.ladealpha.fields.astronomy.celestial_systems.SystemAlpha;
-import velo.ladealpha.fields.math.LinearFunction;
+import velo.ladaalpha.fields.astronomy.celestial_systems.SystemAlpha;
+import velo.ladaalpha.fields.math.LinearFunction;
 
 
 class IModInterp {
