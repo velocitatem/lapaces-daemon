@@ -55,8 +55,6 @@
     - Differentiation [DONE]
     - Limits [DONE]
     - Taylor Series [DONE]
-** Life
-    [[./research/life.pdf]]
 
 * Data
 + Periodically acquired
