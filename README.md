@@ -1,6 +1,7 @@
 <p align="center"><img src="./design/logo1-white.svg" width="200px"/></p>
 
 # Lapaces Daemon [/ˈdeɪmən/](http://ipa-reader.xyz/?text=%20%2F%CB%88de%C9%AAm%C9%99n%2F)
+![main](./design/hash1.png)
 **A free and open-source computational inteligence**
 ## What is it?
 LADA is at it's core a Java library, which has been implemented into the following:
