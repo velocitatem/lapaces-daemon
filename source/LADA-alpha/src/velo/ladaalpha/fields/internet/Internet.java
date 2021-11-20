@@ -1,4 +1,4 @@
-package velo.ladaalpha.fields.system_managment;
+package velo.ladaalpha.fields.internet;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -121,6 +121,48 @@ class NetworkScanner {
 }
 
 public class Internet {	
+	public static String fetch(String url) {
+		StringBuilder sb = new StringBuilder();
+		URL urlO = null;
+		try {
+			urlO = new URL(url);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		URLConnection con = null;
+		try {
+			con = urlO.openConnection();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String line;
+		try {
+			while((line = reader.readLine()) != null) {
+				sb.append(line+"\n");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			reader.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return sb.toString();
+	}
 	public static ArrayList<String> scanNetwork(int T) {
 		return NetworkScanner.scan(T);
 	}
@@ -206,15 +248,7 @@ public class Internet {
 	}
 
 	public static String getPublicIP() {
-		String systemipaddress = "";
-		try {
-			URL url_name = new URL("http://bot.whatismyipaddress.com");
-			BufferedReader sc = new BufferedReader(new InputStreamReader(url_name.openStream()));
-			systemipaddress = sc.readLine().trim();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		String systemipaddress = fetch("http://ifconfig.io/ip");
 		return systemipaddress;
 	}
 

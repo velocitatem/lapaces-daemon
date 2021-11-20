@@ -7,6 +7,8 @@ import java.util.Arrays;
 
 import velo.ladaalpha.fields.astronomy.navigation.Moment;
 import velo.ladaalpha.fields.cryptography.Hashing;
+import velo.ladaalpha.fields.internet.Internet;
+import velo.ladaalpha.fields.internet.Target;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.LMath;
 import velo.ladaalpha.fields.math.LinearFunction;
@@ -16,8 +18,6 @@ import velo.ladaalpha.fields.math.calculus.TaylorSeries;
 import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
 import velo.ladaalpha.fields.physics.ComplexVector;
 import velo.ladaalpha.fields.physics.kinematics.Kinematics;
-import velo.ladaalpha.fields.system_managment.Internet;
-import velo.ladaalpha.fields.system_managment.Target;
 import velo.ladaalpha.misc.SortingAlgorithms;
 
 public class ModuleFunctions {

@@ -1,4 +1,4 @@
-package velo.ladaalpha.fields.system_managment.testing;
+package velo.ladaalpha.fields.internet.testing;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-import velo.ladaalpha.fields.system_managment.Internet;
+import velo.ladaalpha.fields.internet.Internet;
 
 class LANIPTest {
 
