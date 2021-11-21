@@ -25,7 +25,9 @@ public class Modules {
 					}),
 					new Module("stats", new Function[] {
 						ModuleFunctions.LSRL(),
-						ModuleFunctions.OVS()
+						ModuleFunctions.OVS(),
+						ModuleFunctions.zScore(),
+						ModuleFunctions.PDF()
 					})
 			}),
 			new Module("astronomy", new Module[] {

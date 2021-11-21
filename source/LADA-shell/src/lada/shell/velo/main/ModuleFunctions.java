@@ -16,8 +16,11 @@ import velo.ladaalpha.fields.math.calculus.Limits;
 import velo.ladaalpha.fields.math.calculus.NumericalDifferentiation;
 import velo.ladaalpha.fields.math.calculus.TaylorSeries;
 import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
+import velo.ladaalpha.fields.math.stats.DistributionDirections;
+import velo.ladaalpha.fields.math.stats.Distributions;
 import velo.ladaalpha.fields.math.stats.OneVarStats;
 import velo.ladaalpha.fields.math.stats.Regression;
+import velo.ladaalpha.fields.math.stats.Scores;
 import velo.ladaalpha.fields.physics.ComplexVector;
 import velo.ladaalpha.fields.physics.kinematics.Kinematics;
 import velo.ladaalpha.misc.SortingAlgorithms;
@@ -468,4 +471,31 @@ public class ModuleFunctions {
 		}
 		return new f();
 	}
+	public static Function zScore() {
+		class f extends Function {
+			public f() {
+				super("z-score", new String[] {"x","mu","sigma"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double x = (double)params[0], mu = (double)params[1], sigma = (double)params[2];
+				return Scores.zScore(x, mu, sigma);
+			}
+		}
+		return new f();
+	}
+	public static Function PDF() {
+		class f extends Function {
+			public f() {
+				super("probability distribution function", new String[] {"z-score", "direction"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double zScore = (double)params[0]; int direction = ((Double)params[1]).intValue();				
+				return Distributions.PDF(zScore, direction==1?DistributionDirections.LEQ:DistributionDirections.GEQ);
+			}
+		}
+		return new f();
+	}
+	
 }
