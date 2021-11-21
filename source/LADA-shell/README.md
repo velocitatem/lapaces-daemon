@@ -16,7 +16,7 @@ lada>
 ```
 
 ## Using LADA shell
-To get started with using commands in the shell, run `help` or simply `-h`. If the command you enter is recognized by LADA, it will execute in its own environment, however if you were to type `lsblk`, you would get the system output of that command.
+To get started with using commands in the shell, run `help` or simply `-h`. If the command you enter is recognized by LADA, it will execute in its own environment, however if you were to type `lsblk`, you would get the system output of that command. Need more help? Check out [outputs](./outputs.md)
 ## Understanding modules 👾
 To display all currently integrated modules, type `show all` into the prompt, and you will get an output similar to the following:
 ```
