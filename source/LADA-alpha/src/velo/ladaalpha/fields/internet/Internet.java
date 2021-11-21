@@ -103,11 +103,9 @@ class NetworkScanner {
 		}else 
 		{
 			return null;
-		}
-		System.out.println(ip);
+		}		
 		ArrayList<String> found = new ArrayList<String>();
-		String[] elements = ip.split("\\.");
-		System.out.println(Arrays.toString(elements));
+		String[] elements = ip.split("\\.");		
 		for(int i = 0 ; i <= 225; i += 1) {
 			elements[3] = String.valueOf(i);
 			String p = String.join(".", elements);			

@@ -16,6 +16,8 @@ import velo.ladaalpha.fields.math.calculus.Limits;
 import velo.ladaalpha.fields.math.calculus.NumericalDifferentiation;
 import velo.ladaalpha.fields.math.calculus.TaylorSeries;
 import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
+import velo.ladaalpha.fields.math.stats.OneVarStats;
+import velo.ladaalpha.fields.math.stats.Regression;
 import velo.ladaalpha.fields.physics.ComplexVector;
 import velo.ladaalpha.fields.physics.kinematics.Kinematics;
 import velo.ladaalpha.misc.SortingAlgorithms;
@@ -199,7 +201,12 @@ public class ModuleFunctions {
 			}
 			@Override
 			public Object evaluate(Object[] params) {
-				
+				for(int i = 0; i < params.length ; i += 1 ) {
+					if(params[i] != null) {
+						Double val = (double)params[i];
+						params[i] = val.intValue();
+					}
+				}
 				return new Moment((int)params[0], (int)params[1], (int)params[2], (int)params[3], (int)params[4], (int)params[5], (int)params[6]).getJulianDay();
 			}
 		}
@@ -426,11 +433,37 @@ public class ModuleFunctions {
 
 			@Override
 			public Object evaluate(Object[] params) {				
-				return Internet.scanNetwork((int)params[0]);
+				return Internet.scanNetwork(((Double)params[0]).intValue());
 			}
 			@Override
 			public Object stringify(Object o) {
 				return Arrays.toString(((ArrayList<String>)o).toArray());
+			}
+		}
+		return new f();
+	}
+	public static Function LSRL() {
+		class f extends Function {
+			public f() {
+				super("LSRL", new String[] {"x", "y"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double[] x = doubleVec((String[])params[0]), y = doubleVec((String[])params[1]);
+				return Regression.LSRL(x, y);
+			}
+		}
+		return new f();
+	}
+	public static Function OVS() {
+		class f extends Function {
+			public f() {
+				super("One Variable Statistics", new String[] {"array"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double[] x = doubleVec((String[])params[0]);
+				return new OneVarStats(x);
 			}
 		}
 		return new f();

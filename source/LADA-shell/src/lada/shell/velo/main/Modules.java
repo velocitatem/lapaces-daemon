@@ -22,6 +22,10 @@ public class Modules {
 					new Module("operations", new Function[] {
 						ModuleFunctions.sysLin(),
 						ModuleFunctions.factorial()
+					}),
+					new Module("stats", new Function[] {
+						ModuleFunctions.LSRL(),
+						ModuleFunctions.OVS()
 					})
 			}),
 			new Module("astronomy", new Module[] {

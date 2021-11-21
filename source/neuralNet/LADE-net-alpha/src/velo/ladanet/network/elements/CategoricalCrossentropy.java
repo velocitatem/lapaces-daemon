@@ -3,8 +3,8 @@ package velo.ladanet.network.elements;
 import velo.ladanet.math.LadeMath;
 
 public class CategoricalCrossentropy extends Loss{
-	
-	
+
+
 	@Override	
 	public void backward(double[][] dvalues, double[][] y) {
 		int samples = dvalues.length, labels = dvalues[0].length;

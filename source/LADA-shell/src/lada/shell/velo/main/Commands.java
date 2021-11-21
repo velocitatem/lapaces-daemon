@@ -111,9 +111,11 @@ public class Commands {
 				}
 				
 				Main.forward("report");
-				Main.forward("run");					
+				Main.forward("run");
+				Main.p = new Object[20];
 			}
 		}
+		
 	}
 	
 	public static void report() {
@@ -174,19 +176,18 @@ public class Commands {
 			}
 		}
 	}
-	public static Object eval(Object d) {
+	public static Object eval(Object d) {		
 		try {
-			d = Integer.valueOf((String) d);
+			d = Double.valueOf((String) d);
 		} catch (Exception e) {
 			try {
-				d = Double.valueOf((String) d);
+				d = Integer.valueOf((String) d);
 			} catch (Exception ee) {
 				try {
 					String val = (String)d;							
 					if(val.contains("arr")) {
 						int is = val.indexOf("(")+1, ie = val.indexOf(")");
-						String[] arr = val.substring(is, ie).split(",");	
-						System.out.println(Arrays.toString(arr));
+						String[] arr = val.substring(is, ie).split(",");							
 						return arr;
 					}
 				}catch (Exception eee) {

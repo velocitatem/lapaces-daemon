@@ -13,7 +13,7 @@ public class Main {
 
 	public static String prompt() {
 		Scanner myObj = new Scanner(System.in);
-		System.out.print(TerminalColors.BLACK + TerminalColors.WHITE_BACKGROUND + "lade" + (mode == 1 ? " M:c " : "")
+		System.out.print(TerminalColors.BLACK + TerminalColors.WHITE_BACKGROUND + "lada" + (mode == 1 ? " M:c " : "")
 				+ ">" + TerminalColors.RESET + " ");
 		return myObj.nextLine();
 	}

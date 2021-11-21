@@ -12,6 +12,7 @@ public class TaylorSeries {
 				double sum = 0;
 				for(int i = 1; i <= 4 ; i += 1) {
 					sum += NumericalDifferentiation.differentiate(f, s, i) * ( Math.pow(x - s, i) / LMath.factorial(i) );
+
 				}
 				return f.compute(s) + sum;
 			}
