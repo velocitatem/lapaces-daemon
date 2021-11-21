@@ -7,4 +7,5 @@ To add code in Java, please follow this guideline:
 2. Test your code
 3. Leave a message of how the code should be executed
 
-# R & C++
+# R, Python and C++ 
+If you would like to contribute code in R, Python or C++, please open an issue, share the code there and describe its implementation.
