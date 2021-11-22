@@ -3,17 +3,18 @@ LADA Shell is an interactive cli, used to access modules integrated in the LADA 
 
 ## Install ⬇️
 
-### Linux 🐧
+### Linux 🐧 and Mac 💻
 Prerequisites `jre-openjdk` `nodejs`
 
-1. `git clone https://github.com/danalves24com/lapaces-daemon.git`
-2. `cd lapaces-daemon/source/LADA-shell`
+1. `curl -L https://raw.githubusercontent.com/danalves24com/lapaces-daemon/main/source/LADA-shell/.install_lada.sh -o .install_lada.sh`
 3. `sudo bash .install_lada.sh`
 4. `lada` and you should be put into the LADA 🐚 which should look like the following:
 
 ```
 lada>
 ```
+### Windows
+
 
 ## Using LADA shell
 To get started with using commands in the shell, run `help` or simply `-h`. If the command you enter is recognized by LADA, it will execute in its own environment, however if you were to type `lsblk`, you would get the system output of that command. Need more help? Check out [outputs](./outputs.md)
