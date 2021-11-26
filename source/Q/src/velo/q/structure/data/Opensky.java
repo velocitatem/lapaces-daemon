@@ -85,12 +85,8 @@ public class Opensky extends Source {
 					boolean found = false; for(int c = 0 ; !found && c < airlineCodes.size(); c += 1) {
 						JSONObject ob = (JSONObject) airlineCodes.get(c);
 						String icaoM = (String) ob.get("icao");
-						if(icaoM.equals(icaoSubs)) {
-							airline = (String) ob.get("name");
-							found = true;
-						}
-					}
-					Date d1 = new Date(firstSeen*1000), d2 = new Date(lastSeen*1000);
+						if(icaoM.equals(icaoSubs)) { airline = (String) ob.get("name");found = true;}
+					} Date d1 = new Date(firstSeen*1000), d2 = new Date(lastSeen*1000);
 					String[] pcs = {"\tfirst seen:\t"+d1.toString(), "\tlast seen:\t"+d2.toString(), "\torigin:\t\t"+dep, "\tdestination:\t"+arr,"\tcallsign:\t"+callsign, "\ticao:\t\t"+icao,"\tairline:\t"+airline,"\tduration(h):\t"+(durRaw/3600.001)};
 					String tmp = String.join("\n", pcs);
 					sb.append(tmp+"\n\n");
