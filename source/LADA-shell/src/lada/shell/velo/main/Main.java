@@ -15,19 +15,21 @@ public class Main {
 		Scanner myObj = new Scanner(System.in);
 		System.out.print(TerminalColors.BLACK + TerminalColors.WHITE_BACKGROUND + "lada" + (mode == 1 ? " M:c " : "")
 				+ ">" + TerminalColors.RESET + " ");
+		start = System.currentTimeMillis();
 		return myObj.nextLine();
+		
 	}
 
 	public static Module f = null;
 	public static int function = -1;
-	public static Object[] p = new Object[20];
+	public static Object[] p = new Object[200];
 	public static int mode = 0;
-
+	public static String[] curCom = {};
+	
 	public static void forward(String in) {
-
 		String[] inVec = in.split(" ");
+		curCom = inVec;
 		String cmd = inVec[0], pass = inVec.length > 1 ? inVec[1] : null;
-
 		switch (cmd) {
 		case "exit":
 		case "bye":
@@ -40,6 +42,9 @@ public class Main {
 			break;
 		case "mode":
 			Commands.mode(pass);
+			break;
+		case "tell":
+			Commands.tell(pass, inVec);
 			break;
 		case "show":
 			Commands.show(pass);
@@ -94,6 +99,7 @@ public class Main {
 		}
 	}
 
+	static long start = 0, end = 0;
 	public static void main(String[] args) {
 
 		while (true) {
@@ -106,6 +112,8 @@ public class Main {
 					forwardC(prompt());
 					break;
 				}
+				end = System.currentTimeMillis();
+				System.out.println("\tRuntime: "+(end-start)*0.9);
 
 			} catch (Exception e) {
 				Commands.err(e.getMessage());

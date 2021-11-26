@@ -16,7 +16,8 @@ public class Modules {
 			new Module("math", new Module[] { 
 					new Module("calculus", new Function[] { 
 						ModuleFunctions.limit(),
-						ModuleFunctions.numericalDifferentiation(), 
+						ModuleFunctions.numericalDifferentiation(),
+						ModuleFunctions.integrate(),
 						ModuleFunctions.tangentLine() 
 					}),
 					new Module("operations", new Function[] {
