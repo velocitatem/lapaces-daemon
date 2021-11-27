@@ -38,7 +38,7 @@ public class Nasa extends Source{
 					dt.open(new File(loc));
 				} catch (IOException e) {
 				}
-				return "Stored in " + loc;
+				return "\tStored in: " + loc;
 			}
 		}
 		return new satimg();
