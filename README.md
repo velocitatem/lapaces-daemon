@@ -7,6 +7,7 @@
 LADA is at it's core a Java library, which has been implemented into the following:
 - **[LADAos](https://github.com/danalves24com/LADAos)**
 - **[LADAshell](./source/LADA-shell)**
+- **[ladaQ](./source/Q)**
 
 ## Why?
 Wheather you are a software developer or a regular user, LADA can make your life easier. LADA is filled with many algorithms for tasks which would otherwise take longer or simply be tedious.
