@@ -113,6 +113,7 @@ Commands:
 	show [module/all]
 		all: 	Lists all modules and their submodules
 		module: Lists submodules in a parent module
+		tell:	Shows all data modules which you can query
 	
 	set [var/function] [val]
 		var: 		Sets the variable named var to be val
@@ -130,6 +131,9 @@ Commands:
 			- current function
 			- array of variables
 	
+	tell [function] [parameters]
+		reports data based on given function and parameters. PRAMETERS ARE NON-DELARATIONAL! meaning that 'tell function a b' NOT 'tell function a=a b=b'		
+ 	
 	SYSTEM
 		if a command does not match any of the above defined, LADE will treat the input as a system command
 ```
