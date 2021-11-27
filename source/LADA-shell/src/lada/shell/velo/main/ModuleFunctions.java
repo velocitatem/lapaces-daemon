@@ -14,6 +14,7 @@ import velo.ladaalpha.fields.math.LMath;
 import velo.ladaalpha.fields.math.LinearFunction;
 import velo.ladaalpha.fields.math.calculus.Limits;
 import velo.ladaalpha.fields.math.calculus.NumericalDifferentiation;
+import velo.ladaalpha.fields.math.calculus.NumericalIntegration;
 import velo.ladaalpha.fields.math.calculus.TaylorSeries;
 import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
 import velo.ladaalpha.fields.math.stats.DistributionDirections;
@@ -461,7 +462,7 @@ public class ModuleFunctions {
 	public static Function OVS() {
 		class f extends Function {
 			public f() {
-				super("One Variable Statistics", new String[] {"array"});
+				super("one-var-stats", new String[] {"array"});
 			}
 			@Override
 			public Object evaluate(Object[] params) {
@@ -487,12 +488,25 @@ public class ModuleFunctions {
 	public static Function PDF() {
 		class f extends Function {
 			public f() {
-				super("probability distribution function", new String[] {"z-score", "direction"});
+				super("probability-distribution-function", new String[] {"z-score", "direction"});
 			}
 			@Override
 			public Object evaluate(Object[] params) {
 				double zScore = (double)params[0]; int direction = ((Double)params[1]).intValue();				
 				return Distributions.PDF(zScore, direction==1?DistributionDirections.LEQ:DistributionDirections.GEQ);
+			}
+		}
+		return new f();
+	}
+	public static Function integrate() {
+		class f extends Function {
+			public f() {
+				super("integration", new String[] {"equation", "a", "b", "n"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				double a = ((Double)params[1]), b = ((Double)params[2]), n = (Double)params[3];
+				return NumericalIntegration.integrateSMPSN(new Equation().equationFromString((String)params[0]), a, b, n);
 			}
 		}
 		return new f();

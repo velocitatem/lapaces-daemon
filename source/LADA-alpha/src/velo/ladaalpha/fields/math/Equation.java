@@ -3,6 +3,8 @@ package velo.ladaalpha.fields.math;
 import java.util.ArrayList;
 
 import velo.ladealpha.fields.services.Codify;
+import velo.ladealpha.fields.services.MethodInvocationUtils;
+import velo.ladealpha.fields.services.RuntimeCompiler;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -15,6 +17,8 @@ public class Equation{
 	/** The string form. */
 	private String stringForm;
 	
+	private Class<?> cl;
+	
 	/**
 	 * Compute.
 	 *
@@ -26,8 +30,16 @@ public class Equation{
 			return -1;
 		}
 		else {
-			Codify c = new Codify();
-			return c.computeStringEquation(stringForm, input);
+			if(cl!=null) {
+				
+				Object o = MethodInvocationUtils.invokeStaticMethod(cl, "compute", ""+input);            
+				return (double)o;
+			}	
+			else {
+							
+				Codify c = new Codify();
+				return c.computeStringEquation(stringForm, input);
+			}
 		}
 	}	
 	
@@ -56,6 +68,8 @@ public class Equation{
 	 */
 	public Equation equationFromString(String eq) {
 		stringForm = eq;
+		String classNameA = "FunctionR";
+		this.cl = new Codify().getCompiler(eq).getCompiledClass(classNameA);
 		return this;
 	}	
 }

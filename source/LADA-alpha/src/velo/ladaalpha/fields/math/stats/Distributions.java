@@ -12,6 +12,6 @@ public class Distributions {
 	}
 	public static Double PDF(double z, DistributionDirections dir) {
 	
-		return dir.equals(DistributionDirections.LEQ)?NumericalIntegration.integrate(new PDFequation(), -10, z, 100):NumericalIntegration.integrate(new PDFequation(), z, 10, 100);
+		return dir.equals(DistributionDirections.LEQ)?NumericalIntegration.integrateSMPSN(new PDFequation(), -10, z, 1000):NumericalIntegration.integrateSMPSN(new PDFequation(), z, 10, 1000);
 	}
 }

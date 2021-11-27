@@ -12,6 +12,7 @@ class DistributionsTest {
 	@Test
 	void test() {
 		double p =Distributions.PDF(1.5, DistributionDirections.LEQ);
+		System.out.println(p);
 		assertEquals(93, (int)(p*100));
 	}
 

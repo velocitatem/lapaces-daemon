@@ -3,7 +3,7 @@ package velo.ladaalpha.fields.math.calculus;
 import velo.ladaalpha.fields.math.Equation;
 
 public class NumericalIntegration {
-	public static double integrate(Equation eq, double a, double b, double n) {
+	public static double integrateSMPSN(Equation eq, double a, double b, double n) {
 		int i,z;                                                       
         double h,s;                                                    
 

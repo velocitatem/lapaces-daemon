@@ -18,7 +18,7 @@ public class HttpResponse {
 			object = (JSONObject) parser.parse(this.body);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return null;
 		}
 		return object;
 	}

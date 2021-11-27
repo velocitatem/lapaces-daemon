@@ -1,7 +1,12 @@
 package velo.ladaalpha.fields.internet;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -11,6 +16,68 @@ import java.net.URL;
 
 public class APIreq {
 	private static final String USER_AGENT = "Mozilla/5.0";
+	public static String IMAGE(String path, String name) {
+		URL url = null;
+		try {
+			url = new URL(path);
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		InputStream in = null;
+		try {
+			in = new BufferedInputStream(url.openStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		byte[] buf = new byte[1024];
+		int n = 0;
+		try {
+			while (-1!=(n=in.read(buf)))
+			{
+			   out.write(buf, 0, n);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			in.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte[] response = out.toByteArray();
+		FileOutputStream fos = null;
+		String outPath = name+".jpg";				
+		try {
+			fos = new FileOutputStream(outPath);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			fos.write(response);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			fos.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return outPath;
+	}
 	public static HttpResponse GET(String url) {
 		HttpResponse res = new HttpResponse();
 		URL obj = null;

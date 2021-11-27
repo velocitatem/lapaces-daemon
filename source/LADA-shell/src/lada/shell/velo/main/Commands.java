@@ -2,8 +2,12 @@ package lada.shell.velo.main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import velo.ladaalpha.misc.SystemCommand;
+import velo.q.structure.DataPoint;
+import velo.q.structure.Source;
+import velo.q.structure.Sources;
 
 public class Commands {
 	public static void say(Object msg) {
@@ -17,7 +21,19 @@ public class Commands {
 	public static void set(String[] inVec, String pass)  {
 		if (pass.equals("function")) {
 			String fun = inVec[2];
-			Main.function = Integer.valueOf(fun);
+			int fs = -1;
+			int i = 0;
+			for(Function ff : Main.f.getFunctions()) {
+				if(ff.getName().equals(fun)) {
+					fs = i;
+				}
+				i++;
+			}
+			if(fs==-1) {
+				Main.function = Integer.valueOf(fun);				
+			} else {
+				Main.function = fs;
+			}
 		} else {
 			if (Main.function >= 0 && inVec[2] != null) {
 				int i = 0;
@@ -52,6 +68,25 @@ public class Commands {
 		else {				
 		}
 	}
+	
+	public static void tell(String pass, String[] inVec ) {
+		DataPoint focus = null;
+		for(Source s : Sources.getSoruces()) {
+			for(DataPoint dp : s.getData()) {
+				if(dp.getName().equals(pass)) focus=dp;
+			}
+		}
+		Object[] oo = new Object[inVec.length-2];
+		for(int i = 2; i < inVec.length ; i += 1) {
+			oo[i-2] = inVec[i];
+		}
+		if(focus!=null) {
+			Object o = focus.fetch(oo);
+			System.out.println(focus.stringify(o));
+		}
+		else return;
+	}
+	
 	public static void use(String pass) {
 		String[] ms = pass.split("/");
 
@@ -98,24 +133,25 @@ public class Commands {
 			if(pass.contains("/")) {
 				
 				String module = "load " + pass;
-				String fun = "set function " + Integer.valueOf(inVec[2]);
+				String fun = "set function " + inVec[2];
 				
 				Main.forward(module);
 				Main.forward(fun);
 				if(inVec.length>3) {
 					String[] parrs = in.substring(in.indexOf(inVec[3])).split(" ");
 					for(int i = 0 ;i < parrs.length ; i += 2) {
-						String vn = parrs[i], vv = parrs[i+1];
-						Main.forward("set " + vn + " " + vv);
+						if(!parrs[i].contains("s(")) {							
+							String vn = parrs[i], vv = parrs[i+1];
+							Main.forward("set " + vn + " " + vv);
+						}
 					}
 				}
 				
 				Main.forward("report");
 				Main.forward("run");
-				Main.p = new Object[20];
+				Main.p = new Object[200];
 			}
 		}
-		
 	}
 	
 	public static void report() {
@@ -129,9 +165,22 @@ public class Commands {
 		}
 		Commands.say("Variables:\t" + Arrays.toString(used.toArray()));
 	}
+	
+	private static String describeDataPoint(DataPoint p) {
+		return " " + p.getName() + " :: " + Arrays.toString(p.getQueryParams());
+	}
+	
 	public static void show( String pass) {
 		if (pass != null) {
 			switch (pass) {
+			case "tell":
+				for(Source s : Sources.getSoruces()) {
+					System.out.println("\t+ " + s.getName());
+					for(DataPoint point : s.getData()) {
+						System.out.println("\t\t- " + describeDataPoint(point) );
+					}
+				}
+			break;
 			case "all":
 				for (Module m : Modules.modules) {
 					System.out.println("\t+ " + m.getName());
@@ -185,10 +234,14 @@ public class Commands {
 			} catch (Exception ee) {
 				try {
 					String val = (String)d;							
-					if(val.contains("arr")) {
+					if(val.contains("arr(")) {
 						int is = val.indexOf("(")+1, ie = val.indexOf(")");
 						String[] arr = val.substring(is, ie).split(",");							
 						return arr;
+					}
+					else if (val.contains("_")) {
+						d = val.replaceAll("_", " ");
+						System.out.println(d);
 					}
 				}catch (Exception eee) {
 
