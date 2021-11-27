@@ -1,6 +1,9 @@
 package velo.q.structure.data;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,7 +21,7 @@ public class Opensky extends Source {
 		super(name, data, corePath);
 	}
 	public static String name = "opensky";
-	public static DataPoint[] data = {allaircraft(), arrivals()};
+	public static DataPoint[] data = {allaircraft(), arrivals(), findAirport()};
 	public static String corePath = "https://danalves24com:openskyosint@opensky-network.org/api/";
 	public static DataPoint allaircraft() {
 		class ala extends DataPoint {
@@ -38,6 +41,47 @@ public class Opensky extends Source {
 			}
 		}
 		return new ala();
+	}
+	public static DataPoint findAirport() {
+		class airportQuery extends DataPoint {
+			public airportQuery() {
+				super("find-airport", new String[] {"query"});
+			}
+			@Override
+			public Object fetch(Object[] p) {		
+						
+				String path = "https://raw.githubusercontent.com/mwgg/Airports/master/airports.json";
+				HttpResponse res = APIreq.GET(path);
+				String query = (String) p[0];
+				ArrayList<JSONObject> match = new ArrayList<JSONObject>();
+				JSONObject airports = res.getJsonBody();
+				query = query.toLowerCase().trim();
+				for(Object o : airports.keySet()) {
+					String key = (String)o;
+					JSONObject airport = (JSONObject)airports.get(key);
+					String icao = key.toLowerCase(), city = (String) airport.get("city"), state = (String) airport.get("state"), country = (String) airport.get("country"), name = (String) airport.get("name");
+					List<String> cityL = Arrays.asList(city.toLowerCase().split(" "));
+					List<String> stateL = Arrays.asList(state.toLowerCase().split(" ")), countryL = Arrays.asList(country.toLowerCase().split(" ")), nameL = Arrays.asList(name.toLowerCase().split(" "));
+					boolean bc = cityL.contains(query), bs = stateL.contains(query), bcc = countryL.contains(query), bn = nameL.contains(query);
+					if(icao.equals(query)) {
+						match.add(airport);
+					}
+					else if (bc || bs || bcc || bn) { match.add(airport); }
+					else {}
+				}		
+				return match;			
+			}
+			@Override
+			public String stringify(Object o) {
+				StringBuilder sb = new StringBuilder();
+				ArrayList<JSONObject> match = (ArrayList<JSONObject>)o;
+				for(JSONObject m : match) {
+					sb.append("\t"+m.get("icao")+"("+IRSAtranslator.convert((String) m.get("icao"))+")"+"\t ~ \t"+m.get("country")+"/"+m.get("state")+"/"+m.get("city") + "\t ~ \t" + m.get("name")+"\n\n");
+				}
+				return sb.toString();
+			}
+		}
+		return new airportQuery();
 	}
 	public static DataPoint arrivals() {
 		class arrivals extends DataPoint {
