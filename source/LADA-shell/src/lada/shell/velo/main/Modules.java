@@ -28,7 +28,8 @@ public class Modules {
 						ModuleFunctions.LSRL(),
 						ModuleFunctions.OVS(),
 						ModuleFunctions.zScore(),
-						ModuleFunctions.PDF()
+						ModuleFunctions.PDF(),
+						ModuleFunctions.probSim()
 					})
 			}),
 			new Module("astronomy", new Module[] {

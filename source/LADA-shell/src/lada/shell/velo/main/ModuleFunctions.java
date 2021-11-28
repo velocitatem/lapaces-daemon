@@ -20,6 +20,7 @@ import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
 import velo.ladaalpha.fields.math.stats.DistributionDirections;
 import velo.ladaalpha.fields.math.stats.Distributions;
 import velo.ladaalpha.fields.math.stats.OneVarStats;
+import velo.ladaalpha.fields.math.stats.Probability;
 import velo.ladaalpha.fields.math.stats.Regression;
 import velo.ladaalpha.fields.math.stats.Scores;
 import velo.ladaalpha.fields.physics.ComplexVector;
@@ -511,5 +512,18 @@ public class ModuleFunctions {
 		}
 		return new f();
 	}
-	
+	public static Function probSim() {
+		class f extends Function {
+			public f()
+			{
+				super("prob-sim", new String[] {"trials", "prob"});
+			}
+			@Override
+			public Object evaluate(Object[] params) {
+				Double trials = (Double)params[0], prob = (Double)params[1];
+				return Probability.simulate(trials.intValue(), prob);
+			}
+		}
+		return new f();
+	}
 }

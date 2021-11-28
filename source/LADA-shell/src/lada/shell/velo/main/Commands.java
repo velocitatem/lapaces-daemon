@@ -8,6 +8,7 @@ import velo.ladaalpha.misc.SystemCommand;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 import velo.q.structure.Sources;
+import velo.q.structure.data.Credentials;
 
 public class Commands {
 	public static void say(Object msg) {
@@ -70,6 +71,16 @@ public class Commands {
 	}
 	
 	public static void tell(String pass, String[] inVec ) {
+		
+		boolean initRes = false;
+		if(!Credentials.inited) {
+			initRes = Credentials.init();		
+			if(!initRes){say("You need to add your credentials"); return;}
+		}
+		else {
+			
+		}
+		
 		DataPoint focus = null;
 		for(Source s : Sources.getSoruces()) {
 			for(DataPoint dp : s.getData()) {

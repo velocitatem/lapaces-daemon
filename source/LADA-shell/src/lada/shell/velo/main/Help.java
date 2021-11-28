@@ -14,6 +14,7 @@ public class Help {
 				"	show [module/all]\n" + 
 				"		all: 	Lists all modules and their submodules\n" + 
 				"		module: Lists submodules in a parent module\n" + 
+				"		tell:	Shows all data modules which you can query\n" + 
 				"	\n" + 
 				"	set [var/function] [val]\n" + 
 				"		var: 		Sets the variable named var to be val\n" + 
@@ -31,6 +32,9 @@ public class Help {
 				"			- current function\n" + 
 				"			- array of variables\n" + 
 				"	\n" + 
+				"	tell [function] [parameters]\n" + 
+				"		reports data based on given function and parameters. PRAMETERS ARE NON-DELARATIONAL! meaning that 'tell function a b' NOT 'tell function a=a b=b'		\n" + 
+				" 	\n" + 
 				"	SYSTEM\n" + 
 				"		if a command does not match any of the above defined, LADE will treat the input as a system command";				
 	}

@@ -1,6 +1,7 @@
 package lada.shell.velo.main;
 
 import java.io.Console;
+import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 
 import velo.ladaalpha.misc.SystemCommand;
 import velo.ladaalpha.misc.TerminalColors;
+import velo.q.structure.data.Credentials;
 
 public class Main {
 
@@ -101,8 +103,11 @@ public class Main {
 
 	static long start = 0, end = 0;
 	public static void main(String[] args) {
-
+		File f = new File(args[0]);
+		Credentials.path = f.getAbsolutePath();
+		
 		while (true) {
+
 			try {
 				switch (mode) {
 				case 0:
