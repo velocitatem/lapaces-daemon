@@ -11,7 +11,7 @@ public class Finance extends Source {
 	public Finance() {
 		super("finance", new DataPoint[] {forex()}, corePath);
 	}
-	private static String corePath = "https://www.alphavantage.co/", key = "202ED4BWPD8J55R5";
+	private static String corePath = "https://www.alphavantage.co/", key = Credentials.alphavantage;
 	
 	public static DataPoint forex() {
 		class forex extends DataPoint {

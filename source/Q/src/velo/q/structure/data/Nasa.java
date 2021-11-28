@@ -17,7 +17,7 @@ public class Nasa extends Source{
 	public Nasa() {
 		super("nasa", new DataPoint[] {SatIMG()}, corePath );
 	}
-	private static String corePath = "https://api.nasa.gov/", key = "GM7OqKsE8hAG4o7YsYCWdJum4fqti4Wgzd4imvTt";
+	private static String corePath = "https://api.nasa.gov/", key = Credentials.nasa;
 	public static DataPoint SatIMG() {
 		class satimg extends DataPoint {
 			public satimg() {

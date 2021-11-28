@@ -22,7 +22,7 @@ public class Opensky extends Source {
 	}
 	public static String name = "opensky";
 	public static DataPoint[] data = {allaircraft(), arrivals(), findAirport()};
-	public static String corePath = "https://danalves24com:openskyosint@opensky-network.org/api/";
+	public static String corePath = "https://"+Credentials.opensky+"@opensky-network.org/api/";
 	public static DataPoint allaircraft() {
 		class ala extends DataPoint {
 			public ala() {
@@ -109,7 +109,8 @@ public class Opensky extends Source {
 				return ARR;
 			}
 			@Override
-			public String stringify(Object o ) { 
+			public String stringify(Object o ) {
+				/*
 				HttpResponse airlines = APIreq.GET("https://raw.githubusercontent.com/npow/airline-codes/master/airlines.json");
 				JSONParser parser = new JSONParser();
 				JSONArray airlineCodes = null; 
@@ -119,22 +120,28 @@ public class Opensky extends Source {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				JSONArray array = (JSONArray) o;				
+				*/
+				JSONArray array = (JSONArray) o;		
 				StringBuilder sb = new StringBuilder();
+				System.out.println("ff");
 				for(int i =0 ; i < array.size(); i+=1) {
 					JSONObject sub = (JSONObject)array.get(i);
 					long firstSeen = (long) sub.get("firstSeen") , lastSeen = (long) sub.get("lastSeen"), durRaw = lastSeen - firstSeen;
-					String dep = (String) sub.get("estDepartureAirport"), arr = (String) sub.get("estArrivalAirport"), callsign = (String) sub.get("callsign"), icao = (String)sub.get("icao24"), icaoSubs = callsign.substring(0,3), airline = "";				
+					String dep = (String) sub.get("estDepartureAirport"), arr = (String) sub.get("estArrivalAirport"), callsign = (String) sub.get("callsign"), icao = (String)sub.get("icao24");
+					String icaoSubs = callsign==null?null:callsign.substring(0,3), airline = "";				
 					dep += " ~ " +IRSAtranslator.convert(dep); arr += " ~ " +IRSAtranslator.convert(arr);callsign += " ~ " +IRSAtranslator.convert(callsign);					
+					/*
 					boolean found = false; for(int c = 0 ; !found && c < airlineCodes.size(); c += 1) {
 						JSONObject ob = (JSONObject) airlineCodes.get(c);
 						String icaoM = (String) ob.get("icao");
 						if(icaoM.equals(icaoSubs)) { airline = (String) ob.get("name");found = true;}
-					} Date d1 = new Date(firstSeen*1000), d2 = new Date(lastSeen*1000);
-					String[] pcs = {"\tfirst seen:\t"+d1.toString(), "\tlast seen:\t"+d2.toString(), "\torigin:\t\t"+dep, "\tdestination:\t"+arr,"\tcallsign:\t"+callsign, "\ticao:\t\t"+icao,"\tairline:\t"+airline,"\tduration(h):\t"+(durRaw/3600.001)};
+					}*/
+					Date d1 = new Date(firstSeen*1000), d2 = new Date(lastSeen*1000);
+					String[] pcs = {"\tfirst seen:\t"+d1.toString(), "\tlast seen:\t"+d2.toString(), "\torigin:\t\t"+dep, "\tdestination:\t"+arr,"\tcallsign:\t"+callsign, "\ticao:\t\t"+icao,"\tduration(h):\t"+(durRaw/3600.001)};
 					String tmp = String.join("\n", pcs);
 					sb.append(tmp+"\n\n");
 				}
+				System.out.println("ff");
 				return sb.toString();
 			}
 		}
