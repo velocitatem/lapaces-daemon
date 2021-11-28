@@ -1,5 +1,7 @@
 # ladaQ 🪄
-ladaQ is a both a library, but primarily used in [LADAshell](../LADA-shell).
+ladaQ is a library, but primarily used in [LADAshell](../LADA-shell).
+## Setup 🧰
+
 ## LADAshell Usage 🐚
 The command to invoke ladaQ is `tell`. To see what Q can tell you, run: 
 ```show tell```
