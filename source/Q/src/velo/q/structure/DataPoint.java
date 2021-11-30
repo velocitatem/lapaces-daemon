@@ -6,6 +6,9 @@ public class DataPoint {
 	public Object fetch(Object[] p) {
 		return null;
 	}
+	public void plot(Object o ) {
+		
+	}
 	public String stringify(Object o) {
 		return (String)o;
 	}

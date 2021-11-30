@@ -46,7 +46,7 @@ public class WorldBank extends Source {
 	public static DataPoint indicator() {
 		class indicator extends DataPoint {
 			public indicator() {
-				super("indicator", new String[] {"indicator", "country", "start-year"});
+				super("wb-indicator", new String[] {"indicator", "country", "start-year"});
 			}
 			@Override
 			public Object fetch(Object[] p) {
@@ -169,7 +169,7 @@ public class WorldBank extends Source {
 	public static DataPoint findIndicator() {
 		class findIndicator extends DataPoint {
 			public findIndicator() {
-				super("find-indicator", new String[] {"query"});
+				super("wb-find-indicator", new String[] {"query"});
 			}
 			@Override
 			public Object fetch(Object[] p) {				
