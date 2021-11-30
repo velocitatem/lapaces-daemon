@@ -8,10 +8,26 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Credentials.
+ */
 public class Credentials {
+	
+	/** The path. */
 	public static String opensky, nasa, alphavantage, path;
+	
+	/** The obj. */
 	private static JSONObject obj; 
+	
+	/** The inited. */
 	public static boolean inited = false;
+	
+	/**
+	 * Inits the.
+	 *
+	 * @return true, if successful
+	 */
 	public static boolean init() {
 		if(path==null) {
 			return false;

@@ -5,9 +5,19 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Hashing.
+ */
 // source https://www.geeksforgeeks.org/
 public class Hashing {
 
+	/**
+	 * Gets the sha.
+	 *
+	 * @param input the input
+	 * @return the sha
+	 */
 	private static byte[] getSHA(String input)
     { 
         MessageDigest md = null;
@@ -18,6 +28,13 @@ public class Hashing {
 		} 
         return md.digest(input.getBytes(StandardCharsets.UTF_8)); 
     }
+	
+	/**
+	 * To hex string.
+	 *
+	 * @param hash the hash
+	 * @return the string
+	 */
 	private static String toHexString(byte[] hash)
     {
         BigInteger number = new BigInteger(1, hash);  
@@ -30,10 +47,22 @@ public class Hashing {
     }
 	
 	
+	/**
+	 * Sha 256.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha256(String input) {
 		return toHexString(getSHA(input));
 	}
 	
+	/**
+	 * Sha 512.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha512(String input)
     {
         try {
@@ -51,6 +80,12 @@ public class Hashing {
         }
     }
 	
+	/**
+	 * Sha 384.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha384(String input) {
         try {
             // getInstance() method is called with algorithm SHA-384
@@ -82,6 +117,12 @@ public class Hashing {
         }
 	}
 	
+	/**
+	 * Sha 224.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha224(String input) {
         try {
             // getInstance() method is called with algorithm SHA-224
@@ -113,6 +154,12 @@ public class Hashing {
         }
 	}
 	
+	/**
+	 * Md 2.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String md2(String input) {
         try {
             // getInstance() method is called with algorithm MD2
@@ -144,6 +191,12 @@ public class Hashing {
         }
 	}
 	
+	/**
+	 * Md 5.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String md5(String input) {
         try {
         	  
@@ -170,6 +223,13 @@ public class Hashing {
             throw new RuntimeException(e);
         }
 	}
+	
+	/**
+	 * Sha 1.
+	 *
+	 * @param input the input
+	 * @return the string
+	 */
 	public static String sha1(String input) {
         try {
             // getInstance() method is called with algorithm SHA-1

@@ -14,8 +14,22 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class APIreq.
+ */
 public class APIreq {
+	
+	/** The Constant USER_AGENT. */
 	private static final String USER_AGENT = "Mozilla/5.0";
+	
+	/**
+	 * Image.
+	 *
+	 * @param path the path
+	 * @param name the name
+	 * @return the string
+	 */
 	public static String IMAGE(String path, String name) {
 		URL url = null;
 		try {
@@ -78,6 +92,13 @@ public class APIreq {
 		}
 		return outPath;
 	}
+	
+	/**
+	 * Gets the.
+	 *
+	 * @param url the url
+	 * @return the http response
+	 */
 	public static HttpResponse GET(String url) {
 		HttpResponse res = new HttpResponse();
 		URL obj = null;
@@ -140,6 +161,14 @@ public class APIreq {
 		
 		return res;
 	}
+	
+	/**
+	 * Post.
+	 *
+	 * @param url the url
+	 * @param params the params
+	 * @return the http response
+	 */
 	public static HttpResponse POST(String url, String params) {
 		URL obj = null;
 		HttpResponse res = new HttpResponse();

@@ -8,8 +8,15 @@ import javax.script.ScriptException;
 
 import org.junit.jupiter.api.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JSTesting.
+ */
 class JSTesting {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test()  {
 		StringBuffer javascript = null;

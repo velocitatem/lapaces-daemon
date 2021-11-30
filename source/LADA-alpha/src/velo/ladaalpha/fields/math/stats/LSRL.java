@@ -3,12 +3,31 @@ package velo.ladaalpha.fields.math.stats;
 import velo.ladaalpha.fields.math.*;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LSRL.
+ */
 public class LSRL {
+    
+    /** The y. */
     private double[] x, y;
+    
+    /**
+     * Instantiates a new lsrl.
+     *
+     * @param x the x
+     * @param y the y
+     */
     public LSRL(double[] x, double[] y) {
         this.x = x;
         this.y = y;
     }
+    
+    /**
+     * Compute.
+     *
+     * @return the linear function
+     */
     public LinearFunction compute() {
         double[] xy = new double[x.length], x2 = new double[x.length] ;
         int i = 0;
@@ -26,6 +45,13 @@ public class LSRL {
         return lf;
 
     }
+    
+    /**
+     * Sum.
+     *
+     * @param arr the arr
+     * @return the double
+     */
     private double sum(double[] arr) {
         double sum = 0;
 

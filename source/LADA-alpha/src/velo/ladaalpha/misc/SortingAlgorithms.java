@@ -1,6 +1,17 @@
 package velo.ladaalpha.misc;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SortingAlgorithms.
+ */
 public class SortingAlgorithms {
+	
+	/**
+	 * Insertion sort.
+	 *
+	 * @param arr the arr
+	 * @return the double[]
+	 */
 	public static double[] insertionSort(double[] arr) {
 		for (int x = 1; x < arr.length; x++) {
 			double current = arr[x];
@@ -14,6 +25,12 @@ public class SortingAlgorithms {
 		return arr;
 	}
 
+	/**
+	 * Bubble sort.
+	 *
+	 * @param arr the arr
+	 * @return the double[]
+	 */
 	public static double[] bubbleSort(double[] arr) {
 		int n = arr.length;
 		double tmp = 0;
@@ -29,6 +46,13 @@ public class SortingAlgorithms {
 		}
 		return arr;
 	}
+	
+	/**
+	 * Selection sort.
+	 *
+	 * @param arr the arr
+	 * @return the double[]
+	 */
 	public static double[] selectionSort(double[] arr) {
 		for (int x = 0; x < arr.length - 1; x++) {
 			int indx = x;
@@ -44,6 +68,14 @@ public class SortingAlgorithms {
 		return arr;
 	}
 
+	/**
+	 * Merge.
+	 *
+	 * @param array the array
+	 * @param lowval the lowval
+	 * @param midval the midval
+	 * @param highval the highval
+	 */
 	static void merge(double[] array, int lowval, int midval, int highval) {
 		int x, y, k;
 		double[] c = new double[highval - lowval + 1];
@@ -69,6 +101,14 @@ public class SortingAlgorithms {
 		}
 	}
 
+	/**
+	 * Merge sort.
+	 *
+	 * @param array the array
+	 * @param lowval the lowval
+	 * @param highval the highval
+	 * @return the double[]
+	 */
 	public static double[] mergeSort(double[] array, int lowval, int highval) {
 		if (highval - lowval + 1 > 1) {
 			int midval = (lowval + highval) / 2;

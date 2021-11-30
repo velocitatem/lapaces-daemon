@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+// TODO: Auto-generated Javadoc
 class Operation {
 	private String operator, left, right, whole;
 	private Operation opL, opR;
@@ -74,14 +75,30 @@ class Operation {
 
 }
 
+/**
+ * The Class SymbolicDiffTest.
+ */
 class SymbolicDiffTest {
 
+	/**
+	 * Checks if is operator.
+	 *
+	 * @param in the in
+	 * @return true, if is operator
+	 */
 	boolean isOperator(String in) {
 		return Arrays.asList(operators).contains(in);
 	}
 
+	/** The operators. */
 	String[] operators = { "+", "-", "*", "/", "^" };
 
+	/**
+	 * Eval stack.
+	 *
+	 * @param stack the stack
+	 * @return the operation
+	 */
 	Operation evalStack(List<String> stack) {
 		for (int i = 0; i < stack.size(); i += 1) {
 			String o = stack.get(i);
@@ -106,6 +123,12 @@ class SymbolicDiffTest {
 		return null;
 	}
 
+	/**
+	 * Compute.
+	 *
+	 * @param op the op
+	 * @return the double
+	 */
 	double compute(Operation op) {
 		if (op == null)
 			return 0;
@@ -145,8 +168,12 @@ class SymbolicDiffTest {
 		return r;
 	}
 
+	/** The x. */
 	double x = 3.5;
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 

@@ -3,7 +3,19 @@ package velo.ladaalpha.fields.math.calculus;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.LMath;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TaylorSeries.
+ */
 public class TaylorSeries {
+	
+	/**
+	 * Compute centered at.
+	 *
+	 * @param f the f
+	 * @param s the s
+	 * @return the equation
+	 */
 	public static Equation computeCenteredAt(Equation f, double s) {
 		
 		class res extends Equation {

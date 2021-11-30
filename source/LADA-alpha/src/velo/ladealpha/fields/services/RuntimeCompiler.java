@@ -29,38 +29,32 @@ import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RuntimeCompiler.
+ */
 public class RuntimeCompiler
 {
-    /**
-     * The Java Compiler
-     */
+    
+    /** The Java Compiler. */
     private final JavaCompiler javaCompiler;
 
-    /**
-     * The mapping from fully qualified class names to the class data
-     */
+    /** The mapping from fully qualified class names to the class data. */
     private final Map<String, byte[]> classData;
 
-    /**
-     * A class loader that will look up classes in the {@link #classData}
-     */
+    /** A class loader that will look up classes in the {@link #classData}. */
     private final MapClassLoader mapClassLoader;
 
-    /**
-     * The JavaFileManager that will handle the compiled classes, and
-     * eventually put them into the {@link #classData}
-     */
+    /** The JavaFileManager that will handle the compiled classes, and eventually put them into the {@link #classData}. */
     private final ClassDataFileManager classDataFileManager;
 
-    /**
-     * The compilation units for the next compilation task
-     */
+    /** The compilation units for the next compilation task. */
     private final List<JavaFileObject> compilationUnits;
 
 
     /**
-     * Creates a new RuntimeCompiler
-     * 
+     * Creates a new RuntimeCompiler.
+     *
      * @throws NullPointerException If no JavaCompiler could be obtained.
      * This is the case when the application was not started with a JDK,
      * but only with a JRE. (More specifically: When the JDK tools are 
@@ -85,8 +79,8 @@ public class RuntimeCompiler
 
     /**
      * Add a class with the given name and source code to be compiled
-     * with the next call to {@link #compile()}
-     * 
+     * with the next call to {@link #compile()}.
+     *
      * @param className The class name
      * @param code The code of the class
      */
@@ -100,8 +94,8 @@ public class RuntimeCompiler
 
     /**
      * Compile all classes that have been added by calling 
-     * {@link #addClass(String, String)}
-     * 
+     * {@link #addClass(String, String)}.
+     *
      * @return Whether the compilation succeeded
      */
     boolean compile()
@@ -141,19 +135,18 @@ public class RuntimeCompiler
     }
 
     /**
-     * In-memory representation of a source JavaFileObject 
+     * In-memory representation of a source JavaFileObject.
      */
     private static final class MemoryJavaSourceFileObject extends
         SimpleJavaFileObject
     {
-        /**
-         * The source code of the class
-         */
+        
+        /** The source code of the class. */
         private final String code;
 
         /**
-         * Creates a new in-memory representation of a Java file
-         * 
+         * Creates a new in-memory representation of a Java file.
+         *
          * @param fileName The file name
          * @param code The source code of the file
          */
@@ -163,6 +156,13 @@ public class RuntimeCompiler
             this.code = code;
         }
 
+        /**
+         * Gets the char content.
+         *
+         * @param ignoreEncodingErrors the ignore encoding errors
+         * @return the char content
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         @Override
         public CharSequence getCharContent(boolean ignoreEncodingErrors)
             throws IOException
@@ -172,10 +172,17 @@ public class RuntimeCompiler
     }
 
     /**
-     * A class loader that will look up classes in the {@link #classData}
+     * A class loader that will look up classes in the {@link #classData}.
      */
     private class MapClassLoader extends ClassLoader
     {
+        
+        /**
+         * Find class.
+         *
+         * @param name the name
+         * @return the class
+         */
         @Override
         public Class<?> findClass(String name)
         {
@@ -185,20 +192,19 @@ public class RuntimeCompiler
     }
 
     /**
-     * In-memory representation of a class JavaFileObject
-     * @author User
+     * In-memory representation of a class JavaFileObject.
      *
+     * @author User
      */
     private class MemoryJavaClassFileObject extends SimpleJavaFileObject
     {
-        /**
-         * The name of the class represented by the file object
-         */
+        
+        /** The name of the class represented by the file object. */
         private final String className;
 
         /**
-         * Create a new java file object that represents the specified class
-         * 
+         * Create a new java file object that represents the specified class.
+         *
          * @param className THe name of the class
          */
         private MemoryJavaClassFileObject(String className)
@@ -208,6 +214,12 @@ public class RuntimeCompiler
             this.className = className;
         }
 
+        /**
+         * Open output stream.
+         *
+         * @return the output stream
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         @Override
         public OutputStream openOutputStream() throws IOException
         {
@@ -218,14 +230,15 @@ public class RuntimeCompiler
 
     /**
      * A JavaFileManager that manages the compiled classes by passing
-     * them to the {@link #classData} map via a ClassDataOutputStream
+     * them to the {@link #classData} map via a ClassDataOutputStream.
      */
     private class ClassDataFileManager extends
         ForwardingJavaFileManager<StandardJavaFileManager>
     {
+        
         /**
-         * Create a new file manager that delegates to the given file manager
-         * 
+         * Create a new file manager that delegates to the given file manager.
+         *
          * @param standardJavaFileManager The delegate file manager
          */
         private ClassDataFileManager(
@@ -234,6 +247,16 @@ public class RuntimeCompiler
             super(standardJavaFileManager);
         }
 
+        /**
+         * Gets the java file for output.
+         *
+         * @param location the location
+         * @param className the class name
+         * @param kind the kind
+         * @param sibling the sibling
+         * @return the java file for output
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         @Override
         public JavaFileObject getJavaFileForOutput(final Location location,
             final String className, Kind kind, FileObject sibling)
@@ -246,24 +269,21 @@ public class RuntimeCompiler
 
     /**
      * An output stream that is used by the ClassDataFileManager
-     * to store the compiled classes in the  {@link #classData} map
+     * to store the compiled classes in the  {@link #classData} map.
      */
     private class ClassDataOutputStream extends OutputStream
     {
-        /**
-         * The name of the class that the received class data represents
-         */
+        
+        /** The name of the class that the received class data represents. */
         private final String className;
 
-        /**
-         * The output stream that will receive the class data
-         */
+        /** The output stream that will receive the class data. */
         private final ByteArrayOutputStream baos;
 
         /**
          * Creates a new output stream that will store the class
-         * data for the class with the given name
-         * 
+         * data for the class with the given name.
+         *
          * @param className The class name
          */
         private ClassDataOutputStream(String className)
@@ -272,12 +292,23 @@ public class RuntimeCompiler
             this.baos = new ByteArrayOutputStream();
         }
 
+        /**
+         * Write.
+         *
+         * @param b the b
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         @Override
         public void write(int b) throws IOException
         {
             baos.write(b);
         }
 
+        /**
+         * Close.
+         *
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         @Override
         public void close() throws IOException
         {

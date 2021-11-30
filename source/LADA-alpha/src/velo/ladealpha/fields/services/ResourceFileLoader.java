@@ -9,8 +9,21 @@ import resources.ResourceLoader;
 import velo.ladaalpha.fields.system_managment.FileBoss;
 import velo.ladaalpha.misc.SystemCommand;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ResourceFileLoader.
+ */
 public class ResourceFileLoader {
+	
+	/** The tmp. */
 	private String tmp = System.currentTimeMillis() + "-tmp";
+	
+	/**
+	 * Load file.
+	 *
+	 * @param name the name
+	 * @return the string
+	 */
 	public  String loadFile(String name) {		
 		FileBoss.createFile(tmp);
 		try {
@@ -34,6 +47,9 @@ public class ResourceFileLoader {
 		
 	}
 	
+	/**
+	 * Dispose.
+	 */
 	public void dispose() {
 		FileBoss.deleteFile(tmp);
 	}

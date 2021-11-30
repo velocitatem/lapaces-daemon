@@ -8,9 +8,18 @@ import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.LMath;
 import velo.ladaalpha.fields.math.calculus.TaylorSeries;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TaylorSeriesTest.
+ */
 class TaylorSeriesTest {
 
+	/** The e. */
 	Equation e = new Equation().equationFromString("x * Math.pow(x -2, 2)");
+	
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		Equation ts = TaylorSeries.computeCenteredAt(e, 2);

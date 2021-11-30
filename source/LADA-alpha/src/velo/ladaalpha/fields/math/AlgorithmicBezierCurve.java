@@ -5,17 +5,34 @@ import java.util.Arrays;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AlgorithmicBezierCurve.
+ */
 /*
  * DOESNT WORK
  */
 public class AlgorithmicBezierCurve {
+	
+	/** The points. */
 	private ArrayList<Point> points;
 
+	/**
+	 * Instantiates a new algorithmic bezier curve.
+	 *
+	 * @param points the points
+	 */
 	public AlgorithmicBezierCurve(ArrayList<Point> points) {
 		super();
 		this.points = points;
 	}
 	
+	/**
+	 * Lines from points.
+	 *
+	 * @param points the points
+	 * @return the array list
+	 */
 	private ArrayList<Line> linesFromPoints(ArrayList<Point> points) {
 		ArrayList<Line> coreLines = new ArrayList<Line>();
 		for(int i = 0; i < points.size()-1; i += 1) {
@@ -26,6 +43,13 @@ public class AlgorithmicBezierCurve {
 		return coreLines;
 	}
 	
+	/**
+	 * Lerp lines.
+	 *
+	 * @param lines the lines
+	 * @param t the t
+	 * @return the array list
+	 */
 	private ArrayList<Point> lerpLines(ArrayList<Line> lines, double t) {
 		ArrayList<Point> points = new ArrayList<Point>();
 		for(Line l : lines) {
@@ -34,6 +58,12 @@ public class AlgorithmicBezierCurve {
 		return points;
 	}
 	
+	/**
+	 * Compute.
+	 *
+	 * @param t the t
+	 * @return the point
+	 */
 	public Point compute(double t) {				
 		ArrayList<Line> linesO = linesFromPoints(points);
 		ArrayList<Point> pointsO = new ArrayList<Point>();

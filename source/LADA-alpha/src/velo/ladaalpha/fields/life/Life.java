@@ -35,6 +35,9 @@ public class Life {
 	}
 
 	
+	/**
+	 * Graph.
+	 */
 	public void graph() {
 		
 	}
@@ -80,6 +83,11 @@ public class Life {
 	}
 
 	
+	/**
+	 * Gets the equation vector.
+	 *
+	 * @return the equation vector
+	 */
 	public Equation[] getEquationVector() {
 		ArrayList<Equation> vec = new ArrayList<Equation>();
 		for (Behavior b : patterns) {

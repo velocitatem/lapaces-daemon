@@ -6,8 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.fields.linguistics.IRSAtranslator;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class IRSATest.
+ */
 class IRSATest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		String code = "BAW", code1 = "2.51";

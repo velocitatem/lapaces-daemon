@@ -16,13 +16,33 @@ import velo.ladaalpha.fields.linguistics.IRSAtranslator;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Opensky.
+ */
 public class Opensky extends Source {
+	
+	/**
+	 * Instantiates a new opensky.
+	 */
 	public Opensky() {
 		super(name, data, corePath);
 	}
+	
+	/** The name. */
 	public static String name = "opensky";
+	
+	/** The data. */
 	public static DataPoint[] data = {allaircraft(), arrivals(), findAirport()};
+	
+	/** The core path. */
 	public static String corePath = "https://"+Credentials.opensky+"@opensky-network.org/api/";
+	
+	/**
+	 * Allaircraft.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint allaircraft() {
 		class ala extends DataPoint {
 			public ala() {
@@ -42,6 +62,12 @@ public class Opensky extends Source {
 		}
 		return new ala();
 	}
+	
+	/**
+	 * Find airport.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint findAirport() {
 		class airportQuery extends DataPoint {
 			public airportQuery() {
@@ -83,6 +109,12 @@ public class Opensky extends Source {
 		}
 		return new airportQuery();
 	}
+	
+	/**
+	 * Arrivals.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint arrivals() {
 		class arrivals extends DataPoint {
 			public arrivals() {

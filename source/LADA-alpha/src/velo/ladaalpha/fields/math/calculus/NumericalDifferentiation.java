@@ -29,6 +29,12 @@ public class NumericalDifferentiation {
 		return Limits.limit(new df(), 0);
 	}
 
+	/**
+	 * Differentiate.
+	 *
+	 * @param f the f
+	 * @return the equation
+	 */
 	public static Equation differentiate(Equation f) {
 
 		class r extends Equation {
@@ -44,6 +50,14 @@ public class NumericalDifferentiation {
 
 	}
 
+	/**
+	 * Differentiate.
+	 *
+	 * @param f the f
+	 * @param x the x
+	 * @param order the order
+	 * @return the double
+	 */
 	public static double differentiate(Equation f, double x, int order) {
 
 		if (order == 1) {

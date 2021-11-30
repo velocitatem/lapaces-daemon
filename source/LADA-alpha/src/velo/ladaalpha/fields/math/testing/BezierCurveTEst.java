@@ -9,8 +9,15 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.math.AlgorithmicBezierCurve;
 import velo.ladaalpha.fields.math.Point;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BezierCurveTEst.
+ */
 class BezierCurveTEst {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		

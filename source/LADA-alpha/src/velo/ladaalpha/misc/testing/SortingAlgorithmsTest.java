@@ -6,12 +6,24 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.misc.SortingAlgorithms;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SortingAlgorithmsTest.
+ */
 class SortingAlgorithmsTest {
 
+	/**
+	 * Gets the v.
+	 *
+	 * @return the v
+	 */
 	double[] getv() {
 		return new double[] {0, 0.4, -0.4, 2.5, -0.8, -1};
 	}
 	
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		double[] vec = {0, 0.4, -0.4, 2.5, -0.8, -1};		

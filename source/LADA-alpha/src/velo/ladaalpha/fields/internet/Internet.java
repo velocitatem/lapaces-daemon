@@ -25,6 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+// TODO: Auto-generated Javadoc
 class PortScanner {
 
 	public static ArrayList<Integer> scan(String ip) throws InterruptedException, ExecutionException {
@@ -118,7 +119,17 @@ class NetworkScanner {
 	}
 }
 
+/**
+ * The Class Internet.
+ */
 public class Internet {	
+	
+	/**
+	 * Fetch.
+	 *
+	 * @param url the url
+	 * @return the string
+	 */
 	public static String fetch(String url) {
 		StringBuilder sb = new StringBuilder();
 		URL urlO = null;
@@ -161,9 +172,23 @@ public class Internet {
 		
 		return sb.toString();
 	}
+	
+	/**
+	 * Scan network.
+	 *
+	 * @param T the t
+	 * @return the array list
+	 */
 	public static ArrayList<String> scanNetwork(int T) {
 		return NetworkScanner.scan(T);
 	}
+	
+	/**
+	 * Scan ports.
+	 *
+	 * @param ip the ip
+	 * @return the array list
+	 */
 	public static ArrayList<Integer> scanPorts(String ip) {
 		try {
 			return PortScanner.scan(ip);
@@ -172,6 +197,13 @@ public class Internet {
 			return null;
 		}
 	}
+	
+	/**
+	 * Gets the urlip.
+	 *
+	 * @param s the s
+	 * @return the urlip
+	 */
 	public static String getURLIP(String s) {
 		String o = null;
 		try {
@@ -183,6 +215,13 @@ public class Internet {
 		}
 		return o;
 	}
+	
+	/**
+	 * Gets the IP hostname.
+	 *
+	 * @param ip the ip
+	 * @return the IP hostname
+	 */
 	public static String getIPHostname(String ip) {
 		try {
 			return InetAddress.getByName(ip).getHostName();
@@ -192,6 +231,12 @@ public class Internet {
 			return null;
 		}
 	}
+	
+	/**
+	 * Gets the lanip.
+	 *
+	 * @return the lanip
+	 */
 	public static ArrayList<String> getLANIP() {
 		try {
 			return getLANIP_I();
@@ -201,6 +246,13 @@ public class Internet {
 			return null;
 		}
 	}
+	
+	/**
+	 * Gets the lanip i.
+	 *
+	 * @return the lanip i
+	 * @throws SocketException the socket exception
+	 */
 	private static ArrayList<String> getLANIP_I() throws SocketException{
 		ArrayList<String> ips = new ArrayList<String>();
 		for (
@@ -235,6 +287,12 @@ public class Internet {
 			}
 		return ips;
 	}
+	
+	/**
+	 * Gets the local IP.
+	 *
+	 * @return the local IP
+	 */
 	public static String getLocalIP() {
 		try {
 			return InetAddress.getLocalHost().getHostAddress();
@@ -245,11 +303,23 @@ public class Internet {
 		}
 	}
 
+	/**
+	 * Gets the public IP.
+	 *
+	 * @return the public IP
+	 */
 	public static String getPublicIP() {
 		String systemipaddress = fetch("http://ifconfig.io/ip");
 		return systemipaddress;
 	}
 
+	/**
+	 * Reach host.
+	 *
+	 * @param ip the ip
+	 * @param timeout the timeout
+	 * @return true, if successful
+	 */
 	public static boolean reachHost(String ip, int timeout) {
 		InetAddress addr = null;
 		try {
@@ -267,6 +337,11 @@ public class Internet {
 		return false;
 	}
 
+	/**
+	 * Checks if is connected.
+	 *
+	 * @return the boolean
+	 */
 	public static Boolean isConnected() {
 		try {
 			URL url = new URL("http://www.google.com");

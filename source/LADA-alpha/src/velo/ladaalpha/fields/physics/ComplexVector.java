@@ -58,6 +58,11 @@ public class ComplexVector {
 	
 	
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return A_x + "i + " + A_y + "j" ;

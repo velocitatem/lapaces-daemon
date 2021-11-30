@@ -7,6 +7,12 @@ package velo.ladaalpha.fields.math;
 public class LMath {
 	
 	
+    /**
+     * Factorial.
+     *
+     * @param number the number
+     * @return the double
+     */
     public static double factorial(double number) {
         long result = 1;
 

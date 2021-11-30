@@ -7,12 +7,27 @@ import velo.ladaalpha.fields.internet.HttpResponse;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Finance.
+ */
 public class Finance extends Source {
+	
+	/**
+	 * Instantiates a new finance.
+	 */
 	public Finance() {
 		super("finance", new DataPoint[] {forex()}, corePath);
 	}
+	
+	/** The key. */
 	private static String corePath = "https://www.alphavantage.co/", key = Credentials.alphavantage;
 	
+	/**
+	 * Forex.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint forex() {
 		class forex extends DataPoint {
 

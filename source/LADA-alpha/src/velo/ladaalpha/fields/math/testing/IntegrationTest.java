@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.calculus.NumericalIntegration;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class IntegrationTest.
+ */
 class IntegrationTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		// CHANGE FILE NAM

@@ -22,6 +22,7 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
+// TODO: Auto-generated Javadoc
 /**
  * Simple implementation of plot. Minimal features, no dependencies besides standard libraries.
  * Options are self-descriptive, see also samples.
@@ -30,123 +31,344 @@ import javax.imageio.ImageIO;
  */
 public class Plot {
 
-	public enum Line { NONE, SOLID, DASHED };
-	public enum Marker { NONE, CIRCLE, SQUARE, DIAMOND, COLUMN, BAR };
-	public enum AxisFormat { NUMBER, NUMBER_KGM, NUMBER_INT, TIME_HM, TIME_HMS, DATE, DATETIME_HM, DATETIME_HMS }
-	public enum LegendFormat { NONE, TOP, RIGHT, BOTTOM }
+	/**
+	 * The Enum Line.
+	 */
+	public enum Line { /** The none. */
+ NONE, /** The solid. */
+ SOLID, /** The dashed. */
+ DASHED };
 	
-	private enum HorizAlign { LEFT, CENTER, RIGHT }
-	private enum VertAlign { TOP, CENTER, BOTTOM }
+	/**
+	 * The Enum Marker.
+	 */
+	public enum Marker { 
+ /** The none. */
+ NONE, 
+ /** The circle. */
+ CIRCLE, 
+ /** The square. */
+ SQUARE, 
+ /** The diamond. */
+ DIAMOND, 
+ /** The column. */
+ COLUMN, 
+ /** The bar. */
+ BAR };
+	
+	/**
+	 * The Enum AxisFormat.
+	 */
+	public enum AxisFormat { 
+ /** The number. */
+ NUMBER, 
+ /** The number kgm. */
+ NUMBER_KGM, 
+ /** The number int. */
+ NUMBER_INT, 
+ /** The time hm. */
+ TIME_HM, 
+ /** The time hms. */
+ TIME_HMS, 
+ /** The date. */
+ DATE, 
+ /** The datetime hm. */
+ DATETIME_HM, 
+ /** The datetime hms. */
+ DATETIME_HMS }
+	
+	/**
+	 * The Enum LegendFormat.
+	 */
+	public enum LegendFormat { 
+ /** The none. */
+ NONE, 
+ /** The top. */
+ TOP, 
+ /** The right. */
+ RIGHT, 
+ /** The bottom. */
+ BOTTOM }
+	
+	/**
+	 * The Enum HorizAlign.
+	 */
+	private enum HorizAlign { /** The left. */
+ LEFT, /** The center. */
+ CENTER, /** The right. */
+ RIGHT }
+	
+	/**
+	 * The Enum VertAlign.
+	 */
+	private enum VertAlign { 
+ /** The top. */
+ TOP, 
+ /** The center. */
+ CENTER, 
+ /** The bottom. */
+ BOTTOM }
 
+	/** The opts. */
 	private PlotOptions opts = new PlotOptions();
 	
+	/** The bound rect. */
 	private Rectangle boundRect;
+	
+	/** The plot area. */
 	private PlotArea plotArea;
+	
+	/** The x axes. */
 	private Map<String, Axis> xAxes = new HashMap<String, Axis>(3);
+	
+	/** The y axes. */
 	private Map<String, Axis> yAxes = new HashMap<String, Axis>(3);
+	
+	/** The data series map. */
 	private Map<String, DataSeries> dataSeriesMap = new LinkedHashMap<String, DataSeries>(5);
 	
+	/**
+	 * Plot.
+	 *
+	 * @param opts the opts
+	 * @return the plot
+	 */
 	public static Plot plot(PlotOptions opts) {
 		return new Plot(opts);
 	}
 	
+	/**
+	 * Plot opts.
+	 *
+	 * @return the plot options
+	 */
 	public static PlotOptions plotOpts() {
 		return new PlotOptions();
 	}
 	
+	/**
+	 * The Class PlotOptions.
+	 */
 	public static class PlotOptions {
 		
+		/** The title. */
 		private String title = "";
+		
+		/** The width. */
 		private int width = 800;
+		
+		/** The height. */
 		private int height = 600;
+		
+		/** The background color. */
 		private Color backgroundColor = Color.WHITE;
+		
+		/** The foreground color. */
 		private Color foregroundColor = Color.BLACK;
+		
+		/** The title font. */
 		private Font titleFont = new Font("Arial", Font.BOLD, 16);
+		
+		/** The padding. */
 		private int padding = 10; // padding for the entire image
+		
+		/** The plot padding. */
 		private int plotPadding = 5; // padding for plot area (to have min and max values padded)
+		
+		/** The label padding. */
 		private int labelPadding = 10;
+		
+		/** The default legend sign size. */
 		private int defaultLegendSignSize = 10;
+		
+		/** The legend sign size. */
 		private int legendSignSize = 10;
+		
+		/** The grids. */
 		private Point grids = new Point(10 ,10); // grid lines by x and y
+		
+		/** The grid color. */
 		private Color gridColor = Color.GRAY;
+		
+		/** The grid stroke. */
 		private Stroke gridStroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT,
 		        BasicStroke.JOIN_MITER, 10.0f, new float[] { 5.0f }, 0.0f);
+		
+		/** The tick size. */
 		private int tickSize = 5;
+		
+		/** The label font. */
 		private Font labelFont = new Font("Arial", 0, 12);
+		
+		/** The legend. */
 		private LegendFormat legend = LegendFormat.NONE;
 		
+		/**
+		 * Instantiates a new plot options.
+		 */
 		private PlotOptions() {}
 		
+		/**
+		 * Title.
+		 *
+		 * @param title the title
+		 * @return the plot options
+		 */
 		public PlotOptions title(String title) {
 			this.title = title;
 			return this;
 		}
 		
+		/**
+		 * Width.
+		 *
+		 * @param width the width
+		 * @return the plot options
+		 */
 		public PlotOptions width(int width) {
 			this.width = width;
 			return this;
 		}
 		
+		/**
+		 * Height.
+		 *
+		 * @param height the height
+		 * @return the plot options
+		 */
 		public PlotOptions height(int height) {
 			this.height = height;
 			return this;
 		}
 		
+		/**
+		 * Bg color.
+		 *
+		 * @param color the color
+		 * @return the plot options
+		 */
 		public PlotOptions bgColor(Color color) {
 			this.backgroundColor = color;
 			return this;
 		}
 		
+		/**
+		 * Fg color.
+		 *
+		 * @param color the color
+		 * @return the plot options
+		 */
 		public PlotOptions fgColor(Color color) {
 			this.foregroundColor = color;
 			return this;
 		}
 		
+		/**
+		 * Title font.
+		 *
+		 * @param font the font
+		 * @return the plot options
+		 */
 		public PlotOptions titleFont(Font font) {
 			this.titleFont = font;
 			return this;
 		}
 		
+		/**
+		 * Padding.
+		 *
+		 * @param padding the padding
+		 * @return the plot options
+		 */
 		public PlotOptions padding(int padding) {
 			this.padding = padding;
 			return this;
 		}
 		
+		/**
+		 * Plot padding.
+		 *
+		 * @param padding the padding
+		 * @return the plot options
+		 */
 		public PlotOptions plotPadding(int padding) {
 			this.plotPadding = padding;
 			return this;
 		}
 		
+		/**
+		 * Label padding.
+		 *
+		 * @param padding the padding
+		 * @return the plot options
+		 */
 		public PlotOptions labelPadding(int padding) {
 			this.labelPadding = padding;
 			return this;
 		}
 
+		/**
+		 * Label font.
+		 *
+		 * @param font the font
+		 * @return the plot options
+		 */
 		public PlotOptions labelFont(Font font) {
 			this.labelFont = font;
 			return this;
 		}
 
+		/**
+		 * Grids.
+		 *
+		 * @param byX the by X
+		 * @param byY the by Y
+		 * @return the plot options
+		 */
 		public PlotOptions grids(int byX, int byY) {
 			this.grids = new Point(byX, byY);
 			return this;
 		}
 
+		/**
+		 * Grid color.
+		 *
+		 * @param color the color
+		 * @return the plot options
+		 */
 		public PlotOptions gridColor(Color color) {
 			this.gridColor = color;
 			return this;
 		}
 		
+		/**
+		 * Grid stroke.
+		 *
+		 * @param stroke the stroke
+		 * @return the plot options
+		 */
 		public PlotOptions gridStroke(Stroke stroke) {
 			this.gridStroke = stroke;
 			return this;
 		}
 		
+		/**
+		 * Tick size.
+		 *
+		 * @param value the value
+		 * @return the plot options
+		 */
 		public PlotOptions tickSize(int value) {
 			this.tickSize = value;
 			return this;
 		}
 		
+		/**
+		 * Legend.
+		 *
+		 * @param legend the legend
+		 * @return the plot options
+		 */
 		public PlotOptions legend(LegendFormat legend) {
 			this.legend = legend;
 			return this;
@@ -154,6 +376,11 @@ public class Plot {
 		
 	}
 	
+	/**
+	 * Instantiates a new plot.
+	 *
+	 * @param opts the opts
+	 */
 	private Plot(PlotOptions opts) {
 		if (opts != null)
 			this.opts = opts;
@@ -161,20 +388,47 @@ public class Plot {
 		plotArea = new PlotArea();
 	}
 
+	/**
+	 * Opts.
+	 *
+	 * @return the plot options
+	 */
 	public PlotOptions opts() {
 		return opts;
 	}
 
+	/**
+	 * X axis.
+	 *
+	 * @param name the name
+	 * @param opts the opts
+	 * @return the plot
+	 */
 	public Plot xAxis(String name, AxisOptions opts) {
 		xAxes.put(name, new Axis(name, opts));
 		return this;
 	}
 
+	/**
+	 * Y axis.
+	 *
+	 * @param name the name
+	 * @param opts the opts
+	 * @return the plot
+	 */
 	public Plot yAxis(String name, AxisOptions opts) {
 		yAxes.put(name, new Axis(name, opts));
 		return this;
 	}
 
+	/**
+	 * Series.
+	 *
+	 * @param name the name
+	 * @param data the data
+	 * @param opts the opts
+	 * @return the plot
+	 */
 	public Plot series(String name, Data data, DataSeriesOptions opts) {
 		DataSeries series = dataSeriesMap.get(name);
 		if (opts != null)
@@ -189,6 +443,13 @@ public class Plot {
 		return this;
 	}
 
+	/**
+	 * Series.
+	 *
+	 * @param name the name
+	 * @param opts the opts
+	 * @return the plot
+	 */
 	public Plot series(String name, DataSeriesOptions opts) {
 		DataSeries series = dataSeriesMap.get(name);
 		if (opts != null)
@@ -198,16 +459,29 @@ public class Plot {
 		return this;
 	}
 
+	/**
+	 * Calc.
+	 *
+	 * @param g the g
+	 */
 	private void calc(Graphics2D g) {
 		plotArea.calc(g);
 	}
 	
+	/**
+	 * Clear.
+	 */
 	private void clear() {
 		plotArea.clear();
 		for (DataSeries series : dataSeriesMap.values())
 			series.clear();
 	}
 	
+	/**
+	 * Draw.
+	 *
+	 * @return the buffered image
+	 */
 	private BufferedImage draw() {
 		BufferedImage image = new BufferedImage(opts.width, opts.height, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = image.createGraphics();
@@ -223,11 +497,23 @@ public class Plot {
 		}
 	}
 
+	/**
+	 * Draw background.
+	 *
+	 * @param g the g
+	 */
 	private void drawBackground(Graphics2D g) {
 		g.setColor(opts.backgroundColor); 
 		g.fillRect(0, 0, opts.width, opts.height);
 	}
 
+	/**
+	 * Save.
+	 *
+	 * @param fileName the file name
+	 * @param type the type
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public void save(String fileName, String type) throws IOException {
 		clear();
 		BufferedImage bi = draw();
@@ -235,41 +521,88 @@ public class Plot {
 		ImageIO.write(bi, type, outputFile);
 	}
 	
+	/**
+	 * The Class Legend.
+	 */
 	private class Legend {
+		
+		/** The rect. */
 		Rectangle rect;
+		
+		/** The label rect. */
 		Rectangle2D labelRect;
+		
+		/** The entry width. */
 		public int entryWidth;
+		
+		/** The entry width padded. */
 		public int entryWidthPadded;
+		
+		/** The entry count. */
 		public int entryCount;
+		
+		/** The x count. */
 		public int xCount;
+		
+		/** The y count. */
 		public int yCount;
 	}
 	
+	/**
+	 * The Class PlotArea.
+	 */
 	private class PlotArea {
 	
+		/** The plot border rect. */
 		private Rectangle plotBorderRect = new Rectangle(); // boundRect | labels/legend | plotBorderRect | plotPadding | plotRect/clipRect
+		
+		/** The plot rect. */
 		private Rectangle plotRect = new Rectangle();
+		
+		/** The plot clip rect. */
 		private Rectangle plotClipRect = new Rectangle();
+		
+		/** The legend. */
 		private Legend legend = new Legend();
 		
+		/** The x plot range. */
 		private Range xPlotRange = new Range(0, 0);
+		
+		/** The y plot range. */
 		private Range yPlotRange = new Range(0, 0);
 		
+		/**
+		 * Instantiates a new plot area.
+		 */
 		public PlotArea() {
 			clear();
 		}
 		
+		/**
+		 * Clear.
+		 */
 		private void clear() {
 			plotBorderRect.setBounds(boundRect);
 			plotRectChanged();
 		}
 		
+		/**
+		 * Offset.
+		 *
+		 * @param dx the dx
+		 * @param dy the dy
+		 * @param dw the dw
+		 * @param dh the dh
+		 */
 		private void offset(int dx, int dy, int dw, int dh) {
 			plotBorderRect.translate(dx, dy);
 			plotBorderRect.setSize(plotBorderRect.width - dx - dw, plotBorderRect.height - dy - dh);
 			plotRectChanged();
 		}
 		
+		/**
+		 * Plot rect changed.
+		 */
 		private void plotRectChanged() {
 			plotRect.setBounds(plotBorderRect.x + opts.plotPadding, plotBorderRect.y + opts.plotPadding, 
 					plotBorderRect.width - opts.plotPadding * 2, plotBorderRect.height - opts.plotPadding * 2);
@@ -281,6 +614,11 @@ public class Plot {
 			plotClipRect.setBounds(plotBorderRect.x + 1, plotBorderRect.y + 1, plotBorderRect.width - 1, plotBorderRect.height - 1);
 		}
 
+		/**
+		 * Calc.
+		 *
+		 * @param g the g
+		 */
 		private void calc(Graphics2D g) {
 			calcAxes(g);
 			calcRange(true);
@@ -322,6 +660,11 @@ public class Plot {
 			offset(dx, dy, dw, dh);
 		}
 		
+		/**
+		 * Draw.
+		 *
+		 * @param g the g
+		 */
 		private void draw(Graphics2D g) {
 			drawPlotArea(g);
 			drawGrid(g);
@@ -332,6 +675,11 @@ public class Plot {
 			//g.drawRect(boundRect.x + opts.padding, boundRect.y + opts.padding, boundRect.width - opts.padding * 2, boundRect.height - opts.padding * 2);
 		}
 
+		/**
+		 * Draw plot area.
+		 *
+		 * @param g the g
+		 */
 		private void drawPlotArea(Graphics2D g) {
 			g.setColor(opts.foregroundColor);
 			g.drawRect(plotBorderRect.x, plotBorderRect.y, plotBorderRect.width, plotBorderRect.height);
@@ -339,6 +687,11 @@ public class Plot {
 			drawLabel(g, opts.title, plotBorderRect.x + toInt(plotBorderRect.getWidth() / 2), opts.padding, HorizAlign.CENTER, VertAlign.TOP);
 		}
 
+		/**
+		 * Draw grid.
+		 *
+		 * @param g the g
+		 */
 		private void drawGrid(Graphics2D g) {
 			Stroke stroke = g.getStroke();
 			g.setStroke(opts.gridStroke);
@@ -362,6 +715,11 @@ public class Plot {
 			g.setStroke(stroke);
 		}
 
+		/**
+		 * Calc axes.
+		 *
+		 * @param g the g
+		 */
 		private void calcAxes(Graphics2D g) {
 			Axis xAxis = xAxes.isEmpty() ? new Axis("", null) : xAxes.values().iterator().next();
 			Axis yAxis = yAxes.isEmpty() ? new Axis("", null) : yAxes.values().iterator().next();
@@ -383,6 +741,12 @@ public class Plot {
 				yAxes.put("y", yAxis);
 		}
 
+		/**
+		 * Calc axis labels.
+		 *
+		 * @param g the g
+		 * @param isX the is X
+		 */
 		private void calcAxisLabels(Graphics2D g, boolean isX) {
 			FontMetrics fm = g.getFontMetrics();
 			Rectangle2D rect = null;
@@ -406,6 +770,11 @@ public class Plot {
 			}
 		}
 
+		/**
+		 * Calc range.
+		 *
+		 * @param isX the is X
+		 */
 		private void calcRange(boolean isX) {
 			for (DataSeries series : dataSeriesMap.values()) {
 				Axis axis = isX ? series.opts.xAxis : series.opts.yAxis;
@@ -429,6 +798,11 @@ public class Plot {
 			}
 		}
 
+		/**
+		 * Draw axes.
+		 *
+		 * @param g the g
+		 */
 		private void drawAxes(Graphics2D g) {
 			g.setFont(opts.labelFont);
 			g.setColor(opts.foregroundColor);
@@ -471,6 +845,11 @@ public class Plot {
 			}
 		}
 		
+		/**
+		 * Calc legend.
+		 *
+		 * @param g the g
+		 */
 		private void calcLegend(Graphics2D g) {
 			legend.rect = new Rectangle(0, 0);
 			if (opts.legend == LegendFormat.NONE)
@@ -530,6 +909,11 @@ public class Plot {
 			}
 		}
 
+		/**
+		 * Draw legend.
+		 *
+		 * @param g the g
+		 */
 		private void drawLegend(Graphics2D g) {
 			if (opts.legend == LegendFormat.NONE)
 				return;
@@ -562,6 +946,14 @@ public class Plot {
 			}
 		}
 		
+		/**
+		 * Draw legend entry.
+		 *
+		 * @param g the g
+		 * @param series the series
+		 * @param x the x
+		 * @param y the y
+		 */
 		private void drawLegendEntry(Graphics2D g, DataSeries series, int x, int y) {
 			series.fillArea(g, x, y, x + opts.legendSignSize, y, y + opts.legendSignSize / 2);
 			series.drawLine(g, x, y, x + opts.legendSignSize, y);
@@ -572,34 +964,68 @@ public class Plot {
 		
 	}
 	
+	/**
+	 * The Class Range.
+	 */
 	public static class Range {
 		
+		/** The min. */
 		private double min;
+		
+		/** The max. */
 		private double max;
+		
+		/** The diff. */
 		private double diff;
 
+		/**
+		 * Instantiates a new range.
+		 *
+		 * @param min the min
+		 * @param max the max
+		 */
 		public Range(double min, double max) {
 			this.min = min;
 			this.max = max;
 			this.diff = max - min;
 		}
 		
+		/**
+		 * Instantiates a new range.
+		 *
+		 * @param range the range
+		 */
 		public Range(Range range) {
 			this.min = range.min;
 			this.max = range.max;
 			this.diff = max - min;
 		}
 
+		/**
+		 * Sets the min.
+		 *
+		 * @param min the new min
+		 */
 		public void setMin(double min) {
 			this.min = min;
 			this.diff = max - min;
 		}
 	
+		/**
+		 * Sets the max.
+		 *
+		 * @param max the new max
+		 */
 		public void setMax(double max) {
 			this.max = max;
 			this.diff = max - min;
 		}
 
+		/**
+		 * To string.
+		 *
+		 * @return the string
+		 */
 		@Override
 		public String toString() {
 			return "Range [min=" + min + ", max=" + max + "]";
@@ -607,21 +1033,47 @@ public class Plot {
 		
 	}
 
+	/**
+	 * Axis opts.
+	 *
+	 * @return the axis options
+	 */
 	public static AxisOptions axisOpts() {
 		return new AxisOptions();
 	}
 	
+	/**
+	 * The Class AxisOptions.
+	 */
 	public static class AxisOptions {
 		
+		/** The format. */
 		private AxisFormat format = AxisFormat.NUMBER;
+		
+		/** The dynamic range. */
 		private boolean dynamicRange = true;
+		
+		/** The range. */
 		private Range range;
 		
+		/**
+		 * Format.
+		 *
+		 * @param format the format
+		 * @return the axis options
+		 */
 		public AxisOptions format(AxisFormat format) {
 			this.format = format;
 			return this;
 		}
 
+		/**
+		 * Range.
+		 *
+		 * @param min the min
+		 * @param max the max
+		 * @return the axis options
+		 */
 		public AxisOptions range(double min, double max) {
 			this.range = new Range(min, max);
 			this.dynamicRange = false;
@@ -630,19 +1082,40 @@ public class Plot {
 
 	}
 	
+	/**
+	 * The Class Axis.
+	 */
 	private class Axis {
 
+		/** The name. */
 		private String name;
+		
+		/** The opts. */
 		private AxisOptions opts = new AxisOptions();
+		
+		/** The label rect. */
 		private Rectangle2D labelRect;
+		
+		/** The labels. */
 		private String[] labels;
 
+		/**
+		 * Instantiates a new axis.
+		 *
+		 * @param name the name
+		 * @param opts the opts
+		 */
 		public Axis(String name, AxisOptions opts) {
 			this.name = name;
 			if (opts != null)
 				this.opts = opts;
 		}
 
+		/**
+		 * To string.
+		 *
+		 * @return the string
+		 */
 		@Override
 		public String toString() {
 			return "Axis [name=" + name + ", opts=" + opts + "]";
@@ -650,75 +1123,171 @@ public class Plot {
 		
 	}
 	
+	/**
+	 * Series opts.
+	 *
+	 * @return the data series options
+	 */
 	public static DataSeriesOptions seriesOpts() {
 		return new DataSeriesOptions();
 	}
 	
+	/**
+	 * The Class DataSeriesOptions.
+	 */
 	public static class DataSeriesOptions {
 		
+		/** The series color. */
 		private Color seriesColor = Color.BLUE;
+		
+		/** The line. */
 		private Line line = Line.SOLID;
+		
+		/** The line width. */
 		private int lineWidth = 2;
+		
+		/** The line dash. */
 		private float[] lineDash = new float[] { 3.0f, 3.0f };
+		
+		/** The marker. */
 		private Marker marker = Marker.NONE;
+		
+		/** The marker size. */
 		private int markerSize = 10;
+		
+		/** The marker color. */
 		private Color markerColor = Color.WHITE;
+		
+		/** The area color. */
 		private Color areaColor = null;
+		
+		/** The x axis name. */
 		private String xAxisName;
+		
+		/** The y axis name. */
 		private String yAxisName;
+		
+		/** The x axis. */
 		private Axis xAxis;
+		
+		/** The y axis. */
 		private Axis yAxis;
 
+		/**
+		 * Color.
+		 *
+		 * @param seriesColor the series color
+		 * @return the data series options
+		 */
 		public DataSeriesOptions color(Color seriesColor) {
 			this.seriesColor = seriesColor;
 			return this;
 		}
 		
+		/**
+		 * Line.
+		 *
+		 * @param line the line
+		 * @return the data series options
+		 */
 		public DataSeriesOptions line(Line line) {
 			this.line = line;
 			return this;
 		}
 
+		/**
+		 * Line width.
+		 *
+		 * @param width the width
+		 * @return the data series options
+		 */
 		public DataSeriesOptions lineWidth(int width) {
 			this.lineWidth = width;
 			return this;
 		}
 
+		/**
+		 * Line dash.
+		 *
+		 * @param dash the dash
+		 * @return the data series options
+		 */
 		public DataSeriesOptions lineDash(float[] dash) {
 			this.lineDash = dash;
 			return this;
 		}
 		
+		/**
+		 * Marker.
+		 *
+		 * @param marker the marker
+		 * @return the data series options
+		 */
 		public DataSeriesOptions marker(Marker marker) {
 			this.marker = marker;
 			return this;
 		}
 
+		/**
+		 * Marker size.
+		 *
+		 * @param markerSize the marker size
+		 * @return the data series options
+		 */
 		public DataSeriesOptions markerSize(int markerSize) {
 			this.markerSize = markerSize;
 			return this;
 		}
 		
+		/**
+		 * Marker color.
+		 *
+		 * @param color the color
+		 * @return the data series options
+		 */
 		public DataSeriesOptions markerColor(Color color) {
 			this.markerColor = color;
 			return this;
 		}
 		
+		/**
+		 * Area color.
+		 *
+		 * @param color the color
+		 * @return the data series options
+		 */
 		public DataSeriesOptions areaColor(Color color) {
 			this.areaColor = color;
 			return this;
 		}
 		
+		/**
+		 * X axis.
+		 *
+		 * @param name the name
+		 * @return the data series options
+		 */
 		public DataSeriesOptions xAxis(String name) {
 			this.xAxisName = name;
 			return this;
 		}
 
+		/**
+		 * Y axis.
+		 *
+		 * @param name the name
+		 * @return the data series options
+		 */
 		public DataSeriesOptions yAxis(String name) {
 			this.yAxisName = name;
 			return this;
 		}
 
+		/**
+		 * Sets the plot.
+		 *
+		 * @param plot the new plot
+		 */
 		private void setPlot(Plot plot) {
 			if (plot != null)
 				this.xAxis = plot.xAxes.get(xAxisName);			
@@ -728,25 +1297,57 @@ public class Plot {
 		
 	}
 	
+	/**
+	 * Data.
+	 *
+	 * @return the data
+	 */
 	public static Data data() {
 		return new Data();
 	}
 	
+	/**
+	 * The Class Data.
+	 */
 	public static class Data {
 		
+		/** The x 1. */
 		private double[] x1;
+		
+		/** The y 1. */
 		private double[] y1;
+		
+		/** The x 2. */
 		private List<Double> x2;
+		
+		/** The y 2. */
 		private List<Double> y2;
 		
+		/**
+		 * Instantiates a new data.
+		 */
 		private Data() {}
 		
+		/**
+		 * Xy.
+		 *
+		 * @param x the x
+		 * @param y the y
+		 * @return the data
+		 */
 		public Data xy(double[] x, double[] y) {
 			this.x1 = x;
 			this.y1 = y;
 			return this;
 		}
 		
+		/**
+		 * Xy.
+		 *
+		 * @param x the x
+		 * @param y the y
+		 * @return the data
+		 */
 		public Data xy(double x, double y) {
 			if (this.x2 == null || this.y2 == null) {
 				this.x2 = new ArrayList<Double>(10);
@@ -757,12 +1358,24 @@ public class Plot {
 			return this;
 		}
 		
+		/**
+		 * Xy.
+		 *
+		 * @param x the x
+		 * @param y the y
+		 * @return the data
+		 */
 		public Data xy(List<Double> x, List<Double> y) {
 			this.x2 = x;
 			this.y2 = y;
 			return this;
 		}
 		
+		/**
+		 * Size.
+		 *
+		 * @return the int
+		 */
 		public int size() {
 			if (x1 != null)
 				return x1.length;
@@ -771,6 +1384,12 @@ public class Plot {
 			return 0;
 		}
 
+		/**
+		 * X.
+		 *
+		 * @param i the i
+		 * @return the double
+		 */
 		public double x(int i) {
 			if (x1 != null)
 				return x1[i];
@@ -779,6 +1398,12 @@ public class Plot {
 			return 0;
 		}
 
+		/**
+		 * Y.
+		 *
+		 * @param i the i
+		 * @return the double
+		 */
 		public double y(int i) {
 			if (y1 != null)
 				return y1[i];
@@ -789,13 +1414,30 @@ public class Plot {
 
 	}
 	
+	/**
+	 * The Class DataSeries.
+	 */
 	public class DataSeries {
 
+		/** The name. */
 		private String name;
+		
+		/** The name with axes. */
 		private String nameWithAxes;
+		
+		/** The opts. */
 		private DataSeriesOptions opts = new DataSeriesOptions();
+		
+		/** The data. */
 		private Data data;
 		
+		/**
+		 * Instantiates a new data series.
+		 *
+		 * @param name the name
+		 * @param data the data
+		 * @param opts the opts
+		 */
 		public DataSeries(String name, Data data, DataSeriesOptions opts) {
 			if (opts != null)
 				this.opts = opts;
@@ -805,13 +1447,24 @@ public class Plot {
 				this.data = data();
 		}
 		
+		/**
+		 * Clear.
+		 */
 		public void clear() {
 		}
 
+		/**
+		 * Adds the axes to name.
+		 */
 		private void addAxesToName() {
 			this.nameWithAxes = this.name + " (" + opts.yAxis.name +	"/" + opts.xAxis.name + ")";
 		}
 		
+		/**
+		 * X range.
+		 *
+		 * @return the range
+		 */
 		private Range xRange() {
 			Range range = new Range(0, 0);
 			if (data != null && data.size() > 0) {
@@ -826,6 +1479,11 @@ public class Plot {
 			return range;
 		}
 		
+		/**
+		 * Y range.
+		 *
+		 * @return the range
+		 */
 		private Range yRange() {
 			Range range = new Range(0, 0);
 			if (data != null && data.size() > 0) {
@@ -840,6 +1498,11 @@ public class Plot {
 			return range;
 		}
 		
+		/**
+		 * Draw.
+		 *
+		 * @param g the g
+		 */
 		private void draw(Graphics2D g) {
 			g.setClip(plotArea.plotClipRect);
 			if (data != null) {
@@ -877,10 +1540,25 @@ public class Plot {
 			}
 		}
 
+		/**
+		 * Gets the diag marker size.
+		 *
+		 * @return the diag marker size
+		 */
 		private int getDiagMarkerSize() {
 			return (int) Math.round(Math.sqrt(2 * opts.markerSize * opts.markerSize));
 		}
 		
+		/**
+		 * Fill area.
+		 *
+		 * @param g the g
+		 * @param ix1 the ix 1
+		 * @param iy1 the iy 1
+		 * @param ix2 the ix 2
+		 * @param iy2 the iy 2
+		 * @param iy3 the iy 3
+		 */
 		private void fillArea(Graphics2D g, int ix1, int iy1, int ix2, int iy2, int iy3) {
 			if (opts.areaColor != null) {
 				g.setColor(opts.areaColor);
@@ -892,6 +1570,15 @@ public class Plot {
 			}			
 		}
 		
+		/**
+		 * Draw line.
+		 *
+		 * @param g the g
+		 * @param ix1 the ix 1
+		 * @param iy1 the iy 1
+		 * @param ix2 the ix 2
+		 * @param iy2 the iy 2
+		 */
 		private void drawLine(Graphics2D g, int ix1, int iy1, int ix2, int iy2) {
 			if (opts.line != Line.NONE) {
 				g.setColor(opts.seriesColor);
@@ -900,6 +1587,11 @@ public class Plot {
 			}
 		}
 
+		/**
+		 * Sets the stroke.
+		 *
+		 * @param g the new stroke
+		 */
 		private void setStroke(Graphics2D g) {
 			switch (opts.line) {
 			case SOLID: 
@@ -913,6 +1605,15 @@ public class Plot {
 			}
 		}
 			
+		/**
+		 * Draw marker.
+		 *
+		 * @param g the g
+		 * @param x2 the x 2
+		 * @param y2 the y 2
+		 * @param x3 the x 3
+		 * @param y3 the y 3
+		 */
 		private void drawMarker(Graphics2D g, int x2, int y2, int x3, int y3) {
 			int halfMarkerSize = opts.markerSize / 2;
 			int halfDiagMarkerSize =  getDiagMarkerSize() / 2;
@@ -920,6 +1621,17 @@ public class Plot {
 			drawMarker(g, halfMarkerSize, halfDiagMarkerSize, x2, y2, x3, y3);
 		}
 		
+		/**
+		 * Draw marker.
+		 *
+		 * @param g the g
+		 * @param halfMarkerSize the half marker size
+		 * @param halfDiagMarkerSize the half diag marker size
+		 * @param x2 the x 2
+		 * @param y2 the y 2
+		 * @param x3 the x 3
+		 * @param y3 the y 3
+		 */
 		private void drawMarker(Graphics2D g, int halfMarkerSize, int halfDiagMarkerSize, double x2, double y2, double x3, double y3) {
 			switch (opts.marker) {
 			case CIRCLE:
@@ -960,6 +1672,16 @@ public class Plot {
 
 	}
 	
+	/**
+	 * Draw label.
+	 *
+	 * @param g the g
+	 * @param s the s
+	 * @param x the x
+	 * @param y the y
+	 * @param hAlign the h align
+	 * @param vAlign the v align
+	 */
 	private static void drawLabel(Graphics2D g, String s, int x, int y, HorizAlign hAlign, VertAlign vAlign) {
 		FontMetrics fm = g.getFontMetrics();
 		Rectangle2D rect = fm.getStringBounds(s, g);
@@ -979,6 +1701,13 @@ public class Plot {
 		g.drawString(s, x, y);
 	}
 	
+	/**
+	 * Format double.
+	 *
+	 * @param d the d
+	 * @param format the format
+	 * @return the string
+	 */
 	public static String formatDouble(double d, AxisFormat format) {
 		switch (format) {
 		case TIME_HM: return String.format("%tR", new java.util.Date((long) d));
@@ -992,6 +1721,13 @@ public class Plot {
 		}
 	}
 
+	/**
+	 * Format double as number.
+	 *
+	 * @param d the d
+	 * @param useKGM the use KGM
+	 * @return the string
+	 */
 	private static String formatDoubleAsNumber(double d, boolean useKGM) {
 		if (useKGM && d > 1000 && d < 1000000000000l) {
 			long[] numbers = new long[] { 1000l, 1000000l, 1000000000l };
@@ -1013,15 +1749,37 @@ public class Plot {
 			return String.format("%1$.3G", d);
 	}
 	
+	/**
+	 * X 2 x.
+	 *
+	 * @param x the x
+	 * @param xr1 the xr 1
+	 * @param xr2 the xr 2
+	 * @return the double
+	 */
 	private static double x2x(double x, Range xr1, Range xr2) {
 		return xr1.diff == 0 ? xr2.min + xr2.diff / 2 : xr2.min + (x - xr1.min) / xr1.diff * xr2.diff;
 	}
 	
+	/**
+	 * Y 2 y.
+	 *
+	 * @param x the x
+	 * @param xr1 the xr 1
+	 * @param xr2 the xr 2
+	 * @return the double
+	 */
 	// y axis is reverse in Graphics
 	private static double y2y(double x, Range xr1, Range xr2) {
 		return xr1.diff == 0 ? xr2.min + xr2.diff / 2 : xr2.max - (x - xr1.min) / xr1.diff * xr2.diff;
 	}
 
+	/**
+	 * To int.
+	 *
+	 * @param d the d
+	 * @return the int
+	 */
 	private static int toInt(double d) {
 		return (int) Math.round(d);
 	}

@@ -4,8 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class QuadraticFunction.
+ */
 class QuadraticFunction {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		velo.ladaalpha.fields.math.QuadraticFunction qf = new velo.ladaalpha.fields.math.QuadraticFunction(-4, 3, 1);

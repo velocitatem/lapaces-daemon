@@ -13,8 +13,15 @@ import resources.ResourceLoader;
 import velo.ladaalpha.misc.SystemCommand;
 import velo.ladealpha.fields.services.ResourceFileLoader;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ResourceLoading.
+ */
 class ResourceLoading {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		

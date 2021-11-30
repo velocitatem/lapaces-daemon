@@ -8,6 +8,7 @@ import velo.ladaalpha.fields.astronomy.celestial_systems.SystemAlpha;
 import velo.ladaalpha.fields.math.LinearFunction;
 
 
+// TODO: Auto-generated Javadoc
 class IModInterp {
 	public static Object compute(IMod module, int method, Object[] pass) {
 		switch(method) {
@@ -21,8 +22,16 @@ class IModInterp {
 	}
 }
 
+/**
+ * The Class Main.
+ */
 public class Main {
 
+	/**
+	 * Prompt.
+	 *
+	 * @return the string
+	 */
 	private static String prompt() {
 		Scanner myObj = new Scanner(System.in);
 		System.out.print("\n lade> ");
@@ -30,10 +39,24 @@ public class Main {
 		return choice;
 	};
 	 
+	/**
+	 * The Interface mthd.
+	 */
 	interface mthd {
+		
+		/**
+		 * Res.
+		 *
+		 * @return the object
+		 */
 		Object res();
 	}
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		
 		

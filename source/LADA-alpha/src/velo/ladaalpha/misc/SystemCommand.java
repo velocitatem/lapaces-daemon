@@ -4,8 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SystemCommand.
+ */
 public class SystemCommand {
 
+	/**
+	 * Run SV.
+	 *
+	 * @param command the command
+	 * @return the string
+	 */
 	public static String runSV(String command) {
 		String s = null;
 		StringBuilder sb = new StringBuilder();
@@ -36,6 +46,11 @@ public class SystemCommand {
 		return sb.toString();
 	}
 
+	/**
+	 * Run.
+	 *
+	 * @param command the command
+	 */
 	public static void run(String command) {
 		String s = null;
 

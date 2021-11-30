@@ -6,8 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.fields.astronomy.navigation.Moment;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JulianDayTesting.
+ */
 class JulianDayTesting {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		Moment moment = new Moment(1957, 10, 4, 19, 29, 0, 0);
