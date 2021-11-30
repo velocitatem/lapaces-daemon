@@ -93,7 +93,17 @@ public class Commands {
 		}
 		if(focus!=null) {
 			Object o = focus.fetch(oo);
-			System.out.println(focus.stringify(o));
+			if(Arrays.asList(inVec).contains("|")) {
+				String pc = inVec[Arrays.asList(inVec).indexOf("|")+1];
+				switch(pc) {
+				case "plot":
+					focus.plot(o);
+					break;
+				}
+			}
+			else {
+				System.out.println(focus.stringify(o));				
+			}
 		}
 		else return;
 	}
