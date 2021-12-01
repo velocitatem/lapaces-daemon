@@ -62,7 +62,7 @@ public class Event {
 	 */
 	@Override
 	public String toString() {
-		return "cos( 1/" + day_freq + "x + " + sigma + " π) + 1 + " + shift;
+		return "cos( 1/" + day_freq + "x + " + sigma + " ??) + 1 + " + shift;
 	}
 
 	/**

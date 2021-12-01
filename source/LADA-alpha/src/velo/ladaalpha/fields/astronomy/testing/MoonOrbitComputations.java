@@ -6,8 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.fields.astronomy.celestial_systems.SystemAlpha;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MoonOrbitComputations.
+ */
 class MoonOrbitComputations {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		SystemAlpha sysA = new SystemAlpha();

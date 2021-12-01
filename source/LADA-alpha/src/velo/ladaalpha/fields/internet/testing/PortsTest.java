@@ -9,8 +9,15 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.fields.internet.Internet;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PortsTest.
+ */
 class PortsTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		ArrayList<Integer> l = Internet.scanPorts("10.0.1.101");

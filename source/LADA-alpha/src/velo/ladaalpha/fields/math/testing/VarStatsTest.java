@@ -8,8 +8,15 @@ import velo.ladaalpha.fields.math.stats.OneVarStats;
 import velo.ladaalpha.fields.math.stats.TwoVarStats;
 import velo.ladaalpha.misc.MkArray;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class VarStatsTest.
+ */
 class VarStatsTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		double[] arr = {0.7071, 0.866, 1.7321, 0.5, 2};
@@ -23,6 +30,9 @@ class VarStatsTest {
 		}
 	}
 	
+	/**
+	 * Test 2.
+	 */
 	@Test
 	void test2() {
 		double[] x = MkArray.IncrementalDoubleArray(1, 5);

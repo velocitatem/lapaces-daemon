@@ -8,8 +8,15 @@ import velo.ladaalpha.fields.economy.supplyANDdemand.Demand;
 import velo.ladaalpha.fields.economy.supplyANDdemand.Supply;
 import velo.ladaalpha.fields.economy.supplyANDdemand.SupplyAndDemandSystem;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class supplyAndDemandTesting.
+ */
 class supplyAndDemandTesting {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		Supply supply = new Supply(0, 100, 2, 600);

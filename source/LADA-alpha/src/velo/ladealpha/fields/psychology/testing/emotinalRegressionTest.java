@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.psychology.behaviour.prediction.EmotionalRegression;
 import velo.ladaalpha.fields.psychology.personality.Profile;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class emotinalRegressionTest.
+ */
 class emotinalRegressionTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		Profile profile = new Profile();

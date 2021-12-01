@@ -1,5 +1,6 @@
 package velo.ladaalpha.fields.math.stats;
 
+// TODO: Auto-generated Javadoc
 /**
 *
 *This class contains routines to calculate the
@@ -14,25 +15,22 @@ package velo.ladaalpha.fields.math.stats;
 public class CDF_Normal extends Object {
 
 /**
-*
-*This method calculates the normal cdf inverse function.
-*<p>
-*Let PHI(x) be the normal cdf.  Suppose that Q calculates 
-*1.0 - PHI(x), and that QINV calculates QINV(p) for p in (0.0,.5].
-*Then for p .le. .5, x = PHIINV(p) = -QINV(p).
-*For p .gt. .5, x = PHIINV(p) = QINV(1.0 - p).
-*The formula for approximating QINV is taken from Abramowitz and Stegun,
-*Handbook of Mathematical Functions, Dover, 9th printing,
-*formula 26.2.3, page 933.  The error in x is claimed to
-*be less than 4.5e-4 in absolute value.
-*
-*@param   p    p must lie between 0 and 1.  xnormi returns 
-*              the normal cdf inverse evaluated at p.
-*
-*@author Steve Verrill 
-*@version .5 --- June 7, 1996
-*
-*/
+ * This method calculates the normal cdf inverse function.
+ * <p>
+ * Let PHI(x) be the normal cdf.  Suppose that Q calculates 
+ * 1.0 - PHI(x), and that QINV calculates QINV(p) for p in (0.0,.5].
+ * Then for p .le. .5, x = PHIINV(p) = -QINV(p).
+ * For p .gt. .5, x = PHIINV(p) = QINV(1.0 - p).
+ * The formula for approximating QINV is taken from Abramowitz and Stegun,
+ * Handbook of Mathematical Functions, Dover, 9th printing,
+ * formula 26.2.3, page 933.  The error in x is claimed to
+ * be less than 4.5e-4 in absolute value.
+ *
+ * @author Steve Verrill
+ * @version .5 --- June 7, 1996
+ * @param p the p
+ * @return the double
+ */
 
 //  FIX: Eventually I should build in a check that p lies in (0,1)
 
@@ -84,27 +82,24 @@ public class CDF_Normal extends Object {
 
 
 /**
-*
-*This method calculates the normal cumulative distribution function.
-*<p>
-*It is based upon algorithm 5666 for the error function, from:<p>
-*<pre>
-*       Hart, J.F. et al, 'Computer Approximations', Wiley 1968
-*</pre>
-*<p>
-*The FORTRAN programmer was Alan Miller.  The documentation
-*in the FORTRAN code claims that the function is "accurate
-*to 1.e-15."<p>
-*Steve Verrill
-*translated the FORTRAN code (the March 30, 1986 version)
-*into Java.  This translation was performed on January 10, 2001.
-*
-*@param   z   The method returns the value of the normal
-*             cumulative distribution function at z.
-*
-*@version .5 --- January 10, 2001
-*
-*/
+ * This method calculates the normal cumulative distribution function.
+ * <p>
+ * It is based upon algorithm 5666 for the error function, from:<p>
+ * <pre>
+ *       Hart, J.F. et al, 'Computer Approximations', Wiley 1968
+ * </pre>
+ * <p>
+ * The FORTRAN programmer was Alan Miller.  The documentation
+ * in the FORTRAN code claims that the function is "accurate
+ * to 1.e-15."<p>
+ * Steve Verrill
+ * translated the FORTRAN code (the March 30, 1986 version)
+ * into Java.  This translation was performed on January 10, 2001.
+ *
+ * @version .5 --- January 10, 2001
+ * @param z the z
+ * @return the double
+ */
 
 
 /*

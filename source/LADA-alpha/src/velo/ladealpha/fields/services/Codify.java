@@ -51,6 +51,12 @@ public class Codify {
         return (double)o;
 	}
 	
+	/**
+	 * Gets the compiler.
+	 *
+	 * @param equation the equation
+	 * @return the compiler
+	 */
 	public RuntimeCompiler getCompiler(String equation) {
 		
         String classNameA = "FunctionR";

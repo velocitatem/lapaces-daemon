@@ -11,8 +11,13 @@ import velo.ladaalpha.fields.life.Life;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladealpha.fields.services.GnuplotGenerator;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LifeTesting.
+ */
 class LifeTesting {
 
+	/** The secod life. */
 	// sample life model
 	Life life = new Life("Daniel Rosel", new Behavior[] {
 			new Behavior("Waking up", 1, 5.75), new Behavior("Preparing for the day", 2, 5.76, 6.25),
@@ -29,6 +34,9 @@ class LifeTesting {
 			
 	});
 
+	/**
+	 * Odd day behavior.
+	 */
 	@Test
 	void oddDayBehavior() {
 		double probe = 2;
@@ -36,12 +44,18 @@ class LifeTesting {
 				new Behavior("", 2, 24 + 6.25).getEvents()[0].getSigma());
 	}
 
+	/**
+	 * Composite function.
+	 */
 	@Test
 	void compositeFunction() {
 
 		System.out.println(life.getCompositeFunction());
 	}
 
+	/**
+	 * Weekend.
+	 */
 	@Test
 	void weekend() {
 		Life life = new Life("Everyone", new Behavior[] {
@@ -51,11 +65,17 @@ class LifeTesting {
 		
 	}
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		assertEquals("Work end", life.getClosestEvent(1, 18.2).getName());
 	}
 	
+	/**
+	 * Report.
+	 */
 	@Test
 	void report() {
 		
@@ -64,6 +84,9 @@ class LifeTesting {
 	}
 
 	
+	/**
+	 * Code.
+	 */
 	@Test
 	void code() {
 		GnuplotGenerator gg = new GnuplotGenerator();
@@ -72,6 +95,9 @@ class LifeTesting {
 
 	}
 	
+	/**
+	 * Life vector.
+	 */
 	@Test
 	void lifeVector() {
 		System.out.println("V:" +Arrays.toString(life.computeSlopeVector(4).toArray()));

@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.math.LinearFunction;
 import velo.ladaalpha.fields.math.operations.SystemOfLinearFunctions;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LinearFunctionTest.
+ */
 class LinearFunctionTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		LinearFunction y_1 = new LinearFunction(2, -4); 

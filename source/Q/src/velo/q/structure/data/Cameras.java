@@ -10,18 +10,46 @@ import velo.ladaalpha.fields.internet.HttpResponse;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Cameras.
+ *
+ * @author velo
+ */
 public class Cameras extends Source{
+	
+	/**
+	 * Instantiates a new cameras.
+	 */
 	public Cameras() {
 		super(name, data, corePath);
 	}
+	
+	/** The name. */
 	public static String name = "cameras";
+	
+	/** The data. */
 	public static DataPoint[] data = {getCamerasFor()};
+	
+	/** The core path. */
 	public static String corePath = "https://searchapi.earthcam.com/search.php?term=";
+	
+	/**
+	 * Gets the cameras for.
+	 *
+	 * @return the cameras for
+	 */
 	public static DataPoint getCamerasFor() {
 		class camVec extends DataPoint {
+			/**
+			 * 
+			 */
 			public camVec() {
 				super("cameras", new String[] {"location"});				
 			}
+			/**
+			 *
+			 */
 			@Override
 			public Object fetch(Object[] p) {			
 				String queryTerm = (String)p[0];
@@ -36,6 +64,9 @@ public class Cameras extends Source{
 				}
 				return links;
 			}			
+			/**
+			 *
+			 */
 			@Override
 			public String stringify(Object o ) { 
 				ArrayList<String> links = (ArrayList<String>) o;

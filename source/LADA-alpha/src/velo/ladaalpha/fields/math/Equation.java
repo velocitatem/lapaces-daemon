@@ -17,6 +17,7 @@ public class Equation{
 	/** The string form. */
 	private String stringForm;
 	
+	/** The cl. */
 	private Class<?> cl;
 	
 	/**
@@ -46,6 +47,12 @@ public class Equation{
 	
 	
 	
+	/**
+	 * Compute inverse.
+	 *
+	 * @param x the x
+	 * @return the double
+	 */
 	public double computeInverse(double x) {
 		
 		
@@ -53,6 +60,11 @@ public class Equation{
 	}
 	
 	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return stringForm;

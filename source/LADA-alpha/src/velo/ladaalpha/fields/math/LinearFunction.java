@@ -48,6 +48,7 @@ public class LinearFunction {
 	 * @param y1 the y 1
 	 * @param x2 the x 2
 	 * @param y2 the y 2
+	 * @return the linear function
 	 */
 	public LinearFunction BuildFromTwoPoints(double x1, double y1, double x2, double y2) {
 		double MeanRateOfChange = (y2 - y1) / (x2 - x1);

@@ -29,8 +29,9 @@ import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
+// TODO: Auto-generated Javadoc
 /**
- * Utility methods not directly related to the RuntimeCompiler
+ * Utility methods not directly related to the RuntimeCompiler.
  */
 public class MethodInvocationUtils
 {
@@ -107,8 +108,8 @@ public class MethodInvocationUtils
 
     /**
      * Returns whether the given arguments are assignable to the
-     * respective types
-     * 
+     * respective types.
+     *
      * @param types The types
      * @param args The arguments
      * @return Whether the arguments are assignable

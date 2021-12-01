@@ -20,8 +20,17 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.internet.Internet;
 import velo.ladaalpha.fields.internet.crawler.HtmlParser;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CrawlerPrime.
+ */
 class CrawlerPrime {
 
+	/**
+	 * Test.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	@Test
 	void test() throws IOException {
 		// String html =
@@ -35,10 +44,10 @@ class CrawlerPrime {
 		// ii ij ik il im in io ip iq ir is it iu iv iw ix iy iz ja jb dn gv\"
 		// data-selectable-paragraph=\"\">I bought a Raspberry Pi 3 B+ a few years ago
 		// about the time I started learning Rust which was also about when I took OS
-		// dev. I wanted to learn OS development and I’d heard about <a
+		// dev. I wanted to learn OS development and I???d heard about <a
 		// href=\"https://cs140e.sergio.bz/\" class=\"dy ny\" target=\"_blank\"
 		// rel=\"noopener ugc nofollow\">CS140e</a> so I thought it would be relatively
-		// easy. And it has been…<em class=\"lm\"></em></p></section></div>";
+		// easy. And it has been???<em class=\"lm\"></em></p></section></div>";
 		String SRChtml = "<html>\n" + "    <head>\n" + "        <title>My HTML Page</title>\n" + "    </head>\n"
 				+ "    <body>\n" + "        <p style=\"special\">\n" + "            This paragraph has special style\n"
 				+ "        </p>\n" + "        <p>\n" + "            This paragraph is not special\n" + "        </p>\n"
@@ -150,17 +159,43 @@ class CrawlerPrime {
 			openTag(c);
 		}
 	}
+	
+	/**
+	 * The Class Tag.
+	 */
 	class Tag {
+		
+		/** The name. */
 		public String name;
+		
+		/** The body. */
 		public ArrayList<Tag> body;
+		
+		/** The params. */
 		public ArrayList<String[]> params = new ArrayList<String[]>();
+		
+		/** The type. */
 		public int type;
+		
+		/**
+		 * To string.
+		 *
+		 * @return the string
+		 */
 		@Override
 		public String toString() {
 			return name;				
 		}
 	}
+	
+	/** The c. */
 	int c = 0;
+	
+	/**
+	 * Open tag.
+	 *
+	 * @param t the t
+	 */
 	void openTag(Tag t) {
 		if(t.body!=null) {
 			System.out.println(c+ " - " +t.name + " - " + t.body.size());

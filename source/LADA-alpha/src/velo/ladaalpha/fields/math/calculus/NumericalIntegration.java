@@ -2,7 +2,21 @@ package velo.ladaalpha.fields.math.calculus;
 
 import velo.ladaalpha.fields.math.Equation;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NumericalIntegration.
+ */
 public class NumericalIntegration {
+	
+	/**
+	 * Integrate SMPSN.
+	 *
+	 * @param eq the eq
+	 * @param a the a
+	 * @param b the b
+	 * @param n the n
+	 * @return the double
+	 */
 	public static double integrateSMPSN(Equation eq, double a, double b, double n) {
 		int i,z;                                                       
         double h,s;                                                    

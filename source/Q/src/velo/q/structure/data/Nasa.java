@@ -13,11 +13,27 @@ import velo.ladaalpha.fields.internet.HttpResponse;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Nasa.
+ */
 public class Nasa extends Source{
+	
+	/**
+	 * Instantiates a new nasa.
+	 */
 	public Nasa() {
 		super("nasa", new DataPoint[] {SatIMG()}, corePath );
 	}
+	
+	/** The key. */
 	private static String corePath = "https://api.nasa.gov/", key = Credentials.nasa;
+	
+	/**
+	 * Sat IMG.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint SatIMG() {
 		class satimg extends DataPoint {
 			public satimg() {

@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.calculus.NumericalDifferentiation;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EquationFromString.
+ */
 class EquationFromString {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		String eq = "Math.pow(2, x) + 2";

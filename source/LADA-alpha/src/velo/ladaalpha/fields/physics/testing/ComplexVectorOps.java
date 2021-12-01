@@ -6,8 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import velo.ladaalpha.fields.physics.ComplexVector;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ComplexVectorOps.
+ */
 class ComplexVectorOps {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		

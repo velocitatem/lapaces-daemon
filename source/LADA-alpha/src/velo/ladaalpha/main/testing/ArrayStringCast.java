@@ -7,8 +7,15 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ArrayStringCast.
+ */
 class ArrayStringCast {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	void test() {
 		double[] a = {2.5, 6.1};

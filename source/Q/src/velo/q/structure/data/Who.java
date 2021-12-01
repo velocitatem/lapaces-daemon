@@ -20,6 +20,7 @@ import velo.ladaalpha.misc.Plot;
 import velo.q.structure.DataPoint;
 import velo.q.structure.Source;
 
+// TODO: Auto-generated Javadoc
 class WhoIndicatorReport {
 	public String code, name, loc;
 	public JSONArray data;
@@ -34,13 +35,49 @@ class WhoIndicatorReport {
 
 }
 
+/**
+ * The Class Who.
+ */
 public class Who extends Source {
+	
+	/**
+	 * Instantiates a new who.
+	 */
 	public Who() {
 		super("WHO", new DataPoint[] { indicator() }, corePath);
 	}
 
+	/** The core path. */
 	public static String corePath = "https://ghoapi.azureedge.net/";
 
+	
+	public static DataPoint findIndicator() {
+		class findIndicator extends DataPoint {
+			public findIndicator() {
+				super("who-find-indicator", new String[] {"query"});
+			}
+			@Override
+			public Object fetch(Object[] p) {
+				String[] queryVector = new String[p.length];
+				int i = 0 ;
+				for(Object o : p) {
+					queryVector[i] = (String) o;
+					i++;
+				}
+				String query = String.join(" ", queryVector);
+				HttpResponse res = APIreq.GET(corePath+"api/indicator");
+				JSONObject object = res.getJsonBody(); JSONArray data = (JSONArray)object.get("values");
+				return object;
+			}
+		}
+		return new findIndicator();
+	}
+	
+	/**
+	 * Indicator.
+	 *
+	 * @return the data point
+	 */
 	public static DataPoint indicator() {
 		class indicator extends DataPoint {
 			public indicator() {

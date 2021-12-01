@@ -12,10 +12,34 @@ public class Profile {
 			contextual_challenge, curiosity, external_love, courage;
 
 	
+	/**
+	 * Instantiates a new profile.
+	 */
 	public Profile() {
 		
 	}
 	
+	/**
+	 * Instantiates a new profile.
+	 *
+	 * @param contextual_struggle the contextual struggle
+	 * @param contextual_meaning the contextual meaning
+	 * @param expectations the expectations
+	 * @param reality the reality
+	 * @param external_disappointment the external disappointment
+	 * @param responsibility the responsibility
+	 * @param mistrust the mistrust
+	 * @param self_esteem the self esteem
+	 * @param envy the envy
+	 * @param pride the pride
+	 * @param kindness the kindness
+	 * @param powerlessness the powerlessness
+	 * @param contenxtual_skill the contenxtual skill
+	 * @param contextual_challenge the contextual challenge
+	 * @param curiosity the curiosity
+	 * @param external_love the external love
+	 * @param courage the courage
+	 */
 	public Profile(double contextual_struggle, double contextual_meaning, double expectations, double reality,
 			double external_disappointment, double responsibility, double mistrust, double self_esteem, double envy,
 			double pride, double kindness, double powerlessness, double contenxtual_skill, double contextual_challenge,

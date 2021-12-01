@@ -2,10 +2,22 @@ package velo.ladaalpha.fields.linguistics;
 
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class IRSAtranslator.
+ */
 public class IRSAtranslator {
+	
+	/** The numbers. */
 	private static String[] a =  {"Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-Ray", "Yankee", "Zulu"},
 				numbers = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
 	
+	/**
+	 * Convert.
+	 *
+	 * @param msg the msg
+	 * @return the string
+	 */
 	public static String convert(String msg) {
 		if(msg==null) {
 			return null;
