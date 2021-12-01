@@ -45,6 +45,11 @@ public class Modules {
 					}),
 					new Module("sorting", ModuleFunctions.sort())
 			}),
+			new Module("linguistics", new Module[] {
+					new Module("conversion", new Function[] {
+						ModuleFunctions.IRSA()
+					})
+			}),
 			new Module("system", new Module[] {
 					new Module("network", new Function[] {
 						ModuleFunctions.portScan(),
