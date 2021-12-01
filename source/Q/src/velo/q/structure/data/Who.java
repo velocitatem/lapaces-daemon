@@ -50,6 +50,29 @@ public class Who extends Source {
 	/** The core path. */
 	public static String corePath = "https://ghoapi.azureedge.net/";
 
+	
+	public static DataPoint findIndicator() {
+		class findIndicator extends DataPoint {
+			public findIndicator() {
+				super("who-find-indicator", new String[] {"query"});
+			}
+			@Override
+			public Object fetch(Object[] p) {
+				String[] queryVector = new String[p.length];
+				int i = 0 ;
+				for(Object o : p) {
+					queryVector[i] = (String) o;
+					i++;
+				}
+				String query = String.join(" ", queryVector);
+				HttpResponse res = APIreq.GET(corePath+"api/indicator");
+				JSONObject object = res.getJsonBody(); JSONArray data = (JSONArray)object.get("values");
+				return object;
+			}
+		}
+		return new findIndicator();
+	}
+	
 	/**
 	 * Indicator.
 	 *
