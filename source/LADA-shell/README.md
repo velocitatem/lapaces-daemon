@@ -24,24 +24,59 @@ To get started with using commands in the shell, run `help` or simply `-h`. If t
 ## Understanding modules 👾
 To display all currently integrated modules, type `show all` into the prompt, and you will get an output similar to the following:
 ```
-+ computing
- 	+ cryptography
- 	 	- [0]  hashing :: [type, body]
- 	+ sorting
- 	 	- [0]  insertion :: [array]
- 	 	- [1]  bubble :: [array]
-	 	- [2]  selection :: [array]
- 	 	- [3]  merge :: [array]
-+ system
- 	+ network
- 	 	- [0]  port-scan :: [ip]
- 	 	- [1]  device-probe :: [ip]
- 	 	- [2]  scan-network :: [T]	(scan duration proportional to 22600*T (ms))
- 	 	- [3]  ping :: [ip]
- 	 	- [4]  lan-ip :: []
- 	 	- [5]  public-ip :: []
- 	 	- [6]  private-ip :: []
- 	 	- [7]  url-ip :: [url]
+	+ physics
+	 	+ kinematics
+	 	 	- [0]  average-speed :: [distance, time]
+	 	 	- [1]  deltaX :: [v0, v, t]
+	 	+ vectors
+	 	 	- [0]  complex-vector-magnitude :: [ax, ay]
+	 	 	- [1]  complex-vector-theta-degrees :: [ax, ay]
+	 	 	- [2]  complex-vector-from-theta-and-magnitude :: [theta, magnitude]
+	+ math
+	 	+ calculus
+	 	 	- [0]  limit :: [equation, x]
+	 	 	- [1]  differentiation :: [equation, x, order]
+	 	 	- [2]  integration :: [equation, a, b, n]
+	 	 	- [3]  tangen-line :: [equation, x]
+	 	+ operations
+	 	 	- [0]  linear-system-solution :: [m1, b1, m2, b2]
+	 	 	- [1]  factorial :: [a]
+	 	+ stats
+	 	 	- [0]  LSRL :: [x, y]
+	 	 	- [1]  one-var-stats :: [array]
+	 	 	- [2]  z-score :: [x, mu, sigma]
+	 	 	- [3]  probability-distribution-function :: [z-score, direction]
+	 	 	- [4]  prob-sim :: [trials, prob]
+	+ astronomy
+	 	+ navigation
+	 	 	- [0]  get-current-julian-day :: []
+	 	 	- [1]  get-custom-julian-day :: [year, month, day, hour, minute, second, millis]
+	+ computing
+	 	+ cryptography
+	 	 	- [0]  hashing :: [type, body]
+	 	+ sorting
+	 	 	- [0]  insertion :: [array]
+	 	 	- [1]  bubble :: [array]
+	 	 	- [2]  selection :: [array]
+	 	 	- [3]  merge :: [array]
+	+ linguistics
+	 	+ conversion
+	 	 	- [0]  IRSA-parse :: [code]
+	 	+ parsing
+	 	 	- [0]  rm-stopw :: [body]
+	 	 	- [1]  rm-select :: [body, regex]
+	+ system
+	 	+ network
+	 	 	- [0]  port-scan :: [ip]
+	 	 	- [1]  device-probe :: [ip]
+	 	 	- [2]  scan-network :: [T]	(scan duration proportional to 22600*T (ms))
+	 	 	- [3]  ping :: [ip]
+	 	 	- [4]  lan-ip :: []
+	 	 	- [5]  public-ip :: []
+	 	 	- [6]  private-ip :: []
+	 	 	- [7]  url-ip :: [url]
+	 	+ internet
+	 	 	- [0]  get :: [url]
 ```
 You must use modules in their full depth.
 
