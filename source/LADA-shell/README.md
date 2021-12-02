@@ -130,7 +130,7 @@ lada> functions
 	 [6]	private-ip :: []
 	 [7]	url-ip :: [url]
 
-lada> set function 4
+lada> set function=4
 lada> run
 
 	Output: [10.0.1.106, 10.0.1.103]
@@ -140,6 +140,7 @@ lada> run
 ### Help ❓
 You can get the following by running `help` or `-h`. If you are still having issues, makes an issue 🥁.
 ```
+
 Commands:
 	
 	use/load [module]
@@ -153,7 +154,7 @@ Commands:
 		module: Lists submodules in a parent module
 		tell:	Shows all data modules which you can query
 	
-	set [var/function] [val]
+	set [var/function]=[val]
 		var: 		Sets the variable named var to be val
 		function:	Loads a function number val from the current module
 		
@@ -162,6 +163,7 @@ Commands:
 		
 	run [module] [function #] [parameters]
 		Executes a function in module with parameters
+		[parameters]:	Should be in form a=2
 	
 	report
 		Prints a report on the following:
@@ -174,4 +176,5 @@ Commands:
  	
 	SYSTEM
 		if a command does not match any of the above defined, LADE will treat the input as a system command
+
 ```
