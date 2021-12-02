@@ -7,9 +7,12 @@ import java.util.Arrays;
 
 import velo.ladaalpha.fields.astronomy.navigation.Moment;
 import velo.ladaalpha.fields.cryptography.Hashing;
+import velo.ladaalpha.fields.internet.APIreq;
+import velo.ladaalpha.fields.internet.HttpResponse;
 import velo.ladaalpha.fields.internet.Internet;
 import velo.ladaalpha.fields.internet.Target;
 import velo.ladaalpha.fields.linguistics.IRSAtranslator;
+import velo.ladaalpha.fields.linguistics.LinguisticParser;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.LMath;
 import velo.ladaalpha.fields.math.LinearFunction;
@@ -537,5 +540,51 @@ public class ModuleFunctions {
 				return IRSAtranslator.convert(sv);
 			}
 		};
+	}
+	public static Function get() {
+		return new Function("get", new String[] {"url"}) {
+			@Override
+			public Object evaluate(Object[] params) {
+				String path = (String) params[0];
+				return APIreq.GET(path);						
+			}
+			@Override
+			public String stringify(Object o) {
+				StringBuilder sb = new StringBuilder();
+				HttpResponse res = (HttpResponse)o;
+				String[] d = {
+						"Status: "+res.getResponseCode(),
+						"Headers: "+res.getHeaders(),
+						"Body: \n"+res.getBody()
+				};
+				sb.append("\n");
+				for(String s :d) {					
+					sb.append("\t"+s+"\n");
+				}
+				return sb.toString();
+			}
+		};
+	}
+	public static Function removeStopWords() {
+		String n = "rm-stopw"; String[] p = {"body"};
+		return new Function(n, p) {			
+			@Override
+			public Object evaluate(Object[] params) {
+				String body = (String) params[0];
+				return LinguisticParser.removeStopWords(body);
+			}
+		};
+	}
+	
+	public static Function removeAll() {
+		return new Function("rm-select", new String[] {"body", "regex"}) {
+			@Override
+			public Object evaluate(Object[] params) {
+				String body = (String) params[0];
+				String[] query = (String[]) params[1];
+				return LinguisticParser.removeAll(body, query);
+			}
+		};
+		
 	}
 }

@@ -4,13 +4,13 @@ public class Modules {
 	public static Module[] modules = { 
 			new Module("physics", new Module[] {
 					new Module("kinematics", new Function[] { 
-							ModuleFunctions.averageSpeed(), 
-							ModuleFunctions.deltaT() 
+						ModuleFunctions.averageSpeed(), 
+						ModuleFunctions.deltaT() 
 					}),
 					new Module("vectors", new Function[] {
-							ModuleFunctions.complexVectorMagnitude(),
-							ModuleFunctions.complexVectorThetaDegrees(),
-							ModuleFunctions.complexVectorfromParams()
+						ModuleFunctions.complexVectorMagnitude(),
+						ModuleFunctions.complexVectorThetaDegrees(),
+						ModuleFunctions.complexVectorfromParams()
 					})
 			}), 
 			new Module("math", new Module[] { 
@@ -36,7 +36,6 @@ public class Modules {
 					new Module("navigation", new Function[] {
 						ModuleFunctions.julianDay(),
 						ModuleFunctions.julianDay1()
-							
 					})
 			}),
 			new Module("computing", new Module[] {
@@ -48,6 +47,10 @@ public class Modules {
 			new Module("linguistics", new Module[] {
 					new Module("conversion", new Function[] {
 						ModuleFunctions.IRSA()
+					}),
+					new Module("parsing", new Function[] {
+						ModuleFunctions.removeStopWords(),
+						ModuleFunctions.removeAll()
 					})
 			}),
 			new Module("system", new Module[] {
@@ -60,6 +63,9 @@ public class Modules {
 						ModuleFunctions.getPublicIP(),
 						ModuleFunctions.getPrivateIP(),
 						ModuleFunctions.urlIP()
+					}),
+					new Module("internet", new Function[] {
+						ModuleFunctions.get()
 					})
 			})
 			

@@ -40,13 +40,14 @@ public class Commands {
 			}
 			i2 += 1;
 		}
+		blockI = blockI==0?ss.length:blockI;
 		ArrayList<String> pars = new ArrayList<String>();
 		for (int g = blockI; g < ss.length; g += 1) {
 			pars.add(ss[g]);
 		}
 		boolean isopen = false;
 		int lastIndex = 0, i = 0;
-		String build = "";
+		String build = "";		
 		for (String par : pars) {
 			if (isopen) {
 				build += " " + par;
@@ -74,12 +75,16 @@ public class Commands {
 	}
 
 	public static void set(String[] inVec) {
-		String[] sp = inVec[1].split("=");
-		String pass = sp[0];
-		if(sp[1].contains("(") || sp[1].contains(")")) {
-			sp[1] = LinguisticParser.removeAll(sp[1], new String[] {"\\(", "\\)"}); 
+		String[] sp = inVec[1].contains("=")?inVec[1].split("="):null;
+		String pass = sp!=null?sp[0]:null;
+		if(sp!=null) {
+			
+			String v = sp[1]; String[] vs = v.split("");
+			if(vs[0].equals("(") && vs[vs.length-1].equals(")")) {
+				sp[1] = v.substring(1, v.length()-1);
+			}
 		}
-		if (pass.equals("function")) {
+		if (pass !=null && pass.equals("function")) {
 			String fun = sp[1];
 			int fs = -1;
 			int i = 0;
@@ -220,7 +225,7 @@ public class Commands {
 
 				Main.forward(module);
 				Main.forward(fun);
-				if (inVec.length >= 3) {
+				if (inVec.length > 3) {
 					for (int i = 3; i < inVec.length; i += 1) {
 						Main.forward("set " + inVec[i]);
 					}
