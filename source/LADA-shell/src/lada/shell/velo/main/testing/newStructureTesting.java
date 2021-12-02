@@ -10,7 +10,7 @@ class newStructureTesting {
 
 	@Test
 	void test() {
-		Main.forward("run computing/sorting 0 array=arr[1,2,4,8,2]");
+		Main.forward("run computing/cryptography 0 type=sha256 body=(hello world)");
 	}
 
 }

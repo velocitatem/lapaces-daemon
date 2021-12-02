@@ -220,10 +220,9 @@ public class Commands {
 
 				Main.forward(module);
 				Main.forward(fun);
-				if (inVec.length > 3) {
-					ArrayList<String> parrs = Commands.parseCommand(in.substring(in.indexOf(inVec[3])));
-					for (int i = 0; i < parrs.size(); i += 2) {
-						Main.forward("set " + parrs.get(i));
+				if (inVec.length >= 3) {
+					for (int i = 3; i < inVec.length; i += 1) {
+						Main.forward("set " + inVec[i]);
 					}
 				}
 
