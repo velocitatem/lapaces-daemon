@@ -54,7 +54,7 @@ class VariablePassingv2 {
 		Object[] buff = new Object[24];
 		String[] commands = { "set code=(something)", "set data=(This is something new)",
 				"run this/module 2 data=(some data) code=752h2" };
-		ArrayList<String> O = Commands.parseCommand(commands[2]);
+		ArrayList<String> O = Commands.parseCommand("run astronomy/navigation 0");
 		System.out.println(O);
 	}
 

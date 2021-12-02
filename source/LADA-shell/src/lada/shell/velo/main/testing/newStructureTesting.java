@@ -10,7 +10,7 @@ class newStructureTesting {
 
 	@Test
 	void test() {
-		Main.forward("run computing/cryptography 0 type=sha256 body=(hello world)");
+		Main.forward("run astronomy/navigation 0");
 	}
 
 }
