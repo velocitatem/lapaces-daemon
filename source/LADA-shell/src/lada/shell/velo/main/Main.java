@@ -29,9 +29,12 @@ public class Main {
 	public static String[] curCom = {};
 	
 	public static void forward(String in) {
-		String[] inVec = in.split(" ");
+		ArrayList<String> vec = Commands.parseCommand(in);		
+		String[] inVec = new String[vec.size()]; int i = 0;
+		for(String s : vec) {if(!s.equals("")&&!s.equals(" ")) {inVec[i] = s;i+=1; }}
 		curCom = inVec;
 		String cmd = inVec[0], pass = inVec.length > 1 ? inVec[1] : null;
+		if(cmd==null) return;
 		switch (cmd) {
 		case "exit":
 		case "bye":
@@ -55,7 +58,7 @@ public class Main {
 			Commands.run(inVec, pass, in);
 			break;
 		case "set":
-			Commands.set(inVec, pass);
+			Commands.set(inVec);
 			break;
 		case "report":
 			Commands.report();

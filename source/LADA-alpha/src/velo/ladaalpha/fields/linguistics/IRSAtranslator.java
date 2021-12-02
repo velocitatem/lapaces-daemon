@@ -32,7 +32,7 @@ public class IRSAtranslator {
 			catch (Exception e) {
 				if(i[f].equals(".")) {
 					r[f] = "Decimal";
-				}
+				}	
 				else if (!i[f].equals(" ")) {
 					
 					int p = 0;

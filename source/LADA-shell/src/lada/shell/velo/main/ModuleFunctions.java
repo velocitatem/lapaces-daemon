@@ -9,6 +9,7 @@ import velo.ladaalpha.fields.astronomy.navigation.Moment;
 import velo.ladaalpha.fields.cryptography.Hashing;
 import velo.ladaalpha.fields.internet.Internet;
 import velo.ladaalpha.fields.internet.Target;
+import velo.ladaalpha.fields.linguistics.IRSAtranslator;
 import velo.ladaalpha.fields.math.Equation;
 import velo.ladaalpha.fields.math.LMath;
 import velo.ladaalpha.fields.math.LinearFunction;
@@ -525,5 +526,16 @@ public class ModuleFunctions {
 			}
 		}
 		return new f();
+	}
+	public static Function IRSA() {
+		return new Function("IRSA-parse", new String[] {"code"}) {
+			@Override
+			public Object evaluate(Object[] params) {
+				String[] v = new String[params.length]; int i = 0;
+				for(Object o : params) {v[i] = (String)o; i++;};
+				String sv = String.join(" ", v).trim();
+				return IRSAtranslator.convert(sv);
+			}
+		};
 	}
 }

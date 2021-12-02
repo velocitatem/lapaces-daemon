@@ -15,6 +15,14 @@ public class LinguisticParser {
 	
 	/** The stop words list. */
 	private static List<String> stopWordsList = Arrays.asList(stopWords);	
+
+	
+	public static String removeAll(String s, String[] tr) {
+		for(String t : tr) {
+			s = s.replaceAll(t, "");
+		}
+		return s;
+	}
 	
 	/**
 	 * Clean text.
