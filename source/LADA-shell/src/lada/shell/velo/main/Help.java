@@ -16,7 +16,7 @@ public class Help {
 				"		module: Lists submodules in a parent module\n" + 
 				"		tell:	Shows all data modules which you can query\n" + 
 				"	\n" + 
-				"	set [var/function] [val]\n" + 
+				"	set [var/function]=[val]\n" + 
 				"		var: 		Sets the variable named var to be val\n" + 
 				"		function:	Loads a function number val from the current module\n" + 
 				"		\n" + 
@@ -25,6 +25,7 @@ public class Help {
 				"		\n" + 
 				"	run [module] [function #] [parameters]\n" + 
 				"		Executes a function in module with parameters\n" + 
+				"		[parameters]:	Should be in form a=2\n" + 
 				"	\n" + 
 				"	report\n" + 
 				"		Prints a report on the following:\n" + 
