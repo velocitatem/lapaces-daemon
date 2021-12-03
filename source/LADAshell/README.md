@@ -8,7 +8,7 @@ LADA Shell is an interactive cli, used to access modules integrated in the LADA 
 
 Prerequisites `jre-openjdk` `nodejs`
 
-1. `curl -L https://raw.githubusercontent.com/danalves24com/lapaces-daemon/main/source/LADA-shell/.install_lada.sh -o .install_lada.sh`
+1. `curl -L https://raw.githubusercontent.com/danalves24com/lapaces-daemon/main/source/LADAshell/.install_lada.sh -o .install_lada.sh`
 3. `sudo bash .install_lada.sh`
 4. `lada` and you should be put into the LADA 🐚 which should look like the following:
 
