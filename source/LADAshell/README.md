@@ -15,7 +15,7 @@ Prerequisites `jre-openjdk` `nodejs`
 ```
 lada>
 ```
-5. Setup the `tell` command [here](../Q)
+5. Setup the `tell` command [here](../LADAq)
 ### Windows
 
 
