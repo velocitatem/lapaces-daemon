@@ -1,2 +1,0 @@
-#!/bin/bash
-java -jar /bin/.lada/lada.jar
