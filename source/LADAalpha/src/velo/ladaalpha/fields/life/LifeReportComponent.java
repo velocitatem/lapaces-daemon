@@ -1,113 +1,118 @@
 package velo.ladaalpha.fields.life;
 
 // TODO: Auto-generated Javadoc
+
 /**
  * The Class LifeReportComponent.
  */
 public class LifeReportComponent {
-	
-	/** The event. */
-	private Event event;
-	
-	/** The minute. */
-	private double day, hour, minute;
 
-	/**
-	 * Instantiates a new life report component.
-	 *
-	 * @param event the event
-	 * @param day the day
-	 * @param hour the hour
-	 * @param minute the minute
-	 */
-	public LifeReportComponent(Event event, double day, double hour, double minute) {
-		super();
-		this.event = event;
-		this.day = day;
-		this.hour = hour;
-		this.minute = minute;
-	}
+    /**
+     * The event.
+     */
+    private Event event;
 
-	/**
-	 * To string.
-	 *
-	 * @return the string
-	 */
-	@Override
-	public String toString() {
-		return "D-" + (int) day + " H-" + (int) hour + " M-" + (int) minute + "\t \t" + event.getName();
-	}
+    /**
+     * The minute.
+     */
+    private double day, hour, minute;
 
-	/**
-	 * Gets the event.
-	 *
-	 * @return the event
-	 */
-	public Event getEvent() {
-		return event;
-	}
+    /**
+     * Instantiates a new life report component.
+     *
+     * @param event  the event
+     * @param day    the day
+     * @param hour   the hour
+     * @param minute the minute
+     */
+    public LifeReportComponent(Event event, double day, double hour, double minute) {
+        super();
+        this.event = event;
+        this.day = day;
+        this.hour = hour;
+        this.minute = minute;
+    }
 
-	/**
-	 * Sets the event.
-	 *
-	 * @param event the event to set
-	 */
-	public void setEvent(Event event) {
-		this.event = event;
-	}
+    /**
+     * To string.
+     *
+     * @return the string
+     */
+    @Override
+    public String toString() {
+        return "D-" + (int) day + " H-" + (int) hour + " M-" + (int) minute + "\t \t" + event.getName();
+    }
 
-	/**
-	 * Gets the day.
-	 *
-	 * @return the day
-	 */
-	public double getDay() {
-		return day;
-	}
+    /**
+     * Gets the event.
+     *
+     * @return the event
+     */
+    public Event getEvent() {
+        return event;
+    }
 
-	/**
-	 * Sets the day.
-	 *
-	 * @param day the day to set
-	 */
-	public void setDay(double day) {
-		this.day = day;
-	}
+    /**
+     * Sets the event.
+     *
+     * @param event the event to set
+     */
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 
-	/**
-	 * Gets the hour.
-	 *
-	 * @return the hour
-	 */
-	public double getHour() {
-		return hour;
-	}
+    /**
+     * Gets the day.
+     *
+     * @return the day
+     */
+    public double getDay() {
+        return day;
+    }
 
-	/**
-	 * Sets the hour.
-	 *
-	 * @param hour the hour to set
-	 */
-	public void setHour(double hour) {
-		this.hour = hour;
-	}
+    /**
+     * Sets the day.
+     *
+     * @param day the day to set
+     */
+    public void setDay(double day) {
+        this.day = day;
+    }
 
-	/**
-	 * Gets the minute.
-	 *
-	 * @return the minute
-	 */
-	public double getMinute() {
-		return minute;
-	}
+    /**
+     * Gets the hour.
+     *
+     * @return the hour
+     */
+    public double getHour() {
+        return hour;
+    }
 
-	/**
-	 * Sets the minute.
-	 *
-	 * @param minute the minute to set
-	 */
-	public void setMinute(double minute) {
-		this.minute = minute;
-	}
+    /**
+     * Sets the hour.
+     *
+     * @param hour the hour to set
+     */
+    public void setHour(double hour) {
+        this.hour = hour;
+    }
+
+    /**
+     * Gets the minute.
+     *
+     * @return the minute
+     */
+    public double getMinute() {
+        return minute;
+    }
+
+    /**
+     * Sets the minute.
+     *
+     * @param minute the minute to set
+     */
+    public void setMinute(double minute) {
+        this.minute = minute;
+    }
 
 }

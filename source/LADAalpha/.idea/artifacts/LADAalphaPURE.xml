@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LADAalphaPURE">
+    <output-path>$PROJECT_DIR$/out/artifacts/LADAalphaPURE</output-path>
+    <root id="archive" name="LADAalphaPURE.jar">
+      <element id="module-output" name="LADAalpha" />
+    </root>
+  </artifact>
+</component>

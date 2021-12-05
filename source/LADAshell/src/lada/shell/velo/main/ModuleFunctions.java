@@ -27,6 +27,7 @@ import velo.ladaalpha.fields.math.stats.OneVarStats;
 import velo.ladaalpha.fields.math.stats.Probability;
 import velo.ladaalpha.fields.math.stats.Regression;
 import velo.ladaalpha.fields.math.stats.Scores;
+import velo.ladaalpha.fields.math.stats.TwoVarStats;
 import velo.ladaalpha.fields.physics.ComplexVector;
 import velo.ladaalpha.fields.physics.kinematics.Kinematics;
 import velo.ladaalpha.misc.SortingAlgorithms;
@@ -476,6 +477,15 @@ public class ModuleFunctions {
 			}
 		}
 		return new f();
+	}
+	public static Function TVS() {
+		return new Function("two-var-stats", new String[] {"x", "y"}) {
+			@Override
+			public Object evaluate(Object[] params) {
+				double[] x = doubleVec((String[])params[0]), y = doubleVec((String[])params[1]);
+				return new TwoVarStats(x, y);				
+			}
+		};
 	}
 	public static Function zScore() {
 		class f extends Function {
